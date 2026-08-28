@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - OmniCommerce</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/storefront.css">
+</head>
+<body>
+  <header>
+    <div class="container nav-wrapper">
+      <a href="/index.html" class="logo">Omni<span>Commerce</span></a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Shop</a></li>
+        <li><a href="/cart.html">Cart <span id="cart-badge-count" class="cart-badge">0</span></a></li>
+        <li id="nav-auth-container"></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 2rem; margin-bottom: 3rem;">
+    <h1>Your Shopping Cart</h1>
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-top: 1.5rem;">
+      <div id="cart-items-container">
+        <div style="text-align: center; padding: 2rem;">Loading cart...</div>
+      </div>
+      <div id="cart-summary-card" style="background: #fff; padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border-color); height: fit-content;">
+        <h3>Order Summary</h3>
+        <div style="margin: 1rem 0;">
+          <input type="text" id="coupon-code-input" class="form-control" placeholder="Promo Code (WELCOME10)" style="margin-bottom: 0.5rem;">
+          <button class="btn btn-secondary btn-sm" style="width: 100%;" onclick="applyPromo()">Apply Coupon</button>
+        </div>
+        <div id="summary-details"></div>
+        <a href="/checkout.html" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; text-decoration: none;">Proceed to Checkout</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 OmniCommerce Enterprise Platform.</p>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/cart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await AuthManager.init();
+      await renderCartPage();
+    });
+
+    async function renderCartPage() {
+      const cart = await CartManager.fetchCart();
+      const itemsContainer = document.getElementById('cart-items-container');
+      const summaryDetails = document.getElementById('summary-details');
+
+      if (!cart || cart.items.length === 0) {
+        itemsContainer.innerHTML = '<div style="background: #fff; padding: 3rem; text-align: center; border-radius: var(--radius);">Your shopping cart is currently empty. <a href="/index.html">Start shopping</a></div>';
+        summaryDetails.innerHTML = '<p>No items in cart.</p>';
+        return;
+      }
+
+      itemsContainer.innerHTML = `
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${cart.items.map(item => `
+              <tr>
+                <td><strong>${item.name}</strong><br><small style="color: var(--text-muted);">${item.sku}</small></td>
+                <td>$${item.price.toFixed(2)}</td>
+                <td>
+                  <input type="number" value="${item.quantity}" min="1" style="width: 60px;" onchange="updateQty('${item.productId}', this.value)">
+                </td>
+                <td>$${(item.price * item.quantity).toFixed(2)}</td>
+                <td><button class="btn btn-danger btn-sm" onclick="removeItem('${item.productId}')">Remove</button></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+
+      summaryDetails.innerHTML = `
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+          <span>Subtotal:</span> <strong>$${cart.subtotal.toFixed(2)}</strong>
+        </div>
+        ${cart.discountAmount > 0 ? `
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: var(--success-color);">
+          <span>Discount:</span> <strong>-$${cart.discountAmount.toFixed(2)}</strong>
+        </div>` : ''}
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+          <span>Est. Tax:</span> <strong>$${cart.taxAmount.toFixed(2)}</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+          <span>Shipping:</span> <strong>$${cart.shippingAmount.toFixed(2)}</strong>
+        </div>
+        <hr style="margin: 1rem 0; border: none; border-top: 1px solid var(--border-color);">
+        <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700;">
+          <span>Total:</span> <strong style="color: var(--primary-color);">$${cart.grandTotal.toFixed(2)}</strong>
+        </div>
+      `;
+    }
+
+    async function updateQty(productId, qty) {
+      await CartManager.updateQuantity(productId, qty);
+      renderCartPage();
+    }
+
+    async function removeItem(productId) {
+      await CartManager.updateQuantity(productId, 0);
+      renderCartPage();
+    }
+
+    async function applyPromo() {
+      const code = document.getElementById('coupon-code-input').value;
+      if (!code) return;
+      try {
+        await CartManager.applyCoupon(code);
+        alert('Coupon applied successfully!');
+        renderCartPage();
+      } catch (err) {
+        alert(err.message || 'Invalid coupon code');
+      }
+    }
+  </script>
+</body>
+</html>

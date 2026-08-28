@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniCommerce Enterprise - Modern Storefront</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/storefront.css">
+</head>
+<body>
+
+  <header>
+    <div class="container nav-wrapper">
+      <a href="/index.html" class="logo">Omni<span>Commerce</span></a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Shop</a></li>
+        <li><a href="/cart.html">Cart <span id="cart-badge-count" class="cart-badge">0</span></a></li>
+        <li id="nav-auth-container">
+          <!-- Populated dynamically by AuthManager -->
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-banner">
+      <h1>Discover Premium Enterprise Products</h1>
+      <p>Seamless shopping experience with real-time stock and instant checkout</p>
+    </section>
+
+    <div class="catalog-layout">
+      <aside class="filter-sidebar">
+        <div class="filter-group">
+          <h3>Search</h3>
+          <input type="text" id="search-input" class="form-control" placeholder="Search catalog..." onkeyup="filterProducts()">
+        </div>
+
+        <div class="filter-group">
+          <h3>Categories</h3>
+          <div id="category-filter-list" class="filter-options">
+            <!-- Dynamic categories -->
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3>Sort By</h3>
+          <select id="sort-select" class="form-control" onchange="filterProducts()">
+            <option value="newest">Newest Arrivals</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+          </select>
+        </div>
+      </aside>
+
+      <section>
+        <div id="product-grid" class="product-grid">
+          <!-- Dynamic products populated by storefront.js -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 OmniCommerce Enterprise Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/storefront.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await AuthManager.init();
+      await CartManager.fetchCart();
+      await loadCategories();
+      await loadProducts();
+    });
+  </script>
+</body>
+</html>
