@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - OmniCommerce Enterprise</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <header>
+    <div class="container nav-wrapper">
+      <a href="/index.html" class="logo">Omni<span>Commerce</span> Admin</a>
+      <ul class="nav-links">
+        <li><a href="/index.html">View Storefront</a></li>
+        <li id="nav-auth-container"></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <ul class="admin-menu">
+        <li><a href="#" class="active">Dashboard Overview</a></li>
+        <li><a href="/index.html">Product Catalog</a></li>
+        <li><a href="/orders.html">Orders Queue</a></li>
+      </ul>
+    </aside>
+
+    <main class="admin-content">
+      <h1>Executive Analytics Overview</h1>
+      <div id="admin-metrics-container" class="metrics-grid" style="margin-top: 1.5rem;">
+        <!-- Loaded by admin.js -->
+      </div>
+
+      <h2 style="margin-top: 2.5rem; margin-bottom: 1rem;">Recent Platform Orders</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Order #</th>
+            <th>Customer</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Manage Status</th>
+          </tr>
+        </thead>
+        <tbody id="admin-orders-tbody">
+          <!-- Loaded by admin.js -->
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const user = await AuthManager.init();
+      loadAdminMetrics();
+      loadAdminOrders();
+    });
+  </script>
+</body>
+</html>
