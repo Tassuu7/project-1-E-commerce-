@@ -1,6 +1,6 @@
 /**
  * Automated Project Packaging & Compression Utility
- * Creates omnicommerce-enterprise.zip in project root
+ * Includes .git directory for TrainPlex history verification
  * OmniCommerce Enterprise
  */
 
@@ -14,7 +14,7 @@ const zipPath = path.join(projectRoot, zipFileName);
 
 function packageProject() {
   console.log('====================================================');
-  console.log('  Packaging Project into Zip Archive...');
+  console.log('  Packaging Project into Zip Archive (including .git)...');
   console.log('====================================================');
 
   if (fs.existsSync(zipPath)) {
@@ -22,16 +22,16 @@ function packageProject() {
     fs.unlinkSync(zipPath);
   }
 
-  // PowerShell command selecting all items except node_modules, .git, and .zip files
-  const command = `powershell -Command "Get-ChildItem -Path '${projectRoot}' -Exclude 'node_modules','.git','*.zip' | Compress-Archive -DestinationPath '${zipPath}' -Force"`;
+  // Include .git folder for TrainPlex git history validation
+  const command = `powershell -Command "Get-ChildItem -Path '${projectRoot}' -Force -Exclude 'node_modules','*.zip' | Compress-Archive -DestinationPath '${zipPath}' -Force"`;
 
   try {
     console.log('Executing zip compression...');
     execSync(command, { cwd: projectRoot, stdio: 'inherit' });
     if (fs.existsSync(zipPath)) {
       const stats = fs.statSync(zipPath);
-      const sizeKB = (stats.size / 1024).toFixed(2);
-      console.log(`Successfully generated: ${zipFileName} (${sizeKB} KB)`);
+      const sizeMB = (stats.size / (1024 * 1024)).toFixed(2);
+      console.log(`Successfully generated: ${zipFileName} (${sizeMB} MB with .git)`);
     } else {
       console.error('Zip creation failed: file not found after command.');
     }
