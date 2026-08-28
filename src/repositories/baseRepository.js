@@ -38,25 +38,31 @@ class BaseRepository {
 
   saveToFile() {
     try {
-      fs.writeFileSync(this.filePath, JSON.stringify(this.items, null, 2), 'utf8');
+      const serializable = this.items.map(item => item.toJSON ? item.toJSON() : item);
+      fs.writeFileSync(this.filePath, JSON.stringify(serializable, null, 2), 'utf8');
     } catch (err) {
       logger.error(`Error saving storage for ${this.entityName}:`, err);
     }
   }
 
+  formatItem(item) {
+    if (!item) return null;
+    return item.toJSON ? item.toJSON() : item;
+  }
+
   findAll(predicate = null) {
-    if (typeof predicate === 'function') {
-      return this.items.filter(predicate);
-    }
-    return [...this.items];
+    const list = typeof predicate === 'function' ? this.items.filter(predicate) : [...this.items];
+    return list.map(item => this.formatItem(item));
   }
 
   findById(id) {
-    return this.items.find(item => item.id === id) || null;
+    const item = this.items.find(item => item.id === id) || null;
+    return this.formatItem(item);
   }
 
   findOne(predicate) {
-    return this.items.find(predicate) || null;
+    const item = this.items.find(predicate) || null;
+    return this.formatItem(item);
   }
 
   findPaginated(predicate = null, page = 1, limit = 10) {
@@ -64,7 +70,8 @@ class BaseRepository {
     const total = filtered.length;
     const totalPages = Math.ceil(total / limit) || 1;
     const offset = (page - 1) * limit;
-    const data = filtered.slice(offset, offset + limit);
+    const rawData = filtered.slice(offset, offset + limit);
+    const data = rawData.map(item => this.formatItem(item));
 
     return {
       data,
@@ -83,7 +90,7 @@ class BaseRepository {
     const newItem = new this.ModelClass(itemData);
     this.items.push(newItem);
     this.saveToFile();
-    return newItem;
+    return this.formatItem(newItem);
   }
 
   update(id, updateData) {
@@ -101,7 +108,7 @@ class BaseRepository {
     const updatedItem = new this.ModelClass(updatedData);
     this.items[index] = updatedItem;
     this.saveToFile();
-    return updatedItem;
+    return this.formatItem(updatedItem);
   }
 
   delete(id) {

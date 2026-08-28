@@ -31,15 +31,15 @@ class Product {
     this.sku = sku || generateSKU(category, name);
     this.category = category;
     this.price = parseFloat(price) || 0;
-    this.salePrice = salePrice !== null ? parseFloat(salePrice) : null;
+    this.salePrice = salePrice !== null && salePrice !== undefined ? parseFloat(salePrice) : null;
     this.stock = parseInt(stock, 10) || 0;
     this.lowStockThreshold = parseInt(lowStockThreshold, 10) || 10;
     this.description = description;
-    this.images = images.length ? images : ['/images/placeholder.jpg'];
-    this.tags = tags;
+    this.images = images && images.length ? images : ['/images/placeholder.jpg'];
+    this.tags = tags || [];
     this.rating = parseFloat(rating) || 5.0;
     this.reviewCount = parseInt(reviewCount, 10) || 0;
-    this.variants = variants;
+    this.variants = variants || [];
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
@@ -52,6 +52,30 @@ class Product {
 
   get effectivePrice() {
     return this.salePrice !== null && this.salePrice < this.price ? this.salePrice : this.price;
+  }
+
+  toJSON() {
+    return {
+      id: this.id,
+      name: this.name,
+      slug: this.slug,
+      sku: this.sku,
+      category: this.category,
+      price: this.price,
+      salePrice: this.salePrice,
+      effectivePrice: this.effectivePrice,
+      stock: this.stock,
+      stockStatus: this.stockStatus,
+      lowStockThreshold: this.lowStockThreshold,
+      description: this.description,
+      images: this.images,
+      tags: this.tags,
+      rating: this.rating,
+      reviewCount: this.reviewCount,
+      variants: this.variants,
+      createdAt: this.createdAt,
+      updatedAt: this.updatedAt
+    };
   }
 }
 
