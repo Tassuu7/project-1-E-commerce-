@@ -1,7 +1,5 @@
-/**
- * Python Repository Zipper
- * Archives repository including .git folder for TrainPlex Checker Bot
- */
+# Python Repository Zipper
+# Archives repository including .git folder for TrainPlex Checker Bot
 
 import os
 import zipfile
