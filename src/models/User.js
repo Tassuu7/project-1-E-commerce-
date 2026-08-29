@@ -12,6 +12,7 @@ class User {
     name,
     email,
     password,
+    passwordHash,
     role = USER_ROLES.CUSTOMER,
     addresses = [],
     phone = '',
@@ -21,17 +22,39 @@ class User {
     this.id = id;
     this.name = name;
     this.email = email ? email.toLowerCase().trim() : '';
-    this.passwordHash = password ? hashPassword(password) : '';
+    this.passwordHash = passwordHash || (password ? hashPassword(password) : '');
     this.role = role;
-    this.addresses = addresses; // Array of { id, street, city, state, zip, country, isDefault }
+    this.addresses = addresses;
     this.phone = phone;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
 
   toJSON() {
-    const { passwordHash, ...safeUser } = this;
-    return safeUser;
+    return {
+      id: this.id,
+      name: this.name,
+      email: this.email,
+      passwordHash: this.passwordHash,
+      role: this.role,
+      addresses: this.addresses,
+      phone: this.phone,
+      createdAt: this.createdAt,
+      updatedAt: this.updatedAt
+    };
+  }
+
+  toSafeJSON() {
+    return {
+      id: this.id,
+      name: this.name,
+      email: this.email,
+      role: this.role,
+      addresses: this.addresses,
+      phone: this.phone,
+      createdAt: this.createdAt,
+      updatedAt: this.updatedAt
+    };
   }
 }
 

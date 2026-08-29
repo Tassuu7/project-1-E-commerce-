@@ -1,0 +1,56 @@
+[
+  {
+    "id": "7433731c-c3ca-476d-a7ed-4c102430b6c1",
+    "name": "Electronics",
+    "slug": "electronics",
+    "description": "Premium computers, audio, monitors & smart gadgets",
+    "parentId": null,
+    "icon": "cpu",
+    "createdAt": "2026-08-29T03:52:49.540Z"
+  },
+  {
+    "id": "9343b220-5d9d-4dc4-97fb-62cacc92edf0",
+    "name": "Apparel & Fashion",
+    "slug": "apparel-fashion",
+    "description": "Designer clothing, outerwear & premium accessories",
+    "parentId": null,
+    "icon": "shirt",
+    "createdAt": "2026-08-29T03:52:49.542Z"
+  },
+  {
+    "id": "f7e900f4-23c5-4df2-a0ae-5e45768223ba",
+    "name": "Home & Kitchen",
+    "slug": "home-kitchen",
+    "description": "Ergonomic furniture, smart lighting & chef-grade cookware",
+    "parentId": null,
+    "icon": "home",
+    "createdAt": "2026-08-29T03:52:49.543Z"
+  },
+  {
+    "id": "a216e343-1677-4ee8-bb33-7be75a293a79",
+    "name": "Books & Office",
+    "slug": "books-office",
+    "description": "Architecture guides, desk gear & productivity essentials",
+    "parentId": null,
+    "icon": "book",
+    "createdAt": "2026-08-29T03:52:49.543Z"
+  },
+  {
+    "id": "9b853ba2-ff8d-4515-a95d-462292fb0fab",
+    "name": "Sports & Fitness",
+    "slug": "sports-fitness",
+    "description": "Commercial workout gear, smart fitness & sports apparel",
+    "parentId": null,
+    "icon": "activity",
+    "createdAt": "2026-08-29T03:52:49.544Z"
+  },
+  {
+    "id": "1cd308af-8263-43f6-8b32-d8d72baecf71",
+    "name": "Accessories & Travel",
+    "slug": "accessories-travel",
+    "description": "Leather bags, sunglasses, watches & travel gear",
+    "parentId": null,
+    "icon": "briefcase",
+    "createdAt": "2026-08-29T03:52:49.544Z"
+  }
+]

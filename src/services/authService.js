@@ -31,7 +31,7 @@ class AuthService {
     const token = generateToken(newUser);
 
     return {
-      user: newUser.toJSON(),
+      user: newUser.toSafeJSON ? newUser.toSafeJSON() : newUser,
       token
     };
   }
@@ -61,7 +61,7 @@ class AuthService {
     logger.info(`User logged in successfully: ${user.email}`);
 
     return {
-      user: user.toJSON(),
+      user: user.toSafeJSON ? user.toSafeJSON() : user,
       token
     };
   }
@@ -73,7 +73,7 @@ class AuthService {
       err.statusCode = 404;
       throw err;
     }
-    return user.toJSON();
+    return user.toSafeJSON ? user.toSafeJSON() : user;
   }
 }
 

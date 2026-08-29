@@ -20,7 +20,11 @@ class CartService {
       if (userCart) return userCart;
     }
 
-    return cartRepository.create({ userId, items: [] });
+    return cartRepository.create({
+      ...(cartId && { id: cartId }),
+      userId,
+      items: []
+    });
   }
 
   static addItem(cartId, { productId, quantity = 1 }) {
@@ -39,6 +43,8 @@ class CartService {
       throw err;
     }
 
+    const priceVal = typeof product.effectivePrice === 'number' ? product.effectivePrice : (typeof product.salePrice === 'number' ? product.salePrice : (product.price || 0));
+
     const existingIndex = cart.items.findIndex(item => item.productId === productId);
     if (existingIndex > -1) {
       const newQty = cart.items[existingIndex].quantity + quantity;
@@ -52,10 +58,10 @@ class CartService {
       cart.items.push({
         productId: product.id,
         name: product.name,
-        price: product.effectivePrice,
+        price: priceVal,
         quantity: quantity,
         sku: product.sku,
-        image: product.images[0] || '/images/placeholder.jpg'
+        image: (product.images && product.images[0]) || '/images/placeholder.svg'
       });
     }
 
@@ -110,7 +116,9 @@ class CartService {
 
   static getCartSummary(cartId, regionCode = 'CA') {
     const cart = this.getOrCreateCart(cartId);
-    const subtotal = cart.subtotal;
+    const items = cart.items || [];
+    const subtotal = items.reduce((sum, item) => sum + ((item.price || 0) * (item.quantity || 1)), 0);
+    const itemCount = items.reduce((sum, item) => sum + (item.quantity || 1), 0);
 
     let shippingCost = subtotal >= config.shipping.flatRateThreshold || subtotal === 0 ? 0 : config.shipping.standardFee;
     let discountAmount = 0;
@@ -125,7 +133,7 @@ class CartService {
 
     const taxableBase = Math.max(0, subtotal - discountAmount);
     const taxCalculation = TaxCalculator.calculateCartTax(
-      cart.items.map(item => ({ price: item.price, quantity: item.quantity })),
+      items.map(item => ({ price: item.price, quantity: item.quantity })),
       regionCode
     );
 
@@ -134,8 +142,8 @@ class CartService {
     return {
       id: cart.id,
       userId: cart.userId,
-      items: cart.items,
-      itemCount: cart.itemCount,
+      items: items,
+      itemCount: itemCount,
       subtotal: Math.round(subtotal * 100) / 100,
       discountAmount: discountAmount,
       taxAmount: taxCalculation.totalTax,

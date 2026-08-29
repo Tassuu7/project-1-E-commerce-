@@ -1,0 +1,19 @@
+[
+  {
+    "id": "c0ce597f-bfc8-43df-bb83-7aabb7ab5335",
+    "orderId": "765f7867-99d1-4665-84e8-826e6872a540",
+    "carrier": "FedEx Express",
+    "trackingNumber": "FE854238483370",
+    "shippingFee": 9.99,
+    "destination": {
+      "street": "500 Howard St",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94105",
+      "country": "USA"
+    },
+    "status": "LABEL_CREATED",
+    "estimatedDelivery": "2026-09-01T03:53:58.871Z",
+    "createdAt": "2026-08-29T03:53:58.871Z"
+  }
+]

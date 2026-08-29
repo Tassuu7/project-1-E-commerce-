@@ -1,0 +1,116 @@
+[
+  {
+    "id": "55abfd7f-6122-4bbc-b626-3214c6b1725f",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-08-28T11:51:58.232Z",
+    "updatedAt": "2026-08-28T11:51:58.232Z"
+  },
+  {
+    "id": "48635e05-2c96-4f67-9d71-00031ce3f5c2",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-08-28T11:51:58.367Z",
+    "updatedAt": "2026-08-28T11:51:58.367Z"
+  },
+  {
+    "id": "6c2dfc60-d888-4548-b202-f74dc968a3c4",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-08-28T11:55:05.274Z",
+    "updatedAt": "2026-08-28T11:55:05.274Z"
+  },
+  {
+    "id": "d454c442-524d-46dc-aead-1feb540dcdef",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-08-28T12:02:42.592Z",
+    "updatedAt": "2026-08-28T12:02:42.592Z"
+  },
+  {
+    "id": "a2207707-8f27-41d8-a429-dc289269ca9d",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-08-29T03:44:45.689Z",
+    "updatedAt": "2026-08-29T03:44:45.689Z"
+  },
+  {
+    "id": "72e3e72e-5912-40fe-a179-90ecae31a80c",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-08-29T03:52:07.468Z",
+    "updatedAt": "2026-08-29T03:52:07.468Z"
+  },
+  {
+    "id": "895a909a-60be-412f-959e-fa6101ec73ef",
+    "userId": null,
+    "items": [
+      {
+        "productId": "ab9b57e6-6c0e-4fc8-9dc0-6511ce8c3c4b",
+        "name": "VortexSpeed 8K Wireless Optical Gaming Mouse",
+        "price": 74.99,
+        "quantity": 1,
+        "sku": "ELE-VOR-2149",
+        "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80"
+      }
+    ],
+    "appliedCoupon": null,
+    "createdAt": "2026-08-29T03:53:16.401Z",
+    "updatedAt": "2026-08-29T03:53:16.402Z"
+  },
+  {
+    "id": "42736a45-3746-407b-88f9-fb54710c37ea",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-08-29T03:53:16.405Z",
+    "updatedAt": "2026-08-29T03:53:16.405Z"
+  },
+  {
+    "id": "e149c277-3839-4d6b-adf0-49b5205a6382",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-08-29T03:53:16.412Z",
+    "updatedAt": "2026-08-29T03:53:16.412Z"
+  },
+  {
+    "id": "3ea4a625-8cc5-4859-9089-2f6f7fc6a8f7",
+    "userId": null,
+    "items": [
+      {
+        "productId": "ab9b57e6-6c0e-4fc8-9dc0-6511ce8c3c4b",
+        "name": "VortexSpeed 8K Wireless Optical Gaming Mouse",
+        "price": 74.99,
+        "quantity": 1,
+        "sku": "ELE-VOR-2149",
+        "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80"
+      }
+    ],
+    "appliedCoupon": null,
+    "createdAt": "2026-08-29T03:53:23.294Z",
+    "updatedAt": "2026-08-29T03:53:23.294Z"
+  },
+  {
+    "id": "e85dce6d-958e-4663-afcc-2fe6d0207e90",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-08-29T03:53:23.298Z",
+    "updatedAt": "2026-08-29T03:53:23.298Z"
+  },
+  {
+    "id": "test_cart_1787975638794",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-08-29T03:53:58.860Z",
+    "updatedAt": "2026-08-29T03:53:58.873Z"
+  }
+]

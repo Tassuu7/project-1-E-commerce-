@@ -1,0 +1,24 @@
+[
+  {
+    "id": "e5a4d947-2493-4cd8-82f0-dd64061d7fd9",
+    "name": "Executive Admin",
+    "email": "admin@omnicommerce.com",
+    "passwordHash": "d889431e4df238edcf34fd44289b8b230144d00f6c02671de4d21b5362a961f3",
+    "role": "ADMIN",
+    "addresses": [],
+    "phone": "",
+    "createdAt": "2026-08-29T03:52:49.546Z",
+    "updatedAt": "2026-08-29T03:52:49.546Z"
+  },
+  {
+    "id": "3e1a3585-79fc-41bb-aa81-0bee1297e4ca",
+    "name": "Jane Customer",
+    "email": "jane@example.com",
+    "passwordHash": "36900f9e68c3865049799b101bf59b7da1eb366fcd1efe47974ab40323fb3158",
+    "role": "CUSTOMER",
+    "addresses": [],
+    "phone": "",
+    "createdAt": "2026-08-29T03:52:49.547Z",
+    "updatedAt": "2026-08-29T03:52:49.547Z"
+  }
+]

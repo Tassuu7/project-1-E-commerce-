@@ -10,10 +10,11 @@ function testInventoryService() {
   console.log('Testing InventoryService...');
 
   const prod = productRepository.create({
-    name: 'Test Gadget',
+    name: 'Temporary Test Fixture Gadget',
     category: 'Electronics',
     price: 99.99,
-    stock: 10
+    stock: 10,
+    images: ['https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80']
   });
 
   const checkResult = InventoryService.checkStockAvailability([{ productId: prod.id, quantity: 5 }]);
@@ -24,6 +25,9 @@ function testInventoryService() {
 
   const updatedProd = productRepository.findById(prod.id);
   console.assert(updatedProd.stock === 5, `Expected stock to be 5 after reservation, got ${updatedProd.stock}`);
+
+  // Clean up fixture after test
+  productRepository.delete(prod.id);
 
   console.log('InventoryService unit tests PASSED!');
 }

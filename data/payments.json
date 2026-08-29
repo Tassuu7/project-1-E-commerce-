@@ -1,0 +1,17 @@
+[
+  {
+    "id": "eb596200-1efd-4d7c-a508-2607dcc5a6b2",
+    "orderId": "765f7867-99d1-4665-84e8-826e6872a540",
+    "amount": 163.85,
+    "currency": "USD",
+    "paymentMethod": "STRIPE_CREDIT_CARD",
+    "status": "CAPTURED",
+    "transactionId": "TXN-1787975638870-550",
+    "rawResponse": {
+      "gateway": "STRIPE_CREDIT_CARD",
+      "authCode": "AUTH-477944",
+      "processedAt": "2026-08-29T03:53:58.870Z"
+    },
+    "createdAt": "2026-08-29T03:53:58.870Z"
+  }
+]
