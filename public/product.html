@@ -3,32 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Details - OmniCommerce</title>
+  <title>Product Details - OmniCommerce Enterprise</title>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/storefront.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="container nav-wrapper">
-      <a href="/index.html" class="logo">Omni<span>Commerce</span></a>
+      <a href="/index.html" class="logo">Omni<span>Commerce</span> <span class="logo-badge">Enterprise</span></a>
       <ul class="nav-links">
-        <li><a href="/index.html">Shop</a></li>
-        <li><a href="/cart.html">Cart <span id="cart-badge-count" class="cart-badge">0</span></a></li>
+        <li><a href="/index.html">Shop Catalog</a></li>
+        <li><a href="/cart.html" class="cart-link">🛒 Cart <span id="cart-badge-count" class="cart-badge" style="display: none;">0</span></a></li>
         <li id="nav-auth-container"></li>
       </ul>
     </div>
   </header>
 
-  <main class="container" style="margin-top: 2rem; margin-bottom: 3rem;">
+  <main class="container" style="margin-top: 2rem; margin-bottom: 4rem;">
+    <!-- Breadcrumb -->
+    <div style="margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+      <a href="/index.html">Catalog</a> &nbsp;/&nbsp; <span id="breadcrumb-category">Product</span> &nbsp;/&nbsp; <strong id="breadcrumb-name" style="color: var(--text-main);">Details</strong>
+    </div>
+
+    <!-- Product Main Display -->
     <div id="product-detail-container">
-      <div style="text-align: center; padding: 3rem;">Loading product details...</div>
+      <div style="text-align: center; padding: 4rem; background: #fff; border-radius: var(--radius-lg); border: 1px solid var(--border);">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
+        <strong>Loading product details...</strong>
+      </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div id="reviews-section" style="margin-top: 3rem; display: none;">
+      <div style="background: var(--bg-surface); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);">Verified Customer Reviews</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Real feedback from authenticated enterprise purchasers</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="toggleReviewForm()">+ Write a Review</button>
+        </div>
+
+        <!-- Write Review Form -->
+        <form id="write-review-form" style="display: none; background: #f8fafc; padding: 1.75rem; border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 2rem;" onsubmit="submitReview(event)">
+          <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;">Share Your Experience</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+            <div>
+              <label class="form-label">Your Name</label>
+              <input type="text" id="review-user-name" class="form-control" placeholder="John D." required>
+            </div>
+            <div>
+              <label class="form-label">Rating</label>
+              <select id="review-rating" class="form-control" required>
+                <option value="5">★★★★★ (5 Stars - Excellent)</option>
+                <option value="4">★★★★☆ (4 Stars - Good)</option>
+                <option value="3">★★★☆☆ (3 Stars - Average)</option>
+                <option value="2">★★☆☆☆ (2 Stars - Below Average)</option>
+                <option value="1">★☆☆☆☆ (1 Star - Poor)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Review Headline</label>
+            <input type="text" id="review-title" class="form-control" placeholder="Great quality and super fast delivery" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Detailed Comments</label>
+            <textarea id="review-comment" class="form-control" rows="3" placeholder="Provide detailed feedback on build quality, performance, packaging..." required></textarea>
+          </div>
+          <div style="display: flex; gap: 0.75rem;">
+            <button type="submit" class="btn btn-primary btn-sm">Submit Review</button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="toggleReviewForm()">Cancel</button>
+          </div>
+        </form>
+
+        <div id="reviews-list" style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <!-- Populated by JS -->
+        </div>
+      </div>
     </div>
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 OmniCommerce Enterprise Platform.</p>
+      <div class="footer-bottom">
+        <p>&copy; 2026 OmniCommerce Enterprise Platform. All rights reserved.</p>
+        <a href="/index.html" style="color: #cbd5e1;">← Back to Catalog</a>
+      </div>
     </div>
   </footer>
 
@@ -36,69 +100,191 @@
   <script src="/js/auth.js"></script>
   <script src="/js/cart.js"></script>
   <script>
+    let currentProductId = null;
+
     document.addEventListener('DOMContentLoaded', async () => {
       await AuthManager.init();
       await CartManager.fetchCart();
 
       const params = new URLSearchParams(window.location.search);
-      const productId = params.get('id');
+      currentProductId = params.get('id');
 
-      if (!productId) {
+      if (!currentProductId) {
         window.location.href = '/index.html';
         return;
       }
 
+      await loadProductDetails(currentProductId);
+    });
+
+    async function loadProductDetails(productId) {
       try {
         const res = await APIClient.get(`/products/${productId}`);
         const reviewsRes = await APIClient.get(`/reviews/${productId}`);
 
-        if (res.success) {
+        if (res.success && res.data) {
           const p = res.data;
           const reviews = reviewsRes.data || [];
 
-          document.getElementById('product-detail-container').innerHTML = `
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; background: #fff; padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border-color);">
-              <div>
-                <img src="${p.images[0] || 'https://via.placeholder.com/500'}" alt="${p.name}" style="width: 100%; border-radius: var(--radius); object-fit: cover; max-height: 400px;">
-              </div>
-              <div>
-                <span class="badge badge-info">${p.category}</span>
-                <h1 style="margin: 0.5rem 0 1rem 0;">${p.name}</h1>
-                <p style="color: var(--text-muted); margin-bottom: 1rem;">SKU: ${p.sku}</p>
-                <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">
-                  $${p.effectivePrice.toFixed(2)}
-                </div>
-                <p style="margin-bottom: 1.5rem; line-height: 1.6;">${p.description || 'High-quality enterprise product engineered for durability and top performance.'}</p>
-                <div style="margin-bottom: 1.5rem;">
-                  <strong>Stock Status:</strong>
-                  <span class="badge badge-${p.stock > 0 ? 'success' : 'danger'}">${p.stock > 0 ? `In Stock (${p.stock} units)` : 'Out of Stock'}</span>
-                </div>
-                <button class="btn btn-primary" onclick="CartManager.addItem('${p.id}')" ${p.stock <= 0 ? 'disabled' : ''}>Add to Shopping Cart</button>
-              </div>
-            </div>
+          document.getElementById('breadcrumb-category').textContent = p.category || 'Product';
+          document.getElementById('breadcrumb-name').textContent = p.name;
 
-            <div style="margin-top: 3rem; background: #fff; padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border-color);">
-              <h2>Customer Reviews (${reviews.length})</h2>
-              ${reviews.length === 0 ? '<p style="color: var(--text-muted); margin-top: 1rem;">No reviews yet for this product.</p>' : `
-                <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                  ${reviews.map(r => `
-                    <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                      <div style="display: flex; justify-content: space-between;">
-                        <strong>${r.userName}</strong>
-                        <span style="color: var(--accent-color);">★ ${r.rating}/5</span>
-                      </div>
-                      <p style="margin-top: 0.5rem;">${r.comment}</p>
-                    </div>
-                  `).join('')}
+          const priceVal = typeof p.effectivePrice === 'number' ? p.effectivePrice : (typeof p.salePrice === 'number' ? p.salePrice : (p.price || 0));
+          const originalPrice = typeof p.price === 'number' ? p.price : 0;
+          const hasDiscount = p.salePrice && p.salePrice < originalPrice;
+          const isOutOfStock = p.stock <= 0;
+          const isLowStock = p.stock > 0 && p.stock <= (p.lowStockThreshold || 10);
+          const imagesList = (p.images && p.images.length) ? p.images : ['/images/placeholder.svg'];
+
+          document.getElementById('product-detail-container').innerHTML = `
+            <div style="display: grid; grid-template-columns: 1fr 1.15fr; gap: 3.5rem; background: var(--bg-surface); padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-md); align-items: start;">
+              <!-- Image Gallery Column -->
+              <div>
+                <div style="width: 100%; height: 420px; background: #f8fafc; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;">
+                  <img id="main-product-image" src="${imagesList[0]}" alt="${p.name}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
                 </div>
-              `}
+                ${imagesList.length > 1 ? `
+                  <div style="display: flex; gap: 0.75rem;">
+                    ${imagesList.map((img, i) => `
+                      <img src="${img}" style="width: 80px; height: 80px; object-fit: cover; border-radius: var(--radius-sm); border: 2px solid ${i === 0 ? 'var(--primary)' : 'var(--border)'}; cursor: pointer;" onclick="switchMainImage('${img}', this)" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
+                    `).join('')}
+                  </div>
+                ` : ''}
+              </div>
+
+              <!-- Product Info Column -->
+              <div>
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                  <span class="badge badge-info">${p.category}</span>
+                  ${hasDiscount ? `<span class="badge badge-danger">Save $${(originalPrice - priceVal).toFixed(0)}</span>` : ''}
+                </div>
+
+                <h1 style="font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem; line-height: 1.25;">${p.name}</h1>
+                <div style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem;">SKU: <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">${p.sku}</code></div>
+
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+                  <div class="star-rating" style="font-size: 1.15rem;">★ ★ ★ ★ ★</div>
+                  <strong style="font-size: 1rem; color: var(--text-main);">${p.rating.toFixed(1)} / 5.0</strong>
+                  <span style="color: var(--text-muted);">(${reviews.length} customer reviews)</span>
+                </div>
+
+                <div style="display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem; padding: 1rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+                  <span style="font-size: 2.25rem; font-weight: 800; color: var(--primary);">$${priceVal.toFixed(2)}</span>
+                  ${hasDiscount ? `<span style="font-size: 1.25rem; text-decoration: line-through; color: var(--text-light);">$${originalPrice.toFixed(2)}</span>` : ''}
+                </div>
+
+                <p style="font-size: 1rem; line-height: 1.7; color: #475569; margin-bottom: 2rem;">${p.description || 'High performance enterprise-grade hardware engineered for durability, speed, and continuous operation.'}</p>
+
+                <!-- Stock & Actions -->
+                <div style="margin-bottom: 2rem;">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <strong>Availability:</strong>
+                    ${isOutOfStock ? `<span class="badge badge-danger">Out of Stock</span>` : (isLowStock ? `<span class="badge badge-warning">Low Stock (${p.stock} units left)</span>` : `<span class="badge badge-success">In Stock (${p.stock} units ready to ship)</span>`)}
+                  </div>
+
+                  <div style="display: flex; gap: 1rem; align-items: center;">
+                    <div style="display: flex; align-items: center; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: #fff;">
+                      <button style="padding: 0.65rem 1rem; background: transparent; border: none; font-size: 1.1rem; cursor: pointer;" onclick="adjustQty(-1)">-</button>
+                      <input type="number" id="purchase-quantity" value="1" min="1" max="${p.stock}" style="width: 50px; text-align: center; border: none; font-weight: 700; outline: none;">
+                      <button style="padding: 0.65rem 1rem; background: transparent; border: none; font-size: 1.1rem; cursor: pointer;" onclick="adjustQty(1)">+</button>
+                    </div>
+
+                    <button class="btn btn-primary btn-lg" style="flex: 1;" onclick="addCurrentProductToCart()" ${isOutOfStock ? 'disabled' : ''}>
+                      🛒 ${isOutOfStock ? 'Out of Stock' : 'Add to Shopping Cart'}
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Guarantee Highlights -->
+                <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.875rem; color: var(--text-main);">
+                  <div>✓ <strong>Express Shipping:</strong> 2-3 Business Days</div>
+                  <div>✓ <strong>Warranty:</strong> 2-Year Enterprise Coverage</div>
+                  <div>✓ <strong>Returns:</strong> 30-Day Hassle-Free</div>
+                  <div>✓ <strong>Support:</strong> 24/7 Priority Assistance</div>
+                </div>
+              </div>
             </div>
           `;
+
+          // Render Reviews Section
+          document.getElementById('reviews-section').style.display = 'block';
+          const reviewsListEl = document.getElementById('reviews-list');
+          if (reviews.length === 0) {
+            reviewsListEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">No reviews yet. Be the first to review this product!</div>';
+          } else {
+            reviewsListEl.innerHTML = reviews.map(r => `
+              <div style="background: #f8fafc; border: 1px solid var(--border); padding: 1.5rem; border-radius: var(--radius);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <div style="display: flex; align-items: center; gap: 0.6rem;">
+                    <strong>${r.userName}</strong>
+                    <span class="badge badge-success" style="font-size: 0.7rem;">Verified Buyer</span>
+                  </div>
+                  <div class="star-rating">★ ★ ★ ★ ★</div>
+                </div>
+                <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">${r.title || 'Product Feedback'}</h4>
+                <p style="color: #475569; font-size: 0.925rem; line-height: 1.6;">${r.comment}</p>
+                <small style="color: var(--text-light); margin-top: 0.5rem; display: block;">Posted on ${new Date(r.createdAt).toLocaleDateString()}</small>
+              </div>
+            `).join('');
+          }
         }
       } catch (err) {
-        document.getElementById('product-detail-container').innerHTML = `<div style="color: var(--danger-color); text-align: center;">Error loading product: ${err.message}</div>`;
+        document.getElementById('product-detail-container').innerHTML = `<div style="color: var(--danger); text-align: center; padding: 3rem;">Error loading product: ${err.message}</div>`;
       }
-    });
+    }
+
+    function switchMainImage(imgUrl, el) {
+      document.getElementById('main-product-image').src = imgUrl;
+      const thumbs = el.parentElement.querySelectorAll('img');
+      thumbs.forEach(t => t.style.borderColor = 'var(--border)');
+      el.style.borderColor = 'var(--primary)';
+    }
+
+    function adjustQty(delta) {
+      const input = document.getElementById('purchase-quantity');
+      if (!input) return;
+      let val = parseInt(input.value, 10) || 1;
+      val = Math.max(1, val + delta);
+      input.value = val;
+    }
+
+    async function addCurrentProductToCart() {
+      const qtyInput = document.getElementById('purchase-quantity');
+      const qty = qtyInput ? parseInt(qtyInput.value, 10) || 1 : 1;
+      await CartManager.addItem(currentProductId, qty);
+    }
+
+    function toggleReviewForm() {
+      const form = document.getElementById('write-review-form');
+      if (form) {
+        form.style.display = form.style.display === 'none' ? 'block' : 'none';
+      }
+    }
+
+    async function submitReview(event) {
+      event.preventDefault();
+      const userName = document.getElementById('review-user-name').value;
+      const rating = document.getElementById('review-rating').value;
+      const title = document.getElementById('review-title').value;
+      const comment = document.getElementById('review-comment').value;
+
+      try {
+        const res = await APIClient.post(`/reviews/${currentProductId}`, {
+          userName,
+          rating: parseInt(rating, 10),
+          title,
+          comment
+        });
+
+        if (res.success) {
+          showToast('Review submitted successfully!', 'success');
+          toggleReviewForm();
+          await loadProductDetails(currentProductId);
+        }
+      } catch (err) {
+        showToast(err.message || 'Failed to submit review', 'danger');
+      }
+    }
   </script>
 </body>
 </html>

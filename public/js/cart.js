@@ -1,5 +1,5 @@
 /**
- * Client-side Cart State Manager
+ * Client-side Shopping Cart Manager
  * OmniCommerce Enterprise
  */
 
@@ -16,7 +16,7 @@ class CartManager {
   static async fetchCart() {
     try {
       const res = await APIClient.get('/cart', { cartId: this.getCartId() });
-      if (res.success) {
+      if (res.success && res.data) {
         this.updateBadge(res.data.itemCount);
         return res.data;
       }
@@ -31,37 +31,47 @@ class CartManager {
       const res = await APIClient.post('/cart/items', {
         cartId: this.getCartId(),
         productId,
-        quantity
+        quantity: parseInt(quantity, 10) || 1
       });
-      if (res.success) {
+      if (res.success && res.data) {
         this.updateBadge(res.data.itemCount);
-        alert('Product added to shopping cart!');
+        showToast('✓ Added to shopping cart!', 'success');
         return res.data;
       }
     } catch (err) {
-      alert(err.message || 'Failed to add item to cart');
+      showToast(err.message || 'Failed to add item to cart', 'danger');
     }
   }
 
   static async updateQuantity(productId, quantity) {
-    const res = await APIClient.put('/cart/items', {
-      cartId: this.getCartId(),
-      productId,
-      quantity
-    });
-    if (res.success) {
-      this.updateBadge(res.data.itemCount);
-      return res.data;
+    try {
+      const res = await APIClient.put('/cart/items', {
+        cartId: this.getCartId(),
+        productId,
+        quantity: parseInt(quantity, 10)
+      });
+      if (res.success && res.data) {
+        this.updateBadge(res.data.itemCount);
+        return res.data;
+      }
+    } catch (err) {
+      showToast(err.message || 'Failed to update quantity', 'danger');
     }
   }
 
   static async applyCoupon(promoCode) {
-    const res = await APIClient.post('/cart/coupon', {
-      cartId: this.getCartId(),
-      promoCode
-    });
-    if (res.success) {
-      return res.data;
+    try {
+      const res = await APIClient.post('/cart/coupon', {
+        cartId: this.getCartId(),
+        promoCode
+      });
+      if (res.success && res.data) {
+        showToast(`Promo code "${promoCode}" applied!`, 'success');
+        return res.data;
+      }
+    } catch (err) {
+      showToast(err.message || 'Invalid promo code', 'danger');
+      throw err;
     }
   }
 
@@ -69,6 +79,7 @@ class CartManager {
     const badge = document.getElementById('cart-badge-count');
     if (badge) {
       badge.textContent = count || 0;
+      badge.style.display = count > 0 ? 'inline-block' : 'none';
     }
   }
 }
