@@ -18,7 +18,7 @@
       </div>
       <div class="top-bar-links">
         <a href="/orders.html">Track My Order</a>
-        <a href="/admin.html">Staff Login</a>
+        <a href="/cart.html">View Cart</a>
       </div>
     </div>
   </div>
@@ -59,7 +59,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
           <div>
             <h2 style="font-size: 1.5rem; font-weight: 800; color: #111827;">Customer Reviews</h2>
-            <p style="color: #6b7280; font-size: 0.95rem;">Real feedback from verified buyers</p>
+            <p style="color: #6b7280; font-size: 0.95rem;">Real feedback from verified shoppers</p>
           </div>
           <button class="btn btn-primary" onclick="toggleReviewForm()">Write a Review</button>
         </div>
@@ -70,7 +70,7 @@
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
             <div>
               <label class="form-label">Your Name</label>
-              <input type="text" id="review-user-name" class="form-control" placeholder="John D." required>
+              <input type="text" id="review-user-name" class="form-control" placeholder="Jane D." required>
             </div>
             <div>
               <label class="form-label">Rating</label>
@@ -89,7 +89,7 @@
           </div>
           <div class="form-group">
             <label class="form-label">Comments</label>
-            <textarea id="review-comment" class="form-control" rows="3" placeholder="Tell others what you liked about this item..." required></textarea>
+            <textarea id="review-comment" class="form-control" rows="3" placeholder="Tell other shoppers about your experience..." required></textarea>
           </div>
           <div style="display: flex; gap: 0.75rem;">
             <button type="submit" class="btn btn-primary">Submit Review</button>
