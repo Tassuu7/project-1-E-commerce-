@@ -3,23 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secure Checkout — OmniStore</title>
+  <title>Checkout — EverydayStore</title>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/storefront.css">
 </head>
 <body>
 
-  <!-- Top Announcement Promo Bar -->
-  <div class="top-announcement-bar">
+  <!-- Top Bar -->
+  <div class="top-bar">
     <div class="container">
-      <div class="announcement-inner">
-        <div class="announcement-left">
-          <span>🔒 256-Bit SSL Encrypted & PCI-DSS Level 1 Compliant Checkout</span>
-        </div>
-        <div class="announcement-links">
-          <a href="/cart.html">← Return to Shopping Bag</a>
-        </div>
+      <div>
+        <span>🔒 Secure SSL 256-Bit Encrypted Checkout</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="/cart.html">← Back to Cart</a>
       </div>
     </div>
   </div>
@@ -27,119 +25,106 @@
   <!-- Header -->
   <header>
     <div class="container nav-wrapper">
-      <a href="/index.html" class="logo">Omni<span>Store</span><span class="logo-dot"></span></a>
-      <ul class="nav-links">
-        <li><a href="/cart.html">← Back to Bag</a></li>
+      <a href="/index.html" class="logo">Everyday<span>Store</span></a>
+      <ul class="nav-menu">
+        <li><a href="/cart.html">← Back to Cart</a></li>
         <li id="nav-auth-container"></li>
       </ul>
     </div>
   </header>
 
-  <main class="container" style="margin-top: 3rem; margin-bottom: 5rem;">
-    <!-- Step Header -->
-    <div style="text-align: center; margin-bottom: 3rem;">
-      <h1 style="font-size: 2.35rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem; letter-spacing: -0.02em;">Express Checkout</h1>
-      <p style="color: var(--text-muted); font-size: 1.05rem;">Please review your shipping details and select your preferred payment method</p>
-    </div>
+  <main class="container" style="margin-top: 2.5rem; margin-bottom: 5rem;">
+    <h1 style="font-size: 2rem; font-weight: 800; color: #111827; margin-bottom: 0.5rem;">Checkout</h1>
+    <p style="color: #6b7280; font-size: 1rem; margin-bottom: 2rem;">Enter your shipping address and choose payment</p>
 
-    <div style="display: grid; grid-template-columns: 1.75fr 1fr; gap: 3rem; align-items: start;">
-      <!-- Checkout Form Card -->
-      <form id="checkout-form" onsubmit="submitOrder(event)" style="background: var(--bg-surface); padding: 2.75rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
-        <!-- Step 1: Customer Info -->
-        <div style="margin-bottom: 2.25rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-light);">
-          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
-            <span style="background: var(--primary); color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem;">1</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main);">Customer Details</h3>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+    <div style="display: grid; grid-template-columns: 1.7fr 1fr; gap: 2.5rem; align-items: start;">
+      <!-- Checkout Form -->
+      <form id="checkout-form" onsubmit="submitOrder(event)" style="background: #ffffff; padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+        <!-- Step 1: Customer Contact -->
+        <div style="margin-bottom: 2rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--border-light);">
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #111827; margin-bottom: 1.25rem;">1. Contact Information</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
               <label class="form-label">Full Name</label>
-              <input type="text" name="name" id="cust-name" class="form-control" placeholder="Jane Doe" required>
+              <input type="text" name="name" id="cust-name" class="form-control" placeholder="John Doe" required>
             </div>
             <div class="form-group">
               <label class="form-label">Email Address</label>
-              <input type="email" name="email" id="cust-email" class="form-control" placeholder="jane@example.com" required>
+              <input type="email" name="email" id="cust-email" class="form-control" placeholder="john@example.com" required>
             </div>
           </div>
         </div>
 
         <!-- Step 2: Shipping Address -->
-        <div style="margin-bottom: 2.25rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-light);">
-          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
-            <span style="background: var(--primary); color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem;">2</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main);">Shipping Destination</h3>
-          </div>
+        <div style="margin-bottom: 2rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--border-light);">
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #111827; margin-bottom: 1.25rem;">2. Shipping Address</h3>
           <div class="form-group">
             <label class="form-label">Street Address</label>
-            <input type="text" name="street" class="form-control" placeholder="500 Howard Street, Suite 400" required>
+            <input type="text" name="street" class="form-control" placeholder="123 Market St, Apt 4" required>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
             <div class="form-group">
               <label class="form-label">City</label>
-              <input type="text" name="city" class="form-control" placeholder="San Francisco" required>
+              <input type="text" name="city" class="form-control" placeholder="Seattle" required>
             </div>
             <div class="form-group">
-              <label class="form-label">State / Region</label>
-              <input type="text" name="state" class="form-control" placeholder="CA" required maxlength="2">
+              <label class="form-label">State</label>
+              <input type="text" name="state" class="form-control" placeholder="WA" required maxlength="2">
             </div>
             <div class="form-group">
-              <label class="form-label">ZIP Code</label>
-              <input type="text" name="zip" class="form-control" placeholder="94105" required>
+              <label class="form-label">ZIP</label>
+              <input type="text" name="zip" class="form-control" placeholder="98101" required>
             </div>
           </div>
         </div>
 
-        <!-- Step 3: Payment Method -->
-        <div style="margin-bottom: 2.25rem;">
-          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
-            <span style="background: var(--primary); color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem;">3</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main);">Payment Gateway</h3>
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: 1rem;">
-            <label style="display: flex; align-items: center; justify-content: space-between; padding: 1.15rem 1.5rem; border: 2px solid var(--primary); border-radius: var(--radius-lg); background: #f0f7ff; cursor: pointer;">
-              <div style="display: flex; align-items: center; gap: 1rem;">
-                <input type="radio" name="paymentMethod" value="STRIPE_CREDIT_CARD" checked style="accent-color: var(--primary); width: 20px; height: 20px;">
+        <!-- Step 3: Payment -->
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #111827; margin-bottom: 1.25rem;">3. Payment Method</h3>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <label style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; border: 2px solid #111827; border-radius: var(--radius); background: #f9fafb; cursor: pointer;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <input type="radio" name="paymentMethod" value="STRIPE_CREDIT_CARD" checked style="width: 18px; height: 18px; accent-color: #111827;">
                 <div>
-                  <strong style="color: var(--text-main); font-size: 1rem;">Credit / Debit Card</strong>
-                  <div style="font-size: 0.825rem; color: var(--text-muted);">Visa, MasterCard, American Express</div>
+                  <strong>Credit / Debit Card</strong>
+                  <div style="font-size: 0.8rem; color: #6b7280;">Visa, MasterCard, Amex</div>
                 </div>
               </div>
-              <span class="badge badge-info">Instant 1-Click</span>
+              <span class="badge badge-secondary">Card</span>
             </label>
 
-            <label style="display: flex; align-items: center; justify-content: space-between; padding: 1.15rem 1.5rem; border: 1px solid var(--border); border-radius: var(--radius-lg); background: #fff; cursor: pointer;">
-              <div style="display: flex; align-items: center; gap: 1rem;">
-                <input type="radio" name="paymentMethod" value="PAYPAL" style="accent-color: var(--primary); width: 20px; height: 20px;">
+            <label style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; cursor: pointer;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <input type="radio" name="paymentMethod" value="PAYPAL" style="width: 18px; height: 18px; accent-color: #111827;">
                 <div>
-                  <strong style="color: var(--text-main); font-size: 1rem;">PayPal Express</strong>
-                  <div style="font-size: 0.825rem; color: var(--text-muted);">Safe checkout via your PayPal wallet</div>
+                  <strong>PayPal</strong>
+                  <div style="font-size: 0.8rem; color: #6b7280;">Pay with PayPal account</div>
                 </div>
               </div>
               <span class="badge badge-secondary">PayPal</span>
             </label>
 
-            <label style="display: flex; align-items: center; justify-content: space-between; padding: 1.15rem 1.5rem; border: 1px solid var(--border); border-radius: var(--radius-lg); background: #fff; cursor: pointer;">
-              <div style="display: flex; align-items: center; gap: 1rem;">
-                <input type="radio" name="paymentMethod" value="CASH_ON_DELIVERY" style="accent-color: var(--primary); width: 20px; height: 20px;">
+            <label style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; cursor: pointer;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <input type="radio" name="paymentMethod" value="CASH_ON_DELIVERY" style="width: 18px; height: 18px; accent-color: #111827;">
                 <div>
-                  <strong style="color: var(--text-main); font-size: 1rem;">Cash on Delivery (COD)</strong>
-                  <div style="font-size: 0.825rem; color: var(--text-muted);">Pay upon shipment delivery</div>
+                  <strong>Cash on Delivery</strong>
+                  <div style="font-size: 0.8rem; color: #6b7280;">Pay when your order arrives</div>
                 </div>
               </div>
-              <span class="badge badge-warning">COD</span>
+              <span class="badge badge-secondary">COD</span>
             </label>
           </div>
         </div>
 
-        <button type="submit" id="submit-order-btn" class="btn btn-primary btn-lg" style="width: 100%; font-size: 1.15rem; padding: 1.1rem; border-radius: var(--radius-full); box-shadow: 0 12px 28px var(--primary-glow);">
-          🔒 Authorize & Place Order Now
+        <button type="submit" id="submit-order-btn" class="btn btn-primary btn-lg" style="width: 100%;">
+          Place Order Now
         </button>
       </form>
 
       <!-- Live Order Summary Card -->
-      <div id="checkout-summary" style="background: var(--bg-surface); padding: 2.25rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-sm); position: sticky; top: 95px;">
-        <!-- Populated dynamically by checkout.js -->
+      <div id="checkout-summary" style="background: #ffffff; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-sm); position: sticky; top: 90px;">
+        <!-- Populated by checkout.js -->
       </div>
     </div>
   </main>
@@ -147,8 +132,8 @@
   <footer>
     <div class="container">
       <div class="footer-bottom">
-        <p>&copy; 2026 OmniStore Global Inc. All rights reserved.</p>
-        <a href="/cart.html" style="color: #cbd5e1;">← Return to Shopping Bag</a>
+        <p>&copy; 2026 EverydayStore. All rights reserved.</p>
+        <a href="/cart.html" style="color: #6b7280;">← Back to Cart</a>
       </div>
     </div>
   </footer>

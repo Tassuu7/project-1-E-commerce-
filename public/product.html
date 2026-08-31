@@ -3,25 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Details — OmniStore</title>
+  <title>Product Details — EverydayStore</title>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/storefront.css">
 </head>
 <body>
 
-  <!-- Top Announcement Promo Bar -->
-  <div class="top-announcement-bar">
+  <!-- Top Bar -->
+  <div class="top-bar">
     <div class="container">
-      <div class="announcement-inner">
-        <div class="announcement-left">
-          <span class="announcement-tag">Summer Sale</span>
-          <span>⚡ Free Express Delivery on orders over $50 • Use coupon code <strong style="color: #60a5fa;">WELCOME10</strong> for 10% off</span>
-        </div>
-        <div class="announcement-links">
-          <a href="/orders.html">Track Order</a>
-          <a href="/index.html#newsletter">Join Rewards</a>
-        </div>
+      <div>
+        <span>Free standard shipping on orders over $50 &nbsp;•&nbsp; 30-day easy returns</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="/orders.html">Track My Order</a>
+        <a href="/admin.html">Staff Login</a>
       </div>
     </div>
   </div>
@@ -29,13 +26,13 @@
   <!-- Header -->
   <header>
     <div class="container nav-wrapper">
-      <a href="/index.html" class="logo">Omni<span>Store</span><span class="logo-dot"></span></a>
-      <ul class="nav-links">
-        <li><a href="/index.html">← Back to Catalog</a></li>
+      <a href="/index.html" class="logo">Everyday<span>Store</span></a>
+      <ul class="nav-menu">
+        <li><a href="/index.html">← Back to Shop</a></li>
         <li>
-          <a href="/cart.html" class="cart-link-btn">
-            <span>🛒 Bag</span>
-            <span id="cart-badge-count" class="cart-badge" style="display: none;">0</span>
+          <a href="/cart.html" class="cart-btn">
+            <span>Cart</span>
+            <span id="cart-badge-count" class="cart-count" style="display: none;">0</span>
           </a>
         </li>
         <li id="nav-auth-container"></li>
@@ -45,42 +42,41 @@
 
   <main class="container" style="margin-top: 2.5rem; margin-bottom: 5rem;">
     <!-- Breadcrumb -->
-    <div style="margin-bottom: 1.75rem; font-size: 0.925rem; color: var(--text-muted);">
-      <a href="/index.html" style="color: var(--primary);">Shop Catalog</a> &nbsp;/&nbsp; <span id="breadcrumb-category">Product</span> &nbsp;/&nbsp; <strong id="breadcrumb-name" style="color: var(--text-main);">Details</strong>
+    <div style="margin-bottom: 1.5rem; font-size: 0.9rem; color: #6b7280;">
+      <a href="/index.html" style="color: var(--accent);">Home</a> &nbsp;/&nbsp; <span id="breadcrumb-category">Product</span> &nbsp;/&nbsp; <strong id="breadcrumb-name" style="color: #111827;">Details</strong>
     </div>
 
     <!-- Product Main Display -->
     <div id="product-detail-container">
-      <div style="text-align: center; padding: 5rem; background: #fff; border-radius: var(--radius-xl); border: 1px solid var(--border);">
-        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🛍️</div>
-        <strong>Loading product details...</strong>
+      <div style="text-align: center; padding: 5rem; background: #fff; border-radius: var(--radius-lg); border: 1px solid var(--border);">
+        <p style="color: #6b7280;">Loading item details...</p>
       </div>
     </div>
 
     <!-- Customer Reviews Section -->
     <div id="reviews-section" style="margin-top: 3.5rem; display: none;">
-      <div style="background: var(--bg-surface); padding: 3rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+      <div style="background: #ffffff; padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
           <div>
-            <h2 style="font-size: 1.65rem; font-weight: 800; color: var(--text-main);">Verified Customer Reviews</h2>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Real feedback from authenticated store customers</p>
+            <h2 style="font-size: 1.5rem; font-weight: 800; color: #111827;">Customer Reviews</h2>
+            <p style="color: #6b7280; font-size: 0.95rem;">Real feedback from verified buyers</p>
           </div>
-          <button class="btn btn-primary" onclick="toggleReviewForm()">+ Write a Review</button>
+          <button class="btn btn-primary" onclick="toggleReviewForm()">Write a Review</button>
         </div>
 
         <!-- Write Review Form -->
-        <form id="write-review-form" style="display: none; background: #f8fafc; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border); margin-bottom: 2.5rem;" onsubmit="submitReview(event)">
-          <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1.25rem;">Share Your Experience</h3>
+        <form id="write-review-form" style="display: none; background: #f9fafb; padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 2.5rem;" onsubmit="submitReview(event)">
+          <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1.25rem;">Leave a Review</h3>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
             <div>
               <label class="form-label">Your Name</label>
-              <input type="text" id="review-user-name" class="form-control" placeholder="Jane D." required>
+              <input type="text" id="review-user-name" class="form-control" placeholder="John D." required>
             </div>
             <div>
               <label class="form-label">Rating</label>
               <select id="review-rating" class="form-control" required>
                 <option value="5">★★★★★ (5 Stars - Excellent)</option>
-                <option value="4">★★★★☆ (4 Stars - Great)</option>
+                <option value="4">★★★★☆ (4 Stars - Good)</option>
                 <option value="3">★★★☆☆ (3 Stars - Average)</option>
                 <option value="2">★★☆☆☆ (2 Stars - Fair)</option>
                 <option value="1">★☆☆☆☆ (1 Star - Poor)</option>
@@ -88,12 +84,12 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Review Headline</label>
-            <input type="text" id="review-title" class="form-control" placeholder="Outstanding build quality and fast delivery" required>
+            <label class="form-label">Headline</label>
+            <input type="text" id="review-title" class="form-control" placeholder="Great quality and fast delivery" required>
           </div>
           <div class="form-group">
-            <label class="form-label">Detailed Comments</label>
-            <textarea id="review-comment" class="form-control" rows="3" placeholder="Tell other shoppers about your experience with this item..." required></textarea>
+            <label class="form-label">Comments</label>
+            <textarea id="review-comment" class="form-control" rows="3" placeholder="Tell others what you liked about this item..." required></textarea>
           </div>
           <div style="display: flex; gap: 0.75rem;">
             <button type="submit" class="btn btn-primary">Submit Review</button>
@@ -112,8 +108,8 @@
   <footer>
     <div class="container">
       <div class="footer-bottom">
-        <p>&copy; 2026 OmniStore Global Inc. All rights reserved.</p>
-        <a href="/index.html" style="color: #cbd5e1;">← Continue Shopping</a>
+        <p>&copy; 2026 EverydayStore. All rights reserved.</p>
+        <a href="/index.html" style="color: #6b7280;">← Back to Shop</a>
       </div>
     </div>
   </footer>
@@ -159,70 +155,70 @@
           const imagesList = (p.images && p.images.length) ? p.images : ['/images/placeholder.svg'];
 
           document.getElementById('product-detail-container').innerHTML = `
-            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; background: #ffffff; padding: 3.5rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-md); align-items: start;">
-              <!-- Image Gallery -->
+            <div style="display: grid; grid-template-columns: 1fr 1.15fr; gap: 3.5rem; background: #ffffff; padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-sm); align-items: start;">
+              <!-- Image Column -->
               <div>
-                <div style="width: 100%; height: 480px; background: #f8fafc; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: center;">
+                <div style="width: 100%; height: 440px; background: #f3f4f6; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;">
                   <img id="main-product-image" src="${imagesList[0]}" alt="${p.name}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
                 </div>
                 ${imagesList.length > 1 ? `
-                  <div style="display: flex; gap: 1rem;">
+                  <div style="display: flex; gap: 0.75rem;">
                     ${imagesList.map((img, i) => `
-                      <img src="${img}" style="width: 90px; height: 90px; object-fit: cover; border-radius: var(--radius); border: 2px solid ${i === 0 ? 'var(--primary)' : 'var(--border)'}; cursor: pointer; transition: var(--transition);" onclick="switchMainImage('${img}', this)" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
+                      <img src="${img}" style="width: 80px; height: 80px; object-fit: cover; border-radius: var(--radius-sm); border: 2px solid ${i === 0 ? '#111827' : 'var(--border)'}; cursor: pointer;" onclick="switchMainImage('${img}', this)" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
                     `).join('')}
                   </div>
                 ` : ''}
               </div>
 
-              <!-- Product Info Column -->
+              <!-- Details Column -->
               <div>
-                <div style="display: flex; gap: 0.6rem; margin-bottom: 0.85rem;">
-                  <span class="badge badge-info">${p.category}</span>
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                  <span class="badge badge-secondary">${p.category}</span>
                   ${hasDiscount ? `<span class="badge badge-danger">Save $${(originalPrice - priceVal).toFixed(0)}</span>` : ''}
                 </div>
 
-                <h1 style="font-size: 2.35rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem; line-height: 1.2; letter-spacing: -0.02em;">${p.name}</h1>
-                <div style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.5rem;">SKU: <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">${p.sku}</code></div>
+                <h1 style="font-size: 2rem; font-weight: 800; color: #111827; margin-bottom: 0.5rem; line-height: 1.25;">${p.name}</h1>
+                <div style="font-size: 0.85rem; color: #6b7280; margin-bottom: 1.25rem;">SKU: <code>${p.sku}</code></div>
 
-                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem;">
-                  <div class="star-rating" style="font-size: 1.15rem;">★ ★ ★ ★ ★</div>
-                  <strong style="font-size: 1.05rem; color: var(--text-main);">${p.rating.toFixed(1)} / 5.0</strong>
-                  <span style="color: var(--text-muted);">(${reviews.length} verified ratings)</span>
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.5rem;">
+                  <div class="stars">★★★★★</div>
+                  <strong style="color: #111827;">${p.rating.toFixed(1)}</strong>
+                  <span style="color: #6b7280;">(${reviews.length} reviews)</span>
                 </div>
 
-                <div style="display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.75rem; padding: 1.25rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
-                  <span style="font-size: 2.65rem; font-weight: 800; color: var(--text-main);">$${priceVal.toFixed(2)}</span>
-                  ${hasDiscount ? `<span style="font-size: 1.35rem; text-decoration: line-through; color: var(--text-light);">$${originalPrice.toFixed(2)}</span>` : ''}
+                <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1.5rem; padding: 1rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+                  <span style="font-size: 2.25rem; font-weight: 800; color: #111827;">$${priceVal.toFixed(2)}</span>
+                  ${hasDiscount ? `<span style="font-size: 1.25rem; text-decoration: line-through; color: #9ca3af;">$${originalPrice.toFixed(2)}</span>` : ''}
                 </div>
 
-                <p style="font-size: 1.05rem; line-height: 1.75; color: #475569; margin-bottom: 2rem;">${p.description || 'Premium design and crafted with high-durability materials for everyday reliability.'}</p>
+                <p style="font-size: 1rem; line-height: 1.7; color: #374151; margin-bottom: 2rem;">${p.description || 'Quality product designed for daily use.'}</p>
 
                 <!-- Stock & Actions -->
-                <div style="margin-bottom: 2.25rem;">
-                  <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem;">
-                    <strong>Availability:</strong>
-                    ${isOutOfStock ? `<span class="badge badge-danger">Sold Out</span>` : (isLowStock ? `<span class="badge badge-warning">Low Stock (${p.stock} units remaining)</span>` : `<span class="badge badge-success">In Stock (Ready to Ship)</span>`)}
+                <div style="margin-bottom: 2rem;">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.9rem;">
+                    <strong>Stock:</strong>
+                    ${isOutOfStock ? `<span class="badge badge-danger">Out of Stock</span>` : (isLowStock ? `<span class="badge badge-warning">Only ${p.stock} left</span>` : `<span class="badge badge-success">In Stock</span>`)}
                   </div>
 
-                  <div style="display: flex; gap: 1.25rem; align-items: center;">
-                    <div style="display: flex; align-items: center; border: 1px solid var(--border); border-radius: var(--radius-full); overflow: hidden; background: #fff; padding: 2px;">
-                      <button style="padding: 0.75rem 1.25rem; background: transparent; border: none; font-size: 1.2rem; cursor: pointer;" onclick="adjustQty(-1)">-</button>
-                      <input type="number" id="purchase-quantity" value="1" min="1" max="${p.stock}" style="width: 50px; text-align: center; border: none; font-weight: 800; font-size: 1.05rem; outline: none;">
-                      <button style="padding: 0.75rem 1.25rem; background: transparent; border: none; font-size: 1.2rem; cursor: pointer;" onclick="adjustQty(1)">+</button>
+                  <div style="display: flex; gap: 1rem; align-items: center;">
+                    <div style="display: flex; align-items: center; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: #fff;">
+                      <button style="padding: 0.65rem 1rem; background: transparent; border: none; font-size: 1.1rem; cursor: pointer;" onclick="adjustQty(-1)">-</button>
+                      <input type="number" id="purchase-quantity" value="1" min="1" max="${p.stock}" style="width: 45px; text-align: center; border: none; font-weight: 700; outline: none;">
+                      <button style="padding: 0.65rem 1rem; background: transparent; border: none; font-size: 1.1rem; cursor: pointer;" onclick="adjustQty(1)">+</button>
                     </div>
 
-                    <button class="btn btn-primary btn-lg" style="flex: 1; border-radius: var(--radius-full); box-shadow: 0 10px 25px var(--primary-glow);" onclick="addCurrentProductToCart()" ${isOutOfStock ? 'disabled' : ''}>
-                      🛒 ${isOutOfStock ? 'Sold Out' : 'Add to Shopping Bag'}
+                    <button class="btn btn-primary btn-lg" style="flex: 1;" onclick="addCurrentProductToCart()" ${isOutOfStock ? 'disabled' : ''}>
+                      ${isOutOfStock ? 'Out of Stock' : 'Add to Cart'}
                     </button>
                   </div>
                 </div>
 
-                <!-- Guarantee Highlights -->
-                <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem; color: var(--text-main);">
-                  <div>🚀 <strong>Express Delivery:</strong> 2-3 Business Days</div>
-                  <div>🛡️ <strong>Warranty:</strong> 2-Year Full Coverage</div>
-                  <div>🔄 <strong>Easy Returns:</strong> 30-Day Hassle-Free</div>
-                  <div>💬 <strong>Customer Support:</strong> 24/7 Priority Assistance</div>
+                <!-- Value Props -->
+                <div style="background: #f9fafb; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.875rem; color: #374151;">
+                  <div>✓ Free delivery on orders over $50</div>
+                  <div>✓ 30-day money-back guarantee</div>
+                  <div>✓ 2-year quality warranty</div>
+                  <div>✓ Secure encrypted checkout</div>
                 </div>
               </div>
             </div>
@@ -232,26 +228,23 @@
           document.getElementById('reviews-section').style.display = 'block';
           const reviewsListEl = document.getElementById('reviews-list');
           if (reviews.length === 0) {
-            reviewsListEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">No reviews yet. Be the first to leave a review!</div>';
+            reviewsListEl.innerHTML = '<p style="color: #6b7280; text-align: center; padding: 2rem 0;">No reviews yet for this item.</p>';
           } else {
             reviewsListEl.innerHTML = reviews.map(r => `
-              <div style="background: #f8fafc; border: 1px solid var(--border); padding: 1.75rem; border-radius: var(--radius-lg);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
-                  <div style="display: flex; align-items: center; gap: 0.75rem;">
-                    <strong>${r.userName}</strong>
-                    <span class="badge badge-success" style="font-size: 0.7rem;">Verified Purchase</span>
-                  </div>
-                  <div class="star-rating">★ ★ ★ ★ ★</div>
+              <div style="background: #f9fafb; border: 1px solid var(--border); padding: 1.5rem; border-radius: var(--radius);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                  <strong>${r.userName}</strong>
+                  <span class="stars">★★★★★</span>
                 </div>
-                <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">${r.title || 'Customer Feedback'}</h4>
-                <p style="color: #475569; font-size: 0.95rem; line-height: 1.65;">${r.comment}</p>
-                <small style="color: var(--text-light); margin-top: 0.6rem; display: block;">Reviewed on ${new Date(r.createdAt).toLocaleDateString()}</small>
+                <h4 style="font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 0.35rem;">${r.title || 'Review'}</h4>
+                <p style="color: #4b5563; font-size: 0.925rem; line-height: 1.6;">${r.comment}</p>
+                <small style="color: #9ca3af; margin-top: 0.5rem; display: block;">Posted on ${new Date(r.createdAt).toLocaleDateString()}</small>
               </div>
             `).join('');
           }
         }
       } catch (err) {
-        document.getElementById('product-detail-container').innerHTML = `<div style="color: var(--danger); text-align: center; padding: 3rem;">Error loading product: ${err.message}</div>`;
+        document.getElementById('product-detail-container').innerHTML = `<p style="color: #ef4444; text-align: center;">Error loading product: ${err.message}</p>`;
       }
     }
 
@@ -259,7 +252,7 @@
       document.getElementById('main-product-image').src = imgUrl;
       const thumbs = el.parentElement.querySelectorAll('img');
       thumbs.forEach(t => t.style.borderColor = 'var(--border)');
-      el.style.borderColor = 'var(--primary)';
+      el.style.borderColor = '#111827';
     }
 
     function adjustQty(delta) {
@@ -299,7 +292,7 @@
         });
 
         if (res.success) {
-          showToast('Review submitted successfully!', 'success');
+          showToast('Thank you for your review!', 'success');
           toggleReviewForm();
           await loadProductDetails(currentProductId);
         }
