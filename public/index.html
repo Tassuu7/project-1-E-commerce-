@@ -3,136 +3,263 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OmniCommerce Enterprise - Premium Storefront</title>
+  <title>OmniStore — Curated Essentials for Modern Living & Tech</title>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/storefront.css">
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Top Announcement Promo Bar -->
+  <div class="top-announcement-bar">
+    <div class="container">
+      <div class="announcement-inner">
+        <div class="announcement-left">
+          <span class="announcement-tag">Summer Sale</span>
+          <span>⚡ Free Express Delivery on orders over $50 • Use coupon code <strong style="color: #60a5fa;">WELCOME10</strong> for 10% off</span>
+        </div>
+        <div class="announcement-links">
+          <a href="/orders.html">Track Order</a>
+          <a href="#newsletter">Join Rewards (15% Off)</a>
+          <a href="/admin.html">Staff Portal</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
   <header>
     <div class="container nav-wrapper">
+      <!-- Brand Logo -->
       <a href="/index.html" class="logo">
-        Omni<span>Commerce</span>
-        <span class="logo-badge">Enterprise</span>
+        Omni<span>Store</span><span class="logo-dot"></span>
       </a>
+
+      <!-- Live Search Box -->
+      <div class="header-search-box">
+        <span class="header-search-icon">🔍</span>
+        <input type="text" id="header-search-input" placeholder="Search by product name, category, or brand..." onkeyup="handleLiveSearch(this.value)">
+      </div>
+
+      <!-- Navigation & Actions -->
       <ul class="nav-links">
         <li><a href="/index.html" class="active">Shop Catalog</a></li>
         <li>
-          <a href="/cart.html" class="cart-link">
-            🛒 Cart <span id="cart-badge-count" class="cart-badge" style="display: none;">0</span>
+          <a href="/cart.html" class="cart-link-btn">
+            <span>🛒 Bag</span>
+            <span id="cart-badge-count" class="cart-badge" style="display: none;">0</span>
           </a>
         </li>
         <li id="nav-auth-container">
-          <!-- Populated by AuthManager -->
+          <!-- Populated dynamically by AuthManager -->
         </li>
       </ul>
     </div>
   </header>
 
-  <main class="container">
-    <!-- Hero Banner -->
-    <section class="hero-banner">
-      <div class="hero-pill">⚡ Next-Gen Enterprise E-Commerce Platform</div>
-      <h1>Architected for High Performance & Precision</h1>
-      <p>Discover our curated collection of enterprise hardware, designer apparel, ergonomic workspace essentials, and commercial fitness gear.</p>
-      
-      <div class="hero-features">
-        <div class="hero-feature-item">
-          <span>🚀</span> Fast Express Worldwide Delivery
+  <!-- Visual Category Story Strip -->
+  <section class="category-strip-section">
+    <div class="container">
+      <div id="category-bubbles-list" class="category-bubbles-wrapper">
+        <!-- Loaded dynamically by storefront.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-Width Hero Lifestyle Showcase -->
+  <section class="hero-lifestyle-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge-season">✨ New Season 2026 Collection</div>
+          <h1 class="hero-headline">Curated Essentials for Everyday Living & Work</h1>
+          <p class="hero-subtext">Discover handcrafted designer apparel, high-performance computing workstations, ergonomic living essentials, and active outdoor gear built to last.</p>
+          
+          <div class="hero-cta-group">
+            <a href="#catalog-start" class="btn btn-primary btn-lg" style="box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);">
+              Explore Collection ↓
+            </a>
+            <button class="btn btn-secondary btn-lg" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);" onclick="document.getElementById('header-search-input').focus();">
+              Search Catalog 🔍
+            </button>
+          </div>
         </div>
-        <div class="hero-feature-item">
-          <span>🔒</span> Multi-Gateway Secure Checkout (Stripe & PayPal)
-        </div>
-        <div class="hero-feature-item">
-          <span>🛡️</span> 30-Day Money-Back Guarantee
+
+        <div class="hero-featured-card">
+          <div class="hero-card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Featured Workstation">
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+            <div>
+              <span class="badge badge-warning" style="margin-bottom: 0.4rem;">Trending Deal</span>
+              <h3 style="color: #fff; font-size: 1.25rem; font-weight: 700;">OmniBook Pro 16 M-Max</h3>
+              <p style="color: #94a3b8; font-size: 0.9rem;">Ultra-thin 16-Core Liquid Retina Workstation</p>
+            </div>
+            <div style="text-align: right;">
+              <span style="font-size: 1.45rem; font-weight: 800; color: #60a5fa;">$1,749.99</span>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Catalog Section -->
-    <div class="catalog-layout">
-      <!-- Filter Sidebar -->
-      <aside class="filter-sidebar">
-        <div class="filter-group">
-          <h3>Search Catalog</h3>
-          <input type="text" id="search-input" class="form-control" placeholder="Search by name, SKU, or tag..." onkeyup="filterProducts()">
+  <!-- Trust Perks Strip -->
+  <section class="trust-perks-strip">
+    <div class="container">
+      <div class="perks-grid">
+        <div class="perk-card">
+          <div class="perk-icon-wrapper">🚀</div>
+          <div>
+            <div class="perk-title">Free Express Shipping</div>
+            <div class="perk-subtitle">Fast 2-day delivery on orders over $50</div>
+          </div>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon-wrapper">🛡️</div>
+          <div>
+            <div class="perk-title">30-Day Money Back</div>
+            <div class="perk-subtitle">Hassle-free 100% refund guarantee</div>
+          </div>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon-wrapper">🔒</div>
+          <div>
+            <div class="perk-title">Encrypted Checkout</div>
+            <div class="perk-subtitle">Secured with 256-Bit SSL Encryption</div>
+          </div>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon-wrapper">💬</div>
+          <div>
+            <div class="perk-title">24/7 Dedicated Support</div>
+            <div class="perk-subtitle">Real specialists ready to assist you</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-Width Fluid Catalog Section -->
+  <main id="catalog-start" class="container">
+    <div class="catalog-fluid-layout">
+      <!-- Filter Sidebar Card -->
+      <aside class="filter-card">
+        <div class="filter-section-header">
+          <h3>Filter Catalog</h3>
+          <button class="btn btn-secondary btn-sm" onclick="resetFilters()">Reset</button>
         </div>
 
         <div class="filter-group">
-          <h3>Categories</h3>
+          <div class="filter-group-title">Search Keywords</div>
+          <input type="text" id="search-input" class="form-control" placeholder="Search by name, SKU..." onkeyup="handleLiveSearch(this.value)">
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group-title">Collections</div>
           <div id="category-filter-list" class="filter-options">
-            <!-- Dynamic categories populated by storefront.js -->
+            <!-- Loaded dynamically by storefront.js -->
           </div>
         </div>
 
         <div class="filter-group">
-          <h3>Sort Options</h3>
-          <select id="sort-select" class="form-control" onchange="filterProducts()">
+          <div class="filter-group-title">Sort By</div>
+          <select id="sort-select" class="form-control" onchange="loadProducts()">
             <option value="newest">Newest Releases</option>
             <option value="price_asc">Price: Low to High</option>
             <option value="price_desc">Price: High to Low</option>
-            <option value="rating">Customer Rating (Highest)</option>
+            <option value="rating">Top Customer Rated</option>
           </select>
         </div>
 
-        <div style="margin-top: 1.5rem;">
-          <button class="btn btn-secondary btn-sm" style="width: 100%;" onclick="resetFilters()">Reset Filters</button>
+        <div style="background: var(--bg-muted); padding: 1.25rem; border-radius: var(--radius); text-align: center; margin-top: 1.5rem;">
+          <div style="font-size: 1.5rem; margin-bottom: 0.4rem;">🏷️</div>
+          <strong style="font-size: 0.9rem; color: var(--text-main);">Special Promotion</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">Apply code <strong>SUMMER20</strong> in cart for $20 off orders over $150.</p>
         </div>
       </aside>
 
-      <!-- Products Grid -->
+      <!-- Main Products Grid Area -->
       <section>
-        <div class="catalog-header">
-          <span id="results-count-text" class="results-count">Loading products...</span>
-          <div style="display: flex; gap: 0.5rem; align-items: center;">
-            <span style="font-size: 0.85rem; color: var(--text-muted);">View:</span>
-            <span class="badge badge-info">Active Products</span>
+        <!-- Top Toolbar -->
+        <div class="catalog-toolbar">
+          <span id="results-count-text" class="toolbar-results-count">Loading collection...</span>
+          <div class="toolbar-controls">
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Showing:</span>
+            <span class="badge badge-success">Active In-Stock Catalog</span>
           </div>
         </div>
 
-        <div id="product-grid" class="product-grid">
+        <!-- Ultra-Wide Product Grid (4-5 columns) -->
+        <div id="product-grid" class="product-grid-fluid">
           <!-- Dynamic product cards populated by storefront.js -->
         </div>
       </section>
     </div>
   </main>
 
+  <!-- Newsletter Section -->
+  <section id="newsletter" class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div>
+          <h2 class="newsletter-title">Unlock 15% Off Your First Order</h2>
+          <p class="newsletter-sub">Subscribe to receive early access to seasonal drops, exclusive member discounts, and tech lifestyle guides.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="handleNewsletterSignup(event)">
+          <input type="email" id="newsletter-email" placeholder="Enter your personal email address..." required>
+          <button type="submit" class="btn btn-primary" style="padding: 0.8rem 1.75rem; border-radius: var(--radius-full);">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <div class="logo" style="margin-bottom: 1rem;">Omni<span>Commerce</span></div>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: #94a3b8;">Full-stack enterprise e-commerce platform built with high performance Node.js, Express, HTML5, and CSS3 architecture.</p>
+          <div class="logo" style="margin-bottom: 1rem; color: #fff;">
+            Omni<span>Store</span><span class="logo-dot"></span>
+          </div>
+          <p style="font-size: 0.9rem; line-height: 1.7; color: #94a3b8;">Premium lifestyle, computing workstation, and modern everyday essentials. Engineered with precision, curated for quality.</p>
         </div>
         <div class="footer-col">
-          <h4>Storefront</h4>
+          <h4>Collections</h4>
           <ul>
-            <li><a href="/index.html">All Products</a></li>
-            <li><a href="/cart.html">Shopping Cart</a></li>
-            <li><a href="/checkout.html">Checkout Wizard</a></li>
-            <li><a href="/orders.html">Order Status</a></li>
+            <li><a href="/index.html">Computing & Laptops</a></li>
+            <li><a href="/index.html">Audio & Headphones</a></li>
+            <li><a href="/index.html">Ergonomic Furniture</a></li>
+            <li><a href="/index.html">Apparel & Outerwear</a></li>
+            <li><a href="/index.html">Fitness Gear</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Administration</h4>
+          <h4>Customer Care</h4>
           <ul>
-            <li><a href="/admin.html">Admin Dashboard</a></li>
-            <li><a href="/api/health" target="_blank">API Health Status</a></li>
+            <li><a href="/orders.html">Track Order Status</a></li>
+            <li><a href="/cart.html">Shopping Bag</a></li>
+            <li><a href="/checkout.html">Secure Checkout</a></li>
+            <li><a href="/orders.html">Returns & Exchanges</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Management</h4>
+          <ul>
+            <li><a href="/admin.html">Executive Portal</a></li>
+            <li><a href="/api/health" target="_blank">System Status</a></li>
             <li><a href="https://github.com/Tassuu7/project-1-E-commerce-" target="_blank">GitHub Repository</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Enterprise Security</h4>
-          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.75rem;">Protected with zero-knowledge credentials, JWT RBAC permissions, and real-time state machine tracking.</p>
-          <span class="badge badge-success">✓ 100% Certified Clean</span>
+          <h4>Secure Payments</h4>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 1rem;">We accept Visa, Mastercard, American Express, PayPal, Apple Pay, and Google Pay.</p>
+          <span class="badge badge-success" style="padding: 0.4rem 0.8rem;">✓ 100% PCI-DSS Certified</span>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 OmniCommerce Enterprise Platform. All rights reserved.</p>
-        <p style="color: #64748b;">Enterprise Grade Full-Stack Application</p>
+        <p>&copy; 2026 OmniStore Global Inc. All rights reserved.</p>
+        <p style="color: #64748b;">Ultra-Fluid Full Screen E-Commerce Experience</p>
       </div>
     </div>
   </footer>

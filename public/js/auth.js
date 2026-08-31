@@ -1,6 +1,6 @@
 /**
  * Client-side Authentication & Session Manager
- * OmniCommerce Enterprise
+ * OmniStore E-Commerce
  */
 
 class AuthManager {
@@ -78,9 +78,9 @@ class AuthManager {
 
     if (this.currentUser) {
       authContainer.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 0.75rem;">
-          <span style="font-size: 0.875rem; color: #cbd5e1;">Hi, <strong style="color: #fff;">${this.currentUser.name}</strong></span>
-          ${this.currentUser.role === 'ADMIN' ? '<a href="/admin.html" class="btn btn-sm btn-accent" style="color: #fff; text-decoration: none;">Admin Panel</a>' : ''}
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <span style="font-size: 0.875rem; color: #475569;">Hi, <strong style="color: #0f172a;">${this.currentUser.name}</strong></span>
+          ${this.currentUser.role === 'ADMIN' ? '<a href="/admin.html" class="btn btn-sm btn-accent" style="color: #fff; text-decoration: none;">Staff Admin</a>' : ''}
           <a href="/orders.html" class="btn btn-sm btn-secondary">My Orders</a>
           <button class="btn btn-dark btn-sm" onclick="AuthManager.logout()">Logout</button>
         </div>
@@ -119,13 +119,13 @@ class AuthManager {
                 <label class="form-label">Password</label>
                 <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
               </div>
-              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Sign In</button>
+              <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: var(--radius-full); margin-top: 0.5rem;">Sign In</button>
               
               <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.825rem; color: var(--text-muted);">
                 <strong>Quick Demo Fill:</strong>
                 <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
-                  <button type="button" class="btn btn-secondary btn-sm" style="flex: 1;" onclick="fillDemoCredentials('admin')">Admin Demo</button>
-                  <button type="button" class="btn btn-secondary btn-sm" style="flex: 1;" onclick="fillDemoCredentials('customer')">Customer Demo</button>
+                  <button type="button" class="btn btn-secondary btn-sm" style="flex: 1;" onclick="fillDemoCredentials('admin')">Staff Demo</button>
+                  <button type="button" class="btn btn-secondary btn-sm" style="flex: 1;" onclick="fillDemoCredentials('customer')">Shopper Demo</button>
                 </div>
               </div>
             </form>
@@ -144,7 +144,7 @@ class AuthManager {
                 <label class="form-label">Create Password</label>
                 <input type="password" id="reg-password" class="form-control" placeholder="At least 6 characters" minlength="6" required>
               </div>
-              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Create Account</button>
+              <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: var(--radius-full); margin-top: 0.5rem;">Create Account</button>
             </form>
           </div>
         </div>
@@ -182,7 +182,7 @@ function switchAuthTab(tab) {
       loginTab.className = `tab-btn ${isLogin ? 'active' : ''}`;
       regTab.className = `tab-btn ${!isLogin ? 'active' : ''}`;
     }
-    if (title) title.textContent = isLogin ? 'Sign In' : 'Create Account';
+    if (title) title.textContent = isLogin ? 'Sign In to Your Account' : 'Create Free Account';
   }
 }
 
