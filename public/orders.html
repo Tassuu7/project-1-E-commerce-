@@ -18,6 +18,7 @@
       </div>
       <div class="top-bar-links">
         <a href="/index.html">← Back to Shop</a>
+        <a href="/cart.html">View Cart</a>
       </div>
     </div>
   </div>
@@ -43,9 +44,9 @@
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
       <div>
         <h1 style="font-size: 2rem; font-weight: 800; color: #111827;">My Orders & Tracking</h1>
-        <p style="color: #6b7280; font-size: 0.95rem;">Track your package and view past receipts</p>
+        <p style="color: #6b7280; font-size: 0.95rem;">Track your delivery status and view order details</p>
       </div>
-      <a href="/index.html" class="btn btn-primary">+ Shop More Items</a>
+      <a href="/index.html" class="btn btn-primary">+ Browse More Items</a>
     </div>
 
     <div id="orders-list-container">
@@ -89,7 +90,7 @@
       }
 
       try {
-        const res = await APIClient.get('/orders/admin', { limit: 25 });
+        const res = await APIClient.get('/orders/user');
         if (res.success && res.data && res.data.length > 0) {
           renderOrdersList(res.data, container);
         } else {
@@ -97,13 +98,13 @@
             <div style="background: #ffffff; padding: 5rem 2rem; text-align: center; border-radius: var(--radius-lg); border: 1px solid var(--border);">
               <div style="font-size: 3rem; margin-bottom: 1rem;">📦</div>
               <h3 style="font-size: 1.35rem; font-weight: 700; color: #111827; margin-bottom: 0.5rem;">No orders yet</h3>
-              <p style="color: #6b7280; margin-bottom: 1.75rem;">You have not placed any orders yet.</p>
+              <p style="color: #6b7280; margin-bottom: 1.75rem;">You haven't placed any orders yet.</p>
               <a href="/index.html" class="btn btn-primary">Start Shopping</a>
             </div>
           `;
         }
       } catch (err) {
-        container.innerHTML = `<p style="color: #ef4444; text-align: center;">Error loading orders: ${err.message}</p>`;
+        container.innerHTML = `<p style="color: #ef4444; text-align: center; padding: 2rem;">Error loading orders: ${err.message}</p>`;
       }
     });
 
@@ -148,7 +149,7 @@
             </div>
           </div>
 
-          <!-- Tracking -->
+          <!-- Tracking Details -->
           <div style="background: #f3f4f6; border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.5rem;">
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <div>
@@ -181,6 +182,9 @@
                 </div>
                 <div style="font-size: 0.875rem; color: #6b7280;">
                   Recipient: <strong>${order.customerName}</strong> • Date: ${new Date(order.createdAt).toLocaleDateString()}
+                </div>
+                <div style="font-size: 0.8rem; color: #9ca3af; margin-top: 0.2rem;">
+                  Tracking ID: <code>${order.trackingNumber || 'PENDING'}</code>
                 </div>
               </div>
 

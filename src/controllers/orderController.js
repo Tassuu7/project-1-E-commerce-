@@ -4,6 +4,7 @@
  */
 
 const OrderService = require('../services/orderService');
+const { orderRepository } = require('../repositories');
 
 class OrderController {
   static checkout(req, res, next) {
@@ -43,11 +44,26 @@ class OrderController {
 
   static getUserOrders(req, res, next) {
     try {
-      const userId = req.user ? req.user.id : req.query.userId;
-      if (!userId) {
-        return res.status(400).json({ success: false, message: 'User ID is required.' });
+      const user = req.user;
+      let orders = [];
+      
+      if (user && user.id && user.id !== 'GUEST') {
+        orders = orderRepository.findAll(o => 
+          o.userId === user.id || 
+          (o.customerEmail && user.email && o.customerEmail.toLowerCase() === user.email.toLowerCase())
+        );
+      } else if (req.query.email) {
+        orders = orderRepository.findAll(o => 
+          o.customerEmail && o.customerEmail.toLowerCase() === req.query.email.toLowerCase()
+        );
+      } else {
+        // Return latest public store orders
+        orders = orderRepository.findAll();
       }
-      const orders = OrderService.getOrdersByUser(userId);
+
+      // Sort newest first
+      orders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
       res.status(200).json({
         success: true,
         data: orders

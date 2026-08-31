@@ -1,56 +1,32 @@
 /**
- * Admin Dashboard & Control Panel Manager
- * OmniCommerce Enterprise
+ * Store Management & Admin Controller
+ * Clean, Robust, Professional
  */
 
-async function loadAdminMetrics() {
-  const container = document.getElementById('admin-metrics-container');
-  if (!container) return;
+function getStatusBadge(status) {
+  if (status === 'DELIVERED' || status === 'PAID') return 'badge-success';
+  if (status === 'SHIPPED' || status === 'PROCESSING') return 'badge-info';
+  if (status === 'PENDING') return 'badge-warning';
+  return 'badge-danger';
+}
 
+async function loadAdminMetrics() {
   try {
     const res = await APIClient.get('/analytics/metrics');
     if (res.success && res.data) {
-      const data = res.data;
-      container.innerHTML = `
-        <div class="metric-card">
-          <div class="metric-header">
-            <span class="metric-title">Gross Revenue</span>
-            <span class="metric-trend">+18.4% ↑</span>
-          </div>
-          <div class="metric-value">$${data.totalRevenue.toFixed(2)}</div>
-          <small style="color: var(--text-muted); margin-top: 0.5rem;">Across all sales channels</small>
-        </div>
+      const d = res.data;
+      const revEl = document.getElementById('kpi-revenue');
+      const ordEl = document.getElementById('kpi-orders');
+      const aovEl = document.getElementById('kpi-aov');
+      const custEl = document.getElementById('kpi-customers');
 
-        <div class="metric-card">
-          <div class="metric-header">
-            <span class="metric-title">Total Orders</span>
-            <span class="metric-trend">+12.1% ↑</span>
-          </div>
-          <div class="metric-value">${data.totalOrders}</div>
-          <small style="color: var(--text-muted); margin-top: 0.5rem;">Fulfilled & in-transit orders</small>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-header">
-            <span class="metric-title">Total Customers</span>
-            <span class="metric-trend">+9.5% ↑</span>
-          </div>
-          <div class="metric-value">${data.totalCustomers}</div>
-          <small style="color: var(--text-muted); margin-top: 0.5rem;">Active customer accounts</small>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-header">
-            <span class="metric-title">Avg Order Value</span>
-            <span class="metric-trend">+4.2% ↑</span>
-          </div>
-          <div class="metric-value">$${data.averageOrderValue.toFixed(2)}</div>
-          <small style="color: var(--text-muted); margin-top: 0.5rem;">Per transaction average</small>
-        </div>
-      `;
+      if (revEl) revEl.textContent = `$${d.totalRevenue.toFixed(2)}`;
+      if (ordEl) ordEl.textContent = d.totalOrders;
+      if (aovEl) aovEl.textContent = `$${d.averageOrderValue.toFixed(2)}`;
+      if (custEl) custEl.textContent = d.totalCustomers;
     }
   } catch (err) {
-    console.error('Failed to load metrics:', err);
+    console.error('Error loading metrics:', err);
   }
 }
 
@@ -59,10 +35,10 @@ async function loadAdminOrders() {
   if (!tbody) return;
 
   try {
-    const res = await APIClient.get('/orders/admin', { limit: 15 });
+    const res = await APIClient.get('/orders/admin', { limit: 25 });
     if (res.success && res.data) {
       if (res.data.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2rem; color: var(--text-muted);">No orders recorded in system.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2rem; color: #6b7280;">No orders found.</td></tr>';
         return;
       }
 
@@ -70,22 +46,17 @@ async function loadAdminOrders() {
         <tr>
           <td>
             <strong>${order.orderNumber}</strong><br>
-            <small style="color: var(--text-muted); font-family: monospace;">${order.trackingNumber || 'N/A'}</small>
+            <small style="color: #6b7280;">Track: ${order.trackingNumber || 'N/A'}</small>
           </td>
           <td>
             <strong>${order.customerName}</strong><br>
-            <small style="color: var(--text-muted);">${order.customerEmail}</small>
+            <small style="color: #6b7280;">${order.customerEmail}</small>
           </td>
-          <td>
-            <strong style="color: var(--primary); font-size: 1rem;">$${order.grandTotal.toFixed(2)}</strong><br>
-            <small style="color: var(--text-muted);">${order.items.length} items</small>
-          </td>
-          <td>
-            <span class="badge ${getStatusBadge(order.orderStatus)}">${order.orderStatus}</span>
-          </td>
+          <td><strong>$${order.grandTotal.toFixed(2)}</strong></td>
+          <td><span class="badge ${getStatusBadge(order.orderStatus)}">${order.orderStatus}</span></td>
           <td>${new Date(order.createdAt).toLocaleDateString()}</td>
           <td>
-            <select class="status-select" onchange="updateOrderStatus('${order.id}', this.value)">
+            <select style="padding: 0.35rem 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border); font-size: 0.85rem; font-weight: 600;" onchange="updateOrderStatus('${order.id}', this.value)">
               <option value="PENDING" ${order.orderStatus === 'PENDING' ? 'selected' : ''}>PENDING</option>
               <option value="PAID" ${order.orderStatus === 'PAID' ? 'selected' : ''}>PAID</option>
               <option value="PROCESSING" ${order.orderStatus === 'PROCESSING' ? 'selected' : ''}>PROCESSING</option>
@@ -98,34 +69,62 @@ async function loadAdminOrders() {
       `).join('');
     }
   } catch (err) {
-    tbody.innerHTML = `<tr><td colspan="6" style="color: var(--danger); text-align: center;">Error loading orders: ${err.message}</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="6" style="color: #ef4444; text-align: center; padding: 2rem;">Error: ${err.message}</td></tr>`;
   }
 }
 
-function getStatusBadge(status) {
-  if (status === 'DELIVERED' || status === 'PAID') return 'badge-success';
-  if (status === 'PROCESSING' || status === 'SHIPPED') return 'badge-info';
-  if (status === 'PENDING') return 'badge-warning';
-  return 'badge-danger';
+async function loadAdminProducts() {
+  const tbody = document.getElementById('admin-products-tbody');
+  if (!tbody) return;
+
+  try {
+    const res = await APIClient.get('/products', { limit: 50 });
+    if (res.success && res.data) {
+      tbody.innerHTML = res.data.map(p => `
+        <tr>
+          <td>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <img src="${(p.images && p.images[0]) || '/images/placeholder.svg'}" style="width: 44px; height: 44px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border);" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
+              <div>
+                <strong>${p.name}</strong><br>
+                <small style="color: #6b7280;">SKU: ${p.sku}</small>
+              </div>
+            </div>
+          </td>
+          <td><span class="badge badge-secondary">${p.category}</span></td>
+          <td><strong>$${(p.price || 0).toFixed(2)}</strong></td>
+          <td>
+            ${p.stock <= 5 ? `<span class="badge badge-danger">Low Stock (${p.stock})</span>` : `<span class="badge badge-success">${p.stock} units</span>`}
+          </td>
+          <td>★ ${(p.rating || 4.8).toFixed(1)}</td>
+          <td>
+            <a href="/product.html?id=${p.id}" target="_blank" class="btn btn-secondary btn-sm">View Page ↗</a>
+          </td>
+        </tr>
+      `).join('');
+    }
+  } catch (err) {
+    tbody.innerHTML = `<tr><td colspan="6" style="color: #ef4444; text-align: center;">Error loading products: ${err.message}</td></tr>`;
+  }
 }
 
 async function updateOrderStatus(orderId, newStatus) {
   try {
-    const res = await APIClient.request(`/orders/${orderId}/status`, {
-      method: 'PATCH',
-      body: JSON.stringify({ status: newStatus, note: 'Admin updated order status.' })
+    const res = await APIClient.patch(`/orders/${orderId}/status`, {
+      status: newStatus,
+      note: `Updated via Store Dashboard to ${newStatus}`
     });
     if (res.success) {
       showToast(`Order status updated to ${newStatus}`, 'success');
-      loadAdminOrders();
-      loadAdminMetrics();
+      await loadAdminOrders();
+      await loadAdminMetrics();
     }
   } catch (err) {
-    showToast(err.message || 'Failed to update order status', 'danger');
+    showToast(err.message || 'Failed to update order', 'danger');
   }
 }
 
-async function openAddProductModal() {
+function openAddProductModal() {
   const modal = document.getElementById('add-product-modal');
   if (modal) modal.classList.add('active');
 }
@@ -135,15 +134,15 @@ function closeAddProductModal() {
   if (modal) modal.classList.remove('active');
 }
 
-async function handleCreateProduct(event) {
-  event.preventDefault();
-  const form = event.target;
+async function handleCreateProduct(e) {
+  e.preventDefault();
   const name = document.getElementById('new-prod-name').value;
-  const category = document.getElementById('new-prod-cat').value;
+  const category = document.getElementById('new-prod-category').value;
   const price = parseFloat(document.getElementById('new-prod-price').value);
   const stock = parseInt(document.getElementById('new-prod-stock').value, 10);
-  const image = document.getElementById('new-prod-image').value || 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=80';
-  const description = document.getElementById('new-prod-desc').value;
+  const sku = document.getElementById('new-prod-sku').value;
+  const image = document.getElementById('new-prod-image').value;
+  const desc = document.getElementById('new-prod-desc').value;
 
   try {
     const res = await APIClient.post('/products', {
@@ -151,15 +150,16 @@ async function handleCreateProduct(event) {
       category,
       price,
       stock,
+      sku,
       images: [image],
-      description
+      description: desc
     });
 
     if (res.success) {
-      showToast(`Product "${name}" created successfully!`, 'success');
+      showToast('Product created successfully!', 'success');
       closeAddProductModal();
-      form.reset();
-      loadAdminMetrics();
+      await loadAdminProducts();
+      await loadAdminMetrics();
     }
   } catch (err) {
     showToast(err.message || 'Failed to create product', 'danger');
