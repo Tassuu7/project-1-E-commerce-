@@ -32,7 +32,7 @@ class OrderController {
 
   static getOrderById(req, res, next) {
     try {
-      const order = OrderService.getOrderById(req.params.id);
+      const order = OrderService.getOrderById(req.params.id, req.user);
       res.status(200).json({
         success: true,
         data: order
@@ -57,11 +57,9 @@ class OrderController {
           o.customerEmail && o.customerEmail.toLowerCase() === req.query.email.toLowerCase()
         );
       } else {
-        // Return latest public store orders
         orders = orderRepository.findAll();
       }
 
-      // Sort newest first
       orders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
       res.status(200).json({
@@ -89,10 +87,24 @@ class OrderController {
   static updateStatus(req, res, next) {
     try {
       const { status, note } = req.body;
-      const order = OrderService.updateOrderStatus(req.params.id, status, note);
+      const order = OrderService.updateOrderStatus(req.params.id, status, note, req.user);
       res.status(200).json({
         success: true,
         message: `Order status updated to ${status}.`,
+        data: order
+      });
+    } catch (err) {
+      next(err);
+    }
+  }
+
+  static cancelOrder(req, res, next) {
+    try {
+      const { reason } = req.body;
+      const order = OrderService.cancelOrder(req.params.id, req.user, reason);
+      res.status(200).json({
+        success: true,
+        message: 'Order cancelled successfully.',
         data: order
       });
     } catch (err) {

@@ -1,19 +1,29 @@
 /**
- * Order Router Definitions
+ * Order REST API Routes
  * OmniCommerce Enterprise
  */
 
 const express = require('express');
 const router = express.Router();
 const OrderController = require('../controllers/orderController');
-const { requireRole } = require('../middleware/auth');
-const { USER_ROLES, AUDIT_EVENT_TYPES } = require('../config/constants');
-const { auditLogger } = require('../middleware/auditLogger');
+const { requireAuth, requireRole } = require('../middleware/auth');
 
-router.post('/checkout', auditLogger(AUDIT_EVENT_TYPES.ORDER_CREATED), OrderController.checkout);
+// Public / Customer Checkout
+router.post('/checkout', OrderController.checkout);
+
+// Get Customer Orders
 router.get('/user', OrderController.getUserOrders);
-router.get('/admin', requireRole(USER_ROLES.ADMIN, USER_ROLES.SUPPORT), OrderController.getAllOrders);
+
+// Admin-only listing of all orders
+router.get('/', requireAuth, requireRole('ADMIN'), OrderController.getAllOrders);
+
+// Get Order Details (Object-Level Authorization)
 router.get('/:id', OrderController.getOrderById);
-router.patch('/:id/status', requireRole(USER_ROLES.ADMIN, USER_ROLES.SUPPORT), auditLogger(AUDIT_EVENT_TYPES.ORDER_STATUS_UPDATED), OrderController.updateStatus);
+
+// Admin/Delivery Person Status Update
+router.patch('/:id/status', requireAuth, requireRole('ADMIN', 'DELIVERY_PERSON'), OrderController.updateStatus);
+
+// Cancel Order
+router.post('/:id/cancel', requireAuth, OrderController.cancelOrder);
 
 module.exports = router;

@@ -13,5 +13,80 @@
       "processedAt": "2026-08-29T03:53:58.870Z"
     },
     "createdAt": "2026-08-29T03:53:58.870Z"
+  },
+  {
+    "id": "b5379ada-7e6e-405a-b561-74faa2229c9c",
+    "orderId": "87a91558-055d-4966-9a6a-8fa6bcb18202",
+    "amount": 1889.99,
+    "currency": "USD",
+    "paymentMethod": "STRIPE_CREDIT_CARD",
+    "status": "CAPTURED",
+    "transactionId": "TXN-1788239244406-594",
+    "rawResponse": {
+      "gateway": "STRIPE_CREDIT_CARD",
+      "authCode": "AUTH-581696",
+      "processedAt": "2026-09-01T05:07:24.406Z"
+    },
+    "createdAt": "2026-09-01T05:07:24.406Z"
+  },
+  {
+    "id": "80d74341-4681-4964-9632-d9ea60dbf335",
+    "orderId": "56b44fe8-5005-4301-9788-e3e2ab27e6cd",
+    "amount": 183.59,
+    "currency": "USD",
+    "paymentMethod": "STRIPE_CREDIT_CARD",
+    "status": "CAPTURED",
+    "transactionId": "TXN-1788239511504-529",
+    "rawResponse": {
+      "gateway": "STRIPE_CREDIT_CARD",
+      "authCode": "AUTH-250255",
+      "processedAt": "2026-09-01T05:11:51.504Z"
+    },
+    "createdAt": "2026-09-01T05:11:51.504Z"
+  },
+  {
+    "id": "7f9b23fc-e616-446c-aba1-26bd43fdea49",
+    "orderId": "c8e32571-475a-4965-934b-283aa6386860",
+    "amount": 244.05,
+    "currency": "USD",
+    "paymentMethod": "PAYPAL",
+    "status": "CAPTURED",
+    "transactionId": "TXN-1788239645533-509",
+    "rawResponse": {
+      "gateway": "PAYPAL",
+      "authCode": "AUTH-825162",
+      "processedAt": "2026-09-01T05:14:05.533Z"
+    },
+    "createdAt": "2026-09-01T05:14:05.533Z"
+  },
+  {
+    "id": "56f51dc4-252f-46a5-aee2-d83a00ccf87f",
+    "orderId": "23623ea6-14f5-4f3d-99f7-6d68941fe7d6",
+    "amount": 183.59,
+    "currency": "USD",
+    "paymentMethod": "STRIPE_CREDIT_CARD",
+    "status": "CAPTURED",
+    "transactionId": "TXN-1788239841084-47",
+    "rawResponse": {
+      "gateway": "STRIPE_CREDIT_CARD",
+      "authCode": "AUTH-513445",
+      "processedAt": "2026-09-01T05:17:21.084Z"
+    },
+    "createdAt": "2026-09-01T05:17:21.084Z"
+  },
+  {
+    "id": "30bf80bd-4955-43d3-8f92-307bb23afdcf",
+    "orderId": "5e332d65-b5b0-4e2c-9336-2d5873828c23",
+    "amount": 367.18,
+    "currency": "USD",
+    "paymentMethod": "STRIPE_CREDIT_CARD",
+    "status": "CAPTURED",
+    "transactionId": "TXN-1788240331249-501",
+    "rawResponse": {
+      "gateway": "STRIPE_CREDIT_CARD",
+      "authCode": "AUTH-457221",
+      "processedAt": "2026-09-01T05:25:31.249Z"
+    },
+    "createdAt": "2026-09-01T05:25:31.249Z"
   }
 ]

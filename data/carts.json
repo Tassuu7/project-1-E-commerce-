@@ -116,51 +116,10 @@
   {
     "id": "cart_owsz5sydt",
     "userId": null,
-    "items": [
-      {
-        "productId": "52b1c945-a2da-45cd-89b4-e7b3a29e5354",
-        "name": "StudioRef Active Bi-Amplified Desktop Speakers (Pair)",
-        "price": 169.99,
-        "quantity": 1,
-        "sku": "ELE-STU-7790",
-        "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80"
-      },
-      {
-        "productId": "412439fc-ac98-4b44-b770-44e5359c94a8",
-        "name": "ErgoElite Pro Lumbar Executive Mesh Chair",
-        "price": 349.99,
-        "quantity": 1,
-        "sku": "HOM-ERG-2763",
-        "image": "https://images.unsplash.com/photo-1580481077197-6a3f124a9190?auto=format&fit=crop&w=800&q=80"
-      },
-      {
-        "productId": "113a6f6d-52cc-4e64-922c-2866ecf69d7c",
-        "name": "AcousticMax Wireless Noise-Canceling Headphones",
-        "price": 249.99,
-        "quantity": 1,
-        "sku": "ELE-ACO-3647",
-        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80"
-      },
-      {
-        "productId": "526da2cd-845f-4407-9ed7-3e62209edc18",
-        "name": "AeroLift Ergonomic Aluminum Foldable Laptop Stand",
-        "price": 34.99,
-        "quantity": 2,
-        "sku": "BOO-AER-6878",
-        "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80"
-      },
-      {
-        "productId": "f377ac3b-1fbe-4bd9-80f7-ba7e9fb5ffe1",
-        "name": "Signature Tailored 100% Organic Oxford Shirt",
-        "price": 59.99,
-        "quantity": 1,
-        "sku": "APP-SIG-4522",
-        "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80"
-      }
-    ],
+    "items": [],
     "appliedCoupon": null,
     "createdAt": "2026-08-29T03:56:45.980Z",
-    "updatedAt": "2026-09-01T04:59:25.051Z"
+    "updatedAt": "2026-09-01T05:11:51.519Z"
   },
   {
     "id": "cart_f7180nluq",
@@ -193,5 +152,45 @@
     "appliedCoupon": null,
     "createdAt": "2026-09-01T05:07:24.389Z",
     "updatedAt": "2026-09-01T05:07:24.411Z"
+  },
+  {
+    "id": "cart_d8meabd9c",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T05:11:52.176Z",
+    "updatedAt": "2026-09-01T05:14:05.552Z"
+  },
+  {
+    "id": "cart_aeotl8xv9",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T05:14:06.182Z",
+    "updatedAt": "2026-09-01T05:17:21.098Z"
+  },
+  {
+    "id": "cart_vmgvvyyn6",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T05:17:21.687Z",
+    "updatedAt": "2026-09-01T05:25:31.264Z"
+  },
+  {
+    "id": "cart_gq2zc8e3i",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T05:25:31.875Z",
+    "updatedAt": "2026-09-01T05:25:31.875Z"
+  },
+  {
+    "id": "test_suite_cart_1788241693834",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T05:48:13.835Z",
+    "updatedAt": "2026-09-01T05:48:13.856Z"
   }
 ]

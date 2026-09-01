@@ -9655,5 +9655,3 @@ module.exports = {
   InventoryTurnoverIndex,
   SalesForecastingFormula,
 };
-/ /   B u s i n e s s   I n t e l l i g e n c e   E n h a n c e m e n t  
- 

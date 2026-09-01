@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery Courier Portal — EverydayStore</title>
+  <script src="/js/theme.js"></script>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/storefront.css">
+  <style>
+    .delivery-tab-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .delivery-tab-btn.active {
+      background: #111827;
+      color: #ffffff;
+      border-color: #111827;
+    }
+    [data-theme="dark"] .delivery-tab-btn.active {
+      background: #f9fafb;
+      color: #111827;
+      border-color: #f9fafb;
+    }
+    .delivery-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar (Clean & Centered) -->
+  <div class="top-bar">
+    <div class="container">
+      <span>EverydayStore Courier & Logistics Operations</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="/delivery.html" class="logo">Everyday<span>Store</span> <span style="font-size: 0.8rem; background: var(--bg-muted); border: 1px solid var(--border); padding: 3px 8px; border-radius: 4px; font-weight: 600;">Delivery Portal</span></a>
+
+      <ul class="nav-menu">
+        <li><a href="/index.html">Customer Store</a></li>
+        <li>
+          <button id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Theme">
+            Dark Mode
+          </button>
+        </li>
+        <li id="nav-auth-container"></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Login Gate for Delivery Personnel -->
+  <div id="delivery-auth-gate" style="display: none; max-width: 440px; margin: 4.5rem auto; padding: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--card-shadow);">
+    <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">Courier Sign In</h2>
+    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Sign in with your delivery personnel credentials to manage assignments.</p>
+
+    <form onsubmit="handleDeliveryLogin(event)">
+      <div class="form-group">
+        <label class="form-label">Courier Email</label>
+        <input type="email" id="delivery-email-input" class="form-control" value="delivery@omnicommerce.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input type="password" id="delivery-pass-input" class="form-control" value="DeliveryPass2026!" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In to Delivery Portal</button>
+      <div style="margin-top: 1.25rem; text-align: center;">
+        <a href="/index.html" style="font-size: 0.9rem; color: var(--text-muted);">← Return to Customer Store</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Delivery Personnel Main Panel -->
+  <main id="delivery-main-panel" class="container" style="margin-top: 3rem; margin-bottom: 5rem; display: none;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--text-main);">My Assigned Deliveries</h1>
+        <p style="color: var(--text-muted); font-size: 1rem;">Manage parcel pickup, transit dispatch, and doorstep delivery confirmations</p>
+      </div>
+      <button class="btn btn-secondary btn-sm" onclick="loadDeliveryOrders()">🔄 Refresh Assignments</button>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div style="display: flex; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap;">
+      <button class="delivery-tab-btn active" onclick="filterDeliveries('ALL', this)">All Assignments (<span id="count-all">0</span>)</button>
+      <button class="delivery-tab-btn" onclick="filterDeliveries('ASSIGNED', this)">Pending Acceptance (<span id="count-assigned">0</span>)</button>
+      <button class="delivery-tab-btn" onclick="filterDeliveries('OUT_FOR_DELIVERY', this)">Out for Delivery (<span id="count-out">0</span>)</button>
+      <button class="delivery-tab-btn" onclick="filterDeliveries('DELIVERED', this)">Completed (<span id="count-completed">0</span>)</button>
+    </div>
+
+    <!-- Deliveries List -->
+    <div id="deliveries-container" style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <div style="text-align: center; padding: 5rem; background: var(--bg-card); border-radius: 14px; border: 1px solid var(--border);">
+        <p style="color: var(--text-muted); font-size: 1.05rem;">Loading assigned shipments...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 EverydayStore. All rights reserved.</p>
+        <a href="/index.html" style="color: var(--text-muted);">← Customer Storefront</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script>
+    let allAssignments = [];
+    let currentFilter = 'ALL';
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const user = await AuthManager.init();
+      if (!user || (user.role !== 'DELIVERY_PERSON' && user.role !== 'ADMIN')) {
+        document.getElementById('delivery-auth-gate').style.display = 'block';
+        document.getElementById('delivery-main-panel').style.display = 'none';
+      } else {
+        document.getElementById('delivery-auth-gate').style.display = 'none';
+        document.getElementById('delivery-main-panel').style.display = 'block';
+        await loadDeliveryOrders();
+      }
+    });
+
+    async function handleDeliveryLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('delivery-email-input').value;
+      const pass = document.getElementById('delivery-pass-input').value;
+      try {
+        await AuthManager.login(email, pass);
+        window.location.reload();
+      } catch (err) {
+        showToast('Invalid courier credentials', 'danger');
+      }
+    }
+
+    async function loadDeliveryOrders() {
+      try {
+        const res = await APIClient.get('/delivery/orders');
+        if (res.success && res.data) {
+          allAssignments = res.data;
+          updateCounts();
+          renderDeliveries();
+        }
+      } catch (err) {
+        document.getElementById('deliveries-container').innerHTML = `
+          <p style="color: var(--sale-red); text-align: center; padding: 2rem;">Error: ${err.message}</p>
+        `;
+      }
+    }
+
+    function updateCounts() {
+      document.getElementById('count-all').textContent = allAssignments.length;
+      document.getElementById('count-assigned').textContent = allAssignments.filter(a => a.status === 'ASSIGNED' || a.status === 'ACCEPTED').length;
+      document.getElementById('count-out').textContent = allAssignments.filter(a => a.status === 'OUT_FOR_DELIVERY').length;
+      document.getElementById('count-completed').textContent = allAssignments.filter(a => a.status === 'DELIVERED').length;
+    }
+
+    function filterDeliveries(filter, btn) {
+      currentFilter = filter;
+      document.querySelectorAll('.delivery-tab-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderDeliveries();
+    }
+
+    function renderDeliveries() {
+      const container = document.getElementById('deliveries-container');
+      let filtered = allAssignments;
+
+      if (currentFilter === 'ASSIGNED') {
+        filtered = allAssignments.filter(a => a.status === 'ASSIGNED' || a.status === 'ACCEPTED');
+      } else if (currentFilter === 'OUT_FOR_DELIVERY') {
+        filtered = allAssignments.filter(a => a.status === 'OUT_FOR_DELIVERY');
+      } else if (currentFilter === 'DELIVERED') {
+        filtered = allAssignments.filter(a => a.status === 'DELIVERED');
+      }
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 4rem; background: var(--bg-card); border-radius: 14px; border: 1px solid var(--border);">
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">No assignments in this view</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">New dispatch assignments from the store manager will appear here.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(a => {
+        const o = a.order || {};
+        const isCOD = o.paymentMethod === 'CASH_ON_DELIVERY';
+        const isPendingAccept = a.status === 'ASSIGNED';
+        const isAccepted = a.status === 'ACCEPTED';
+        const isOut = a.status === 'OUT_FOR_DELIVERY';
+        const isDelivered = a.status === 'DELIVERED';
+
+        return `
+          <div class="delivery-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border); padding-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.4rem;">
+                  <strong style="font-size: 1.35rem; color: var(--text-main);">${o.orderNumber || 'ORD-UNKNOWN'}</strong>
+                  <span class="badge ${isDelivered ? 'badge-success' : (isOut ? 'badge-warning' : 'badge-info')}">${a.status}</span>
+                </div>
+                <div style="font-size: 0.9rem; color: var(--text-muted);">Assigned on: ${new Date(a.assignedAt).toLocaleString()}</div>
+              </div>
+
+              <div style="text-align: right;">
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Collection Amount</span>
+                <div style="font-size: 1.6rem; font-weight: 800; color: var(--text-main);">$${(o.grandTotal || 0).toFixed(2)}</div>
+                <span class="badge ${isCOD ? 'badge-danger' : 'badge-success'}" style="font-size: 0.8rem;">${isCOD ? 'Collect Cash on Delivery' : 'Prepaid Order'}</span>
+              </div>
+            </div>
+
+            <!-- Customer Destination Address -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; background: var(--bg-muted); padding: 1.25rem 1.5rem; border-radius: var(--radius); border: 1px solid var(--border);">
+              <div>
+                <strong style="font-size: 0.95rem; color: var(--text-main);">Recipient & Contact:</strong>
+                <div style="font-size: 0.925rem; color: var(--text-main); margin-top: 0.25rem;">
+                  <strong>${o.customerName || 'Customer'}</strong><br>
+                  ${o.customerEmail || ''}
+                </div>
+              </div>
+              <div>
+                <strong style="font-size: 0.95rem; color: var(--text-main);">Delivery Address:</strong>
+                <div style="font-size: 0.925rem; color: var(--text-main); margin-top: 0.25rem;">
+                  ${o.shippingAddress?.street || '123 Main St'}<br>
+                  ${o.shippingAddress?.city || 'City'}, ${o.shippingAddress?.state || 'ST'} ${o.shippingAddress?.zip || '00000'}
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Items Summary -->
+            <div>
+              <strong style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.5rem; display: block;">Parcel Contents (${(o.items && o.items.length) || 0} items):</strong>
+              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                ${(o.items || []).map(item => `
+                  <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-muted);">
+                    <span>${item.name} × ${item.quantity}</span>
+                    <strong>$${(item.price * item.quantity).toFixed(2)}</strong>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Operational Action Buttons -->
+            <div style="display: flex; justify-content: flex-end; gap: 1rem; border-top: 1px solid var(--border); padding-top: 1.25rem; flex-wrap: wrap;">
+              ${isPendingAccept ? `
+                <button class="btn btn-primary" onclick="acceptAssignment('${a.id}')">Accept Assignment</button>
+              ` : ''}
+
+              ${(isAccepted || isPendingAccept) ? `
+                <button class="btn btn-primary" onclick="markOutForDelivery('${a.id}')">Mark Out for Delivery →</button>
+              ` : ''}
+
+              ${isOut ? `
+                <button class="btn btn-success" style="background: var(--discount-green); color: #fff;" onclick="confirmDeliveryPrompt('${a.id}')">✓ Confirm Successful Delivery</button>
+              ` : ''}
+
+              ${isDelivered ? `
+                <span style="color: var(--discount-green); font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">
+                  ✓ Delivered on ${new Date(a.deliveredAt || Date.now()).toLocaleTimeString()}
+                </span>
+              ` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function acceptAssignment(assignmentId) {
+      try {
+        const res = await APIClient.post(`/delivery/orders/${assignmentId}/accept`);
+        if (res.success) {
+          showToast('Assignment accepted!', 'success');
+          await loadDeliveryOrders();
+        }
+      } catch (err) {
+        showToast(err.message || 'Failed to accept assignment', 'danger');
+      }
+    }
+
+    async function markOutForDelivery(assignmentId) {
+      try {
+        const res = await APIClient.patch(`/delivery/orders/${assignmentId}/out-for-delivery`);
+        if (res.success) {
+          showToast('Order marked Out for Delivery! Customer notified.', 'success');
+          await loadDeliveryOrders();
+        }
+      } catch (err) {
+        showToast(err.message || 'Failed to update delivery status', 'danger');
+      }
+    }
+
+    async function confirmDeliveryPrompt(assignmentId) {
+      const notes = prompt('Enter delivery confirmation note (e.g. Handed directly to customer):', 'Handed to customer at front door');
+      if (notes === null) return;
+
+      try {
+        const res = await APIClient.post(`/delivery/orders/${assignmentId}/confirm`, { notes });
+        if (res.success) {
+          showToast('Delivery completed and confirmed! Customer notified.', 'success');
+          await loadDeliveryOrders();
+        }
+      } catch (err) {
+        showToast(err.message || 'Failed to confirm delivery', 'danger');
+      }
+    }
+  </script>
+</body>
+</html>

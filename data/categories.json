@@ -1,56 +1,56 @@
 [
   {
-    "id": "7433731c-c3ca-476d-a7ed-4c102430b6c1",
+    "id": "8d1ae440-c19f-4e72-8b30-32f3941b5eae",
     "name": "Electronics",
     "slug": "electronics",
-    "description": "Premium computers, audio, monitors & smart gadgets",
+    "description": "Laptops, headphones, monitors, cameras & smart devices",
     "parentId": null,
-    "icon": "cpu",
-    "createdAt": "2026-08-29T03:52:49.540Z"
+    "icon": "folder",
+    "createdAt": "2026-09-01T05:45:47.723Z"
   },
   {
-    "id": "9343b220-5d9d-4dc4-97fb-62cacc92edf0",
+    "id": "a6443609-9da6-43c6-966a-8d69711ca412",
     "name": "Apparel & Fashion",
     "slug": "apparel-fashion",
-    "description": "Designer clothing, outerwear & premium accessories",
+    "description": "Tailored shirts, outerwear, jackets & daily apparel",
     "parentId": null,
-    "icon": "shirt",
-    "createdAt": "2026-08-29T03:52:49.542Z"
+    "icon": "folder",
+    "createdAt": "2026-09-01T05:45:47.723Z"
   },
   {
-    "id": "f7e900f4-23c5-4df2-a0ae-5e45768223ba",
+    "id": "5b8ef1fa-751c-46fb-b70f-32a019bacd5c",
     "name": "Home & Kitchen",
     "slug": "home-kitchen",
-    "description": "Ergonomic furniture, smart lighting & chef-grade cookware",
+    "description": "Ergonomic furniture, cookware, espresso machines & appliances",
     "parentId": null,
-    "icon": "home",
-    "createdAt": "2026-08-29T03:52:49.543Z"
+    "icon": "folder",
+    "createdAt": "2026-09-01T05:45:47.724Z"
   },
   {
-    "id": "a216e343-1677-4ee8-bb33-7be75a293a79",
+    "id": "b451b510-5f60-4ec7-998b-d98cdc034431",
     "name": "Books & Office",
     "slug": "books-office",
-    "description": "Architecture guides, desk gear & productivity essentials",
+    "description": "Productivity desks, notebooks, fountain pens & organizers",
     "parentId": null,
-    "icon": "book",
-    "createdAt": "2026-08-29T03:52:49.543Z"
+    "icon": "folder",
+    "createdAt": "2026-09-01T05:45:47.724Z"
   },
   {
-    "id": "9b853ba2-ff8d-4515-a95d-462292fb0fab",
+    "id": "5b64d69b-0f70-424e-a646-884444bf4063",
     "name": "Sports & Fitness",
     "slug": "sports-fitness",
-    "description": "Commercial workout gear, smart fitness & sports apparel",
+    "description": "Adjustable weights, yoga mats, running shoes & smart fitness",
     "parentId": null,
-    "icon": "activity",
-    "createdAt": "2026-08-29T03:52:49.544Z"
+    "icon": "folder",
+    "createdAt": "2026-09-01T05:45:47.725Z"
   },
   {
-    "id": "1cd308af-8263-43f6-8b32-d8d72baecf71",
+    "id": "9c95c1ca-5176-475c-9a58-368d289b8a7d",
     "name": "Accessories & Travel",
     "slug": "accessories-travel",
-    "description": "Leather bags, sunglasses, watches & travel gear",
+    "description": "Leather bags, minimalist watches, sunglasses & luggage",
     "parentId": null,
-    "icon": "briefcase",
-    "createdAt": "2026-08-29T03:52:49.544Z"
+    "icon": "folder",
+    "createdAt": "2026-09-01T05:45:47.725Z"
   }
 ]

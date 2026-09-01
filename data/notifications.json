@@ -1,0 +1,86 @@
+[
+  {
+    "id": "n1-init-welcome",
+    "userId": "68db7655-556c-4633-a295-45cd2c59225b",
+    "role": "CUSTOMER",
+    "type": "SYSTEM",
+    "title": "Welcome to EverydayStore",
+    "message": "Thank you for joining EverydayStore! Explore our catalog and use coupon WELCOME10 for 10% off your first order.",
+    "orderId": null,
+    "read": false,
+    "createdAt": "2026-09-01T04:00:00.000Z",
+    "updatedAt": "2026-09-01T04:00:00.000Z"
+  },
+  {
+    "id": "4bfdad66-4008-4308-831d-c53ef3ce62d8",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "ORDER_PLACED",
+    "title": "Order Confirmed",
+    "message": "Your order ORD-20260901-7A512C ($55.55) has been placed and confirmed.",
+    "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
+    "read": true,
+    "createdAt": "2026-09-01T05:48:13.854Z",
+    "updatedAt": "2026-09-01T05:48:13.915Z"
+  },
+  {
+    "id": "20db52f5-968d-4a19-9454-783316f38f07",
+    "userId": null,
+    "role": "ADMIN",
+    "type": "ORDER_PLACED",
+    "title": "New Customer Order Placed",
+    "message": "Order ORD-20260901-7A512C received from Customer User ($55.55).",
+    "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
+    "read": false,
+    "createdAt": "2026-09-01T05:48:13.856Z",
+    "updatedAt": "2026-09-01T05:48:13.856Z"
+  },
+  {
+    "id": "41245afc-c11a-4c4d-a0e9-36ca6d8e285f",
+    "userId": "4668e540-62ca-4cee-b6e2-b7e3c71e90d7",
+    "role": "DELIVERY_PERSON",
+    "type": "DELIVERY_ASSIGNED",
+    "title": "New Delivery Assigned",
+    "message": "You have been assigned to deliver order ORD-20260901-7A512C to Seattle.",
+    "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
+    "read": false,
+    "createdAt": "2026-09-01T05:48:13.873Z",
+    "updatedAt": "2026-09-01T05:48:13.873Z"
+  },
+  {
+    "id": "f3a29779-e707-4295-813b-8fdca0f03eb0",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "ORDER_DISPATCHED",
+    "title": "Order Assigned for Dispatch",
+    "message": "Your order ORD-20260901-7A512C has been assigned to courier Alex Courier for dispatch.",
+    "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
+    "read": true,
+    "createdAt": "2026-09-01T05:48:13.874Z",
+    "updatedAt": "2026-09-01T05:48:13.914Z"
+  },
+  {
+    "id": "dc987f21-3923-4fec-a459-0360272e9364",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "OUT_FOR_DELIVERY",
+    "title": "Out for Delivery!",
+    "message": "Your package ORD-20260901-7A512C is out for delivery today with courier Alex Courier.",
+    "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
+    "read": true,
+    "createdAt": "2026-09-01T05:48:13.881Z",
+    "updatedAt": "2026-09-01T05:48:13.914Z"
+  },
+  {
+    "id": "41fd87dd-3c1c-4763-b378-022477ff78f9",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "DELIVERED",
+    "title": "Package Delivered Successfully",
+    "message": "Your order ORD-20260901-7A512C has been delivered. Thank you for shopping with EverydayStore!",
+    "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
+    "read": true,
+    "createdAt": "2026-09-01T05:48:13.889Z",
+    "updatedAt": "2026-09-01T05:48:13.913Z"
+  }
+]

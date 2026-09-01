@@ -1,24 +1,57 @@
 [
   {
-    "id": "e5a4d947-2493-4cd8-82f0-dd64061d7fd9",
-    "name": "Executive Admin",
+    "id": "2749313d-a87c-4a43-8a81-ab6a91cc119b",
+    "name": "Store Administrator",
     "email": "admin@omnicommerce.com",
     "passwordHash": "d889431e4df238edcf34fd44289b8b230144d00f6c02671de4d21b5362a961f3",
     "role": "ADMIN",
     "addresses": [],
-    "phone": "",
-    "createdAt": "2026-08-29T03:52:49.546Z",
-    "updatedAt": "2026-08-29T03:52:49.546Z"
+    "phone": "+1-206-555-0100",
+    "createdAt": "2026-09-01T05:45:47.727Z",
+    "updatedAt": "2026-09-01T05:45:47.727Z"
   },
   {
-    "id": "3e1a3585-79fc-41bb-aa81-0bee1297e4ca",
-    "name": "Jane Customer",
-    "email": "jane@example.com",
-    "passwordHash": "36900f9e68c3865049799b101bf59b7da1eb366fcd1efe47974ab40323fb3158",
+    "id": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "name": "Customer User",
+    "email": "customer@example.com",
+    "passwordHash": "97e479a307f26af0ab04e5d9af12f9871e7e4700ef923358d8faf6b7d4446aab",
     "role": "CUSTOMER",
     "addresses": [],
-    "phone": "",
-    "createdAt": "2026-08-29T03:52:49.547Z",
-    "updatedAt": "2026-08-29T03:52:49.547Z"
+    "phone": "+1-206-555-0199",
+    "createdAt": "2026-09-01T05:45:47.729Z",
+    "updatedAt": "2026-09-01T05:45:47.729Z"
+  },
+  {
+    "id": "0b817688-d257-42e6-b90c-7b4984746eac",
+    "name": "Jane Customer",
+    "email": "jane@example.com",
+    "passwordHash": "37c3e7401ca7498a507bdb2046410b5132f8b67ef05f7d5af41f0485d66335cb",
+    "role": "CUSTOMER",
+    "addresses": [],
+    "phone": "+1-206-555-0122",
+    "createdAt": "2026-09-01T05:45:47.729Z",
+    "updatedAt": "2026-09-01T05:45:47.729Z"
+  },
+  {
+    "id": "4668e540-62ca-4cee-b6e2-b7e3c71e90d7",
+    "name": "Alex Courier",
+    "email": "delivery@omnicommerce.com",
+    "passwordHash": "838ee4a5c28e89ba50d020d02b353b46eab66d53a742900e3d77c0641ae639e0",
+    "role": "DELIVERY_PERSON",
+    "addresses": [],
+    "phone": "+1-206-555-0144",
+    "createdAt": "2026-09-01T05:45:47.730Z",
+    "updatedAt": "2026-09-01T05:45:47.730Z"
+  },
+  {
+    "id": "ae1f8569-a3b8-4345-ba81-e0481093346c",
+    "name": "Sam Dispatch",
+    "email": "courier@omnicommerce.com",
+    "passwordHash": "55dd235f86670eeff6e81578ae8f8a28b732cfc116c01c736bdeaee6fc5083ed",
+    "role": "DELIVERY_PERSON",
+    "addresses": [],
+    "phone": "+1-206-555-0188",
+    "createdAt": "2026-09-01T05:45:47.731Z",
+    "updatedAt": "2026-09-01T05:45:47.731Z"
   }
 ]

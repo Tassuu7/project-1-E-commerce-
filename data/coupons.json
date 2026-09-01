@@ -1,0 +1,44 @@
+[
+  {
+    "id": "4ffc9941-5a7e-4a36-9226-0c11a7d0f11c",
+    "code": "WELCOME10",
+    "discountType": "PERCENTAGE",
+    "discountValue": 10,
+    "minOrderValue": 25,
+    "maxDiscountAmount": 100,
+    "usageLimit": 1000,
+    "usedCount": 5,
+    "isActive": true,
+    "expiresAt": "2027-09-01T05:45:47.780Z",
+    "createdAt": "2026-09-01T05:45:47.780Z",
+    "updatedAt": "2026-09-01T05:45:47.780Z"
+  },
+  {
+    "id": "61076e4c-6d33-4d30-b52e-3a5cebcc3bae",
+    "code": "SUMMER20",
+    "discountType": "FIXED",
+    "discountValue": 20,
+    "minOrderValue": 60,
+    "maxDiscountAmount": null,
+    "usageLimit": 500,
+    "usedCount": 2,
+    "isActive": true,
+    "expiresAt": "2027-09-01T05:45:47.781Z",
+    "createdAt": "2026-09-01T05:45:47.781Z",
+    "updatedAt": "2026-09-01T05:45:47.781Z"
+  },
+  {
+    "id": "ca64931f-66c8-474c-b830-489fe56c966b",
+    "code": "FREESHIP",
+    "discountType": "FIXED",
+    "discountValue": 15,
+    "minOrderValue": 40,
+    "maxDiscountAmount": null,
+    "usageLimit": 1000,
+    "usedCount": 8,
+    "isActive": true,
+    "expiresAt": "2027-09-01T05:45:47.781Z",
+    "createdAt": "2026-09-01T05:45:47.781Z",
+    "updatedAt": "2026-09-01T05:45:47.781Z"
+  }
+]

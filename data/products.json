@@ -1,17 +1,17 @@
 [
   {
-    "id": "9094fe3b-fe20-48df-96e4-f1027b667176",
+    "id": "56326e2c-c3a5-4cd8-9796-4f46800e5fe9",
     "name": "OmniBook Pro 16 M-Max Laptop",
     "slug": "omnibook-pro-16-m-max-laptop",
-    "sku": "ELE-OMN-9339",
+    "sku": "ELE-OMN-2280",
     "category": "Electronics",
     "price": 1899.99,
     "salePrice": 1749.99,
     "effectivePrice": 1749.99,
     "stock": 35,
     "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 8,
-    "description": "Ultra-thin enterprise workstation featuring a 16-core silicon processor, 32GB unified RAM, 1TB NVMe SSD, and Liquid Retina XDR 120Hz display with 22-hour battery life.",
+    "lowStockThreshold": 10,
+    "description": "Ultra-thin enterprise laptop with 16-core CPU, 32GB RAM, 1TB NVMe SSD, and 120Hz Liquid Retina display.",
     "images": [
       "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=800&q=80"
@@ -19,29 +19,27 @@
     "tags": [
       "laptop",
       "electronics",
-      "apple",
-      "workstation",
-      "pro"
+      "workstation"
     ],
     "rating": 4.9,
     "reviewCount": 48,
     "variants": [],
-    "createdAt": "2026-08-29T03:52:49.548Z",
-    "updatedAt": "2026-08-29T03:52:49.548Z"
+    "createdAt": "2026-09-01T05:45:47.733Z",
+    "updatedAt": "2026-09-01T05:45:47.733Z"
   },
   {
-    "id": "68cc43ba-786a-41f0-8ae1-c076548939fc",
-    "name": "AcousticMax Wireless Noise-Canceling Headphones",
-    "slug": "acousticmax-wireless-noise-canceling-headphones",
-    "sku": "ELE-ACO-1994",
+    "id": "8463fe90-495b-447e-b9dd-9cf2d2264051",
+    "name": "AcousticMax Wireless ANC Headphones",
+    "slug": "acousticmax-wireless-anc-headphones",
+    "sku": "ELE-ACO-9818",
     "category": "Electronics",
     "price": 299.99,
     "salePrice": 249.99,
     "effectivePrice": 249.99,
     "stock": 85,
     "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 15,
-    "description": "Flagship active noise canceling over-ear headphones with custom spatial audio drivers, plush memory foam earcups, multi-device Bluetooth 5.3 pairing, and 40-hour playtime.",
+    "lowStockThreshold": 10,
+    "description": "Premium active noise-canceling over-ear headphones with custom spatial audio drivers and 40-hour battery life.",
     "images": [
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=800&q=80"
@@ -49,536 +47,1452 @@
     "tags": [
       "headphones",
       "audio",
-      "wireless",
-      "anc",
-      "electronics"
+      "wireless"
     ],
     "rating": 4.8,
     "reviewCount": 92,
     "variants": [],
-    "createdAt": "2026-08-29T03:52:49.549Z",
-    "updatedAt": "2026-08-29T03:52:49.549Z"
+    "createdAt": "2026-09-01T05:45:47.734Z",
+    "updatedAt": "2026-09-01T05:45:47.734Z"
   },
   {
-    "id": "2c36d56b-06a6-402c-a7c1-8921e5438e20",
-    "name": "UltraVision 34-Inch Curved 4K HDR Monitor",
-    "slug": "ultravision-34-inch-curved-4k-hdr-monitor",
-    "sku": "ELE-ULT-3927",
+    "id": "a124de0c-4d0c-4100-a766-425c50666dea",
+    "name": "UltraVision 34-Inch Curved 4K Monitor",
+    "slug": "ultravision-34-inch-curved-4k-monitor",
+    "sku": "ELE-ULT-8596",
     "category": "Electronics",
     "price": 649.99,
-    "salePrice": 579.99,
-    "effectivePrice": 579.99,
-    "stock": 22,
+    "salePrice": 589.99,
+    "effectivePrice": 589.99,
+    "stock": 24,
     "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 5,
-    "description": "Immersive 1500R curved panoramic gaming & productivity display with 165Hz refresh rate, 1ms response time, 99% DCI-P3 color gamut, and 90W USB-C single-cable power delivery.",
+    "lowStockThreshold": 10,
+    "description": "Ultrawide 34-inch curved IPS monitor with 144Hz refresh rate, USB-C 90W power delivery, and HDR 600.",
     "images": [
-      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1586210579191-33b45e38fa2c?auto=format&fit=crop&w=800&q=80"
     ],
     "tags": [
       "monitor",
       "curved",
-      "4k",
-      "gaming",
-      "workspace"
+      "4k"
     ],
     "rating": 4.7,
     "reviewCount": 36,
     "variants": [],
-    "createdAt": "2026-08-29T03:52:49.550Z",
-    "updatedAt": "2026-08-29T03:52:49.550Z"
+    "createdAt": "2026-09-01T05:45:47.734Z",
+    "updatedAt": "2026-09-01T05:45:47.735Z"
   },
   {
-    "id": "788ebaad-ed37-4174-bb67-d092f47e1515",
-    "name": "ErgoElite Pro Lumbar Executive Mesh Chair",
-    "slug": "ergoelite-pro-lumbar-executive-mesh-chair",
-    "sku": "HOM-ERG-5202",
-    "category": "Home & Kitchen",
-    "price": 389.99,
-    "salePrice": 349.99,
-    "effectivePrice": 349.99,
-    "stock": 18,
-    "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 5,
-    "description": "Orthopedic breathable elastomeric mesh chair with dynamic 4D adjustable armrests, synchronized tilt lock mechanism, and integrated lumbar support cushion for all-day comfort.",
-    "images": [
-      "https://images.unsplash.com/photo-1580481077197-6a3f124a9190?auto=format&fit=crop&w=800&q=80"
-    ],
-    "tags": [
-      "chair",
-      "furniture",
-      "ergonomic",
-      "office",
-      "home"
-    ],
-    "rating": 4.9,
-    "reviewCount": 64,
-    "variants": [],
-    "createdAt": "2026-08-29T03:52:49.550Z",
-    "updatedAt": "2026-08-29T03:52:49.550Z"
-  },
-  {
-    "id": "04670327-cb27-4485-ba44-4e3d37f0c782",
-    "name": "LuminaSmart RGB Ambient Desk Lamp with Wireless Qi",
-    "slug": "luminasmart-rgb-ambient-desk-lamp-with-wireless-qi",
-    "sku": "HOM-LUM-6600",
-    "category": "Home & Kitchen",
-    "price": 69.99,
-    "salePrice": 49.99,
-    "effectivePrice": 49.99,
-    "stock": 140,
-    "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 20,
-    "description": "Touch-controlled architectural desk lamp featuring stepless dimming, circadian color temperature tuning (2700K-6500K), built-in 15W Qi fast wireless charging base, and app sync.",
-    "images": [
-      "https://images.unsplash.com/photo-1534972195531-a756b1126f24?auto=format&fit=crop&w=800&q=80"
-    ],
-    "tags": [
-      "lamp",
-      "lighting",
-      "smart home",
-      "desk",
-      "wireless charger"
-    ],
-    "rating": 4.6,
-    "reviewCount": 29,
-    "variants": [],
-    "createdAt": "2026-08-29T03:52:49.551Z",
-    "updatedAt": "2026-08-29T03:52:49.551Z"
-  },
-  {
-    "id": "bc2260f7-ed91-49e1-8bb4-8e4c64fdd1e1",
-    "name": "Signature Tailored 100% Organic Oxford Shirt",
-    "slug": "signature-tailored-100-organic-oxford-shirt",
-    "sku": "APP-SIG-7327",
-    "category": "Apparel & Fashion",
-    "price": 79.99,
-    "salePrice": 59.99,
-    "effectivePrice": 59.99,
-    "stock": 90,
-    "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 15,
-    "description": "Crafted from sustainable long-staple organic cotton. Features classic button-down collar, durable mother-of-pearl buttons, and tailored athletic fit suitable for office or casual wear.",
-    "images": [
-      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80"
-    ],
-    "tags": [
-      "apparel",
-      "shirt",
-      "fashion",
-      "cotton",
-      "menswear"
-    ],
-    "rating": 4.7,
-    "reviewCount": 42,
-    "variants": [],
-    "createdAt": "2026-08-29T03:52:49.552Z",
-    "updatedAt": "2026-08-29T03:52:49.552Z"
-  },
-  {
-    "id": "d42b8c9e-fae4-49c6-b5e0-cfd122b1289d",
-    "name": "ApexShield Waterproof All-Terrain Expedition Jacket",
-    "slug": "apexshield-waterproof-all-terrain-expedition-jacket",
-    "sku": "APP-APE-7095",
-    "category": "Apparel & Fashion",
-    "price": 189.99,
-    "salePrice": 159.99,
-    "effectivePrice": 159.99,
-    "stock": 45,
+    "id": "d208b024-013a-461d-b00d-7817b1079fe0",
+    "name": "PulseTrack Pro GPS Smartwatch",
+    "slug": "pulsetrack-pro-gps-smartwatch",
+    "sku": "ELE-PUL-2775",
+    "category": "Electronics",
+    "price": 249.99,
+    "salePrice": 199.99,
+    "effectivePrice": 199.99,
+    "stock": 60,
     "stockStatus": "IN_STOCK",
     "lowStockThreshold": 10,
-    "description": "Triple-layer Gore-weave waterproof breathable shell jacket designed for extreme mountain climates. Features sealed YKK aquaguard zippers, thermal fleece lining, and helmet hood.",
+    "description": "All-day health & fitness smartwatch featuring AMOLED sapphire glass, ECG monitoring, and 50m water resistance.",
     "images": [
-      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=800&q=80"
     ],
     "tags": [
-      "jacket",
-      "waterproof",
-      "outdoor",
-      "outerwear",
-      "fashion"
+      "smartwatch",
+      "wearable",
+      "gps"
+    ],
+    "rating": 4.6,
+    "reviewCount": 64,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.735Z",
+    "updatedAt": "2026-09-01T05:45:47.735Z"
+  },
+  {
+    "id": "26916480-e66d-4fca-ac4e-d7d101eb22da",
+    "name": "LumixPro 4K Mirrorless Digital Camera",
+    "slug": "lumixpro-4k-mirrorless-digital-camera",
+    "sku": "ELE-LUM-9688",
+    "category": "Electronics",
+    "price": 1299.99,
+    "salePrice": 1149.99,
+    "effectivePrice": 1149.99,
+    "stock": 18,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Professional 24.2MP full-frame mirrorless camera with 4K 60p video capture, 5-axis stabilization, and dual card slots.",
+    "images": [
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "camera",
+      "dslr",
+      "photography"
     ],
     "rating": 4.9,
-    "reviewCount": 51,
+    "reviewCount": 29,
     "variants": [],
-    "createdAt": "2026-08-29T03:52:49.552Z",
-    "updatedAt": "2026-08-29T03:52:49.552Z"
+    "createdAt": "2026-09-01T05:45:47.735Z",
+    "updatedAt": "2026-09-01T05:45:47.735Z"
   },
   {
-    "id": "20b90179-45a3-4af4-b84d-3646c53cbec5",
-    "name": "ChefMaster Tri-Ply Stainless Steel 10-Piece Cookware Set",
-    "slug": "chefmaster-tri-ply-stainless-steel-10-piece-cookware-set",
-    "sku": "HOM-CHE-4741",
-    "category": "Home & Kitchen",
-    "price": 329.99,
-    "salePrice": 289.99,
-    "effectivePrice": 289.99,
-    "stock": 28,
-    "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 6,
-    "description": "Commercial-grade 18/10 stainless steel cookware with bonded aluminum core for rapid, uniform heat distribution. Oven safe up to 500°F and compatible with all cooktops including induction.",
-    "images": [
-      "https://images.unsplash.com/photo-1584990347449-397cf1e9569b?auto=format&fit=crop&w=800&q=80"
-    ],
-    "tags": [
-      "cookware",
-      "kitchen",
-      "stainless steel",
-      "cooking",
-      "chef"
-    ],
-    "rating": 4.8,
-    "reviewCount": 38,
-    "variants": [],
-    "createdAt": "2026-08-29T03:52:49.554Z",
-    "updatedAt": "2026-08-29T03:52:49.554Z"
-  },
-  {
-    "id": "3b3f6196-0eba-4ddb-8718-f029155678be",
-    "name": "Enterprise Cloud Architecture & Distributed Systems Guide",
-    "slug": "enterprise-cloud-architecture-distributed-systems-guide",
-    "sku": "BOO-ENT-2257",
-    "category": "Books & Office",
-    "price": 64.99,
-    "salePrice": 49.99,
-    "effectivePrice": 49.99,
-    "stock": 210,
-    "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 25,
-    "description": "Comprehensive hardbound engineering blueprint for architecting mission-critical, fault-tolerant cloud microservices, high-throughput message brokers, and enterprise distributed systems.",
-    "images": [
-      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80"
-    ],
-    "tags": [
-      "book",
-      "engineering",
-      "architecture",
-      "software",
-      "office"
-    ],
-    "rating": 5,
-    "reviewCount": 88,
-    "variants": [],
-    "createdAt": "2026-08-29T03:52:49.555Z",
-    "updatedAt": "2026-08-29T03:52:49.555Z"
-  },
-  {
-    "id": "205131c4-175c-4ad4-8a83-ee447af44c0c",
-    "name": "PowerFlex Quick-Adjust Dumbbell Set (5 - 52.5 lbs)",
-    "slug": "powerflex-quick-adjust-dumbbell-set-5-525-lbs",
-    "sku": "SPO-POW-6431",
-    "category": "Sports & Fitness",
-    "price": 249.99,
-    "salePrice": 219.99,
-    "effectivePrice": 219.99,
-    "stock": 32,
-    "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 8,
-    "description": "Space-saving selectorized dumbbell system replacing 15 sets of weights with a turn of a dial. Engineered with heavy-duty steel plate molding and non-slip knurled grip handles.",
-    "images": [
-      "https://images.unsplash.com/photo-1586401100295-7a8096fd231a?auto=format&fit=crop&w=800&q=80"
-    ],
-    "tags": [
-      "fitness",
-      "dumbbells",
-      "weights",
-      "gym",
-      "workout"
-    ],
-    "rating": 4.9,
-    "reviewCount": 77,
-    "variants": [],
-    "createdAt": "2026-08-29T03:52:49.556Z",
-    "updatedAt": "2026-08-29T03:52:49.556Z"
-  },
-  {
-    "id": "49bce2d8-984d-4de1-8d0b-a98f9e73028c",
-    "name": "ApexStrike RGB Hot-Swappable Mechanical Keyboard",
-    "slug": "apexstrike-rgb-hot-swappable-mechanical-keyboard",
-    "sku": "ELE-APE-8126",
+    "id": "8e3d0c1b-3600-4fda-99b1-3503b53c9d54",
+    "name": "ApexKey Mechanical Wireless Keyboard",
+    "slug": "apexkey-mechanical-wireless-keyboard",
+    "sku": "ELE-APE-3283",
     "category": "Electronics",
     "price": 139.99,
     "salePrice": 119.99,
     "effectivePrice": 119.99,
-    "stock": 65,
+    "stock": 95,
     "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 12,
-    "description": "75% layout aircraft-grade aluminum gasket-mounted keyboard with pre-lubed tactile mechanical switches, PBT double-shot keycaps, south-facing RGB per-key LEDs, and Bluetooth/2.4G/USB-C.",
+    "lowStockThreshold": 10,
+    "description": "Custom hot-swappable mechanical keyboard with lubricated linear switches, aluminum chassis, and Bluetooth 5.2.",
     "images": [
-      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80"
     ],
     "tags": [
       "keyboard",
       "gaming",
-      "rgb",
-      "mechanical",
-      "electronics"
+      "mechanical"
     ],
     "rating": 4.8,
-    "reviewCount": 53,
+    "reviewCount": 77,
     "variants": [],
-    "createdAt": "2026-08-29T03:52:49.557Z",
-    "updatedAt": "2026-08-29T03:52:49.557Z"
+    "createdAt": "2026-09-01T05:45:47.736Z",
+    "updatedAt": "2026-09-01T05:45:47.736Z"
   },
   {
-    "id": "ab9b57e6-6c0e-4fc8-9dc0-6511ce8c3c4b",
-    "name": "VortexSpeed 8K Wireless Optical Gaming Mouse",
-    "slug": "vortexspeed-8k-wireless-optical-gaming-mouse",
-    "sku": "ELE-VOR-2149",
+    "id": "fac2d8fd-5cf7-427b-86e3-0aad77979e4d",
+    "name": "VortexSpeed 8K Wireless Optical Mouse",
+    "slug": "vortexspeed-8k-wireless-optical-mouse",
+    "sku": "ELE-VOR-8608",
     "category": "Electronics",
-    "price": 89.99,
-    "salePrice": 74.99,
-    "effectivePrice": 74.99,
-    "stock": 93,
+    "price": 79.99,
+    "salePrice": 64.99,
+    "effectivePrice": 64.99,
+    "stock": 110,
     "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 15,
-    "description": "Ultra-lightweight 54g honeycomb gaming mouse with 26,000 DPI optical sensor, optical micro-switches rated for 90M clicks, pure PTFE glide feet, and 80-hour rechargeable battery.",
+    "lowStockThreshold": 10,
+    "description": "Ultralight 58g ergonomic optical mouse with 26K DPI sensor, PTFE feet, and 90-hour continuous battery life.",
     "images": [
       "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80"
     ],
     "tags": [
       "mouse",
       "gaming",
-      "wireless",
-      "accessories",
-      "electronics"
+      "wireless"
+    ],
+    "rating": 4.7,
+    "reviewCount": 84,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.737Z",
+    "updatedAt": "2026-09-01T05:45:47.737Z"
+  },
+  {
+    "id": "e4d06f05-7b0c-489a-b70d-8f8df7118731",
+    "name": "SonicBoom Portable Bluetooth Speaker",
+    "slug": "sonicboom-portable-bluetooth-speaker",
+    "sku": "ELE-SON-4697",
+    "category": "Electronics",
+    "price": 89.99,
+    "salePrice": 69.99,
+    "effectivePrice": 69.99,
+    "stock": 75,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Rugged IP67 waterproof outdoor speaker with 360-degree room-filling sound, deep bass radiators, and 24h battery.",
+    "images": [
+      "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "speaker",
+      "audio",
+      "bluetooth"
+    ],
+    "rating": 4.6,
+    "reviewCount": 52,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.737Z",
+    "updatedAt": "2026-09-01T05:45:47.737Z"
+  },
+  {
+    "id": "52c3c844-aa7c-436c-8dd4-f87011060716",
+    "name": "PowerVault 65W GaN Fast Charger",
+    "slug": "powervault-65w-gan-fast-charger",
+    "sku": "ELE-POW-4767",
+    "category": "Electronics",
+    "price": 49.99,
+    "salePrice": 39.99,
+    "effectivePrice": 39.99,
+    "stock": 150,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Compact 3-port GaN III fast wall charger supporting dual USB-C laptops, tablets, and phones simultaneously.",
+    "images": [
+      "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "charger",
+      "gan",
+      "usbc"
+    ],
+    "rating": 4.8,
+    "reviewCount": 114,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.738Z",
+    "updatedAt": "2026-09-01T05:45:47.738Z"
+  },
+  {
+    "id": "7bdd5ffd-69d3-4de3-9995-5b1391b14d9a",
+    "name": "TrueSound Studio Podcasting Microphone",
+    "slug": "truesound-studio-podcasting-microphone",
+    "sku": "ELE-TRU-9013",
+    "category": "Electronics",
+    "price": 149.99,
+    "salePrice": 129.99,
+    "effectivePrice": 129.99,
+    "stock": 45,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Cardioid dynamic studio microphone with built-in pop filter, zero-latency headphone monitoring, and USB/XLR outputs.",
+    "images": [
+      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "microphone",
+      "podcast",
+      "audio"
     ],
     "rating": 4.7,
     "reviewCount": 41,
     "variants": [],
-    "createdAt": "2026-08-29T03:52:49.559Z",
-    "updatedAt": "2026-08-29T03:53:58.866Z"
+    "createdAt": "2026-09-01T05:45:47.738Z",
+    "updatedAt": "2026-09-01T05:45:47.738Z"
   },
   {
-    "id": "1af32dec-c2db-4b2a-87f7-7bb49077ed75",
-    "name": "Chronos Pro Titanium Smartwatch Series 7",
-    "slug": "chronos-pro-titanium-smartwatch-series-7",
-    "sku": "ACC-CHR-6297",
-    "category": "Accessories & Travel",
+    "id": "24ee6a10-28a6-408c-812d-31c649439115",
+    "name": "Heritage Classic Oxford Cotton Shirt",
+    "slug": "heritage-classic-oxford-cotton-shirt",
+    "sku": "APP-HER-6596",
+    "category": "Apparel & Fashion",
+    "price": 68,
+    "salePrice": 54,
+    "effectivePrice": 54,
+    "stock": 90,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "100% combed long-staple organic cotton button-down shirt with tailored fit and reinforced seams.",
+    "images": [
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "shirt",
+      "apparel",
+      "cotton"
+    ],
+    "rating": 4.7,
+    "reviewCount": 68,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.738Z",
+    "updatedAt": "2026-09-01T05:45:47.738Z"
+  },
+  {
+    "id": "d82cbcb0-f00e-4824-9a2e-d859b745dbca",
+    "name": "UrbanFlex All-Weather Wool Trench Coat",
+    "slug": "urbanflex-all-weather-wool-trench-coat",
+    "sku": "APP-URB-8155",
+    "category": "Apparel & Fashion",
+    "price": 249,
+    "salePrice": 199,
+    "effectivePrice": 199,
+    "stock": 30,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Italian wool blend double-breasted coat featuring water-resistant storm shield and satin lining.",
+    "images": [
+      "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "coat",
+      "outerwear",
+      "wool"
+    ],
+    "rating": 4.9,
+    "reviewCount": 31,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.739Z",
+    "updatedAt": "2026-09-01T05:45:47.739Z"
+  },
+  {
+    "id": "449e4992-a7eb-4754-8452-94f88abd0683",
+    "name": "Merino Wool Crewneck Sweater",
+    "slug": "merino-wool-crewneck-sweater",
+    "sku": "APP-MER-6961",
+    "category": "Apparel & Fashion",
+    "price": 89,
+    "salePrice": 72,
+    "effectivePrice": 72,
+    "stock": 65,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Ultra-fine 100% Merino wool knit sweater providing natural temperature regulation and exceptional softness.",
+    "images": [
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "sweater",
+      "merino",
+      "knitwear"
+    ],
+    "rating": 4.8,
+    "reviewCount": 45,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.739Z",
+    "updatedAt": "2026-09-01T05:45:47.739Z"
+  },
+  {
+    "id": "d71bb779-f03d-4d07-92a9-25cfd631f609",
+    "name": "Tailored Stretch Chino Trousers",
+    "slug": "tailored-stretch-chino-trousers",
+    "sku": "APP-TAI-4630",
+    "category": "Apparel & Fashion",
+    "price": 74,
+    "salePrice": 59,
+    "effectivePrice": 59,
+    "stock": 80,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Modern slim-fit chinos crafted with 98% organic cotton and 2% elastane for unrestricted all-day movement.",
+    "images": [
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "chinos",
+      "pants",
+      "trousers"
+    ],
+    "rating": 4.6,
+    "reviewCount": 56,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.740Z",
+    "updatedAt": "2026-09-01T05:45:47.740Z"
+  },
+  {
+    "id": "4a912f51-9e80-4591-a7dc-9ba7987f4e50",
+    "name": "Raw Selvedge Denim Slim Jeans",
+    "slug": "raw-selvedge-denim-slim-jeans",
+    "sku": "APP-RAW-3303",
+    "category": "Apparel & Fashion",
+    "price": 119,
+    "salePrice": 95,
+    "effectivePrice": 95,
+    "stock": 50,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "13.5oz authentic Japanese shuttle-loom selvedge denim designed to develop unique personal fade patterns.",
+    "images": [
+      "https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "jeans",
+      "denim",
+      "selvedge"
+    ],
+    "rating": 4.8,
+    "reviewCount": 63,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.740Z",
+    "updatedAt": "2026-09-01T05:45:47.740Z"
+  },
+  {
+    "id": "a7960aee-39aa-49b1-aebe-067ddf32f543",
+    "name": "Essential Heavyweight Cotton Hoodie",
+    "slug": "essential-heavyweight-cotton-hoodie",
+    "sku": "APP-ESS-8826",
+    "category": "Apparel & Fashion",
+    "price": 79,
+    "salePrice": 62,
+    "effectivePrice": 62,
+    "stock": 120,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "450 GSM heavyweight french terry fleece hoodie with double-lined hood and sturdy ribbed cuffs.",
+    "images": [
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "hoodie",
+      "fleece",
+      "streetwear"
+    ],
+    "rating": 4.7,
+    "reviewCount": 89,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.741Z",
+    "updatedAt": "2026-09-01T05:45:47.741Z"
+  },
+  {
+    "id": "995c84d8-0b4b-46fe-b65c-c323c3cb2400",
+    "name": "Handmade Italian Leather Dress Shoes",
+    "slug": "handmade-italian-leather-dress-shoes",
+    "sku": "APP-HAN-2687",
+    "category": "Apparel & Fashion",
+    "price": 219,
+    "salePrice": 179,
+    "effectivePrice": 179,
+    "stock": 28,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Full-grain calfskin leather Oxford dress shoes handcrafted with Goodyear welt construction and leather soles.",
+    "images": [
+      "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "shoes",
+      "oxford",
+      "leather"
+    ],
+    "rating": 4.9,
+    "reviewCount": 37,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.741Z",
+    "updatedAt": "2026-09-01T05:45:47.741Z"
+  },
+  {
+    "id": "11acd4e3-e897-4a9f-ae21-830b0337c5e8",
+    "name": "Minimalist Cashmere Scarf",
+    "slug": "minimalist-cashmere-scarf",
+    "sku": "APP-MIN-8106",
+    "category": "Apparel & Fashion",
+    "price": 65,
+    "salePrice": 49,
+    "effectivePrice": 49,
+    "stock": 70,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "100% Mongolian cashmere lightweight warm scarf with subtle fringed edges.",
+    "images": [
+      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "scarf",
+      "cashmere",
+      "winter"
+    ],
+    "rating": 4.8,
+    "reviewCount": 42,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.741Z",
+    "updatedAt": "2026-09-01T05:45:47.741Z"
+  },
+  {
+    "id": "86873c56-6e8d-4e89-a0dc-c0c1bb02ec74",
+    "name": "ErgoComfort High-Back Mesh Desk Chair",
+    "slug": "ergocomfort-high-back-mesh-desk-chair",
+    "sku": "HOM-ERG-4973",
+    "category": "Home & Kitchen",
     "price": 349.99,
-    "salePrice": 299.99,
-    "effectivePrice": 299.99,
+    "salePrice": 289.99,
+    "effectivePrice": 289.99,
     "stock": 40,
     "stockStatus": "IN_STOCK",
     "lowStockThreshold": 10,
-    "description": "Aerospace-grade titanium chassis with sapphire crystal AMOLED display. Continuous ECG heart rate monitoring, dual-band GPS, 100m water resistance, and 14-day battery life.",
+    "description": "Ergonomic breathable mesh task chair with 4D adjustable armrests, dynamic lumbar support, and tilt lock.",
     "images": [
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1580481077195-728b7e28989f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1505797149-43b0069ec26b?auto=format&fit=crop&w=800&q=80"
     ],
     "tags": [
-      "smartwatch",
-      "watch",
-      "wearable",
-      "titanium",
-      "fitness"
-    ],
-    "rating": 4.9,
-    "reviewCount": 65,
-    "variants": [],
-    "createdAt": "2026-08-29T03:52:49.560Z",
-    "updatedAt": "2026-08-29T03:52:49.560Z"
-  },
-  {
-    "id": "dc7d33ca-9fa2-4fb5-9857-50e53a918949",
-    "name": "Heritage Full-Grain Leather Commuter Backpack 22L",
-    "slug": "heritage-full-grain-leather-commuter-backpack-22l",
-    "sku": "ACC-HER-7364",
-    "category": "Accessories & Travel",
-    "price": 219.99,
-    "salePrice": 189.99,
-    "effectivePrice": 189.99,
-    "stock": 30,
-    "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 6,
-    "description": "Handcrafted vegetable-tanned full-grain leather backpack. Features padded 16-inch laptop compartment, water-resistant twill lining, antique brass hardware, and trolley luggage sleeve.",
-    "images": [
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80"
-    ],
-    "tags": [
-      "backpack",
-      "leather",
-      "travel",
-      "commute",
-      "bag"
+      "chair",
+      "furniture",
+      "ergonomic"
     ],
     "rating": 4.8,
-    "reviewCount": 34,
+    "reviewCount": 54,
     "variants": [],
-    "createdAt": "2026-08-29T03:52:49.560Z",
-    "updatedAt": "2026-08-29T03:52:49.560Z"
+    "createdAt": "2026-09-01T05:45:47.742Z",
+    "updatedAt": "2026-09-01T05:45:47.742Z"
   },
   {
-    "id": "e258de0a-974f-4006-86d1-4ba383bc4e52",
-    "name": "Artisan Barista Ceramic Coffee Pour-Over Dripper Set",
-    "slug": "artisan-barista-ceramic-coffee-pour-over-dripper-set",
-    "sku": "HOM-ART-8691",
+    "id": "35156cc0-4506-4afc-b66f-311900d3689e",
+    "name": "Artisan Barista Espresso Machine",
+    "slug": "artisan-barista-espresso-machine",
+    "sku": "HOM-ART-7854",
     "category": "Home & Kitchen",
-    "price": 49.99,
-    "salePrice": 39.99,
-    "effectivePrice": 39.99,
-    "stock": 75,
+    "price": 599.99,
+    "salePrice": 499.99,
+    "effectivePrice": 499.99,
+    "stock": 22,
     "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 15,
-    "description": "Handcrafted ceramic pour-over cone with 600ml borosilicate glass carafe and precision stainless steel reusable mesh filter for rich, velvety specialty coffee extraction.",
+    "lowStockThreshold": 10,
+    "description": "15-bar Italian thermo-block espresso machine with integrated burr grinder and micro-foam steam wand.",
+    "images": [
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "espresso",
+      "coffee",
+      "kitchen"
+    ],
+    "rating": 4.9,
+    "reviewCount": 67,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.743Z",
+    "updatedAt": "2026-09-01T05:45:47.743Z"
+  },
+  {
+    "id": "39a57929-974e-46a3-990c-0ecfa9581bc2",
+    "name": "Cast Iron Dutch Oven 6-Quart",
+    "slug": "cast-iron-dutch-oven-6-quart",
+    "sku": "HOM-CAS-6913",
+    "category": "Home & Kitchen",
+    "price": 119.99,
+    "salePrice": 89.99,
+    "effectivePrice": 89.99,
+    "stock": 45,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Heavy-duty enameled cast iron Dutch oven with tight-fitting lid for superior heat retention and slow braising.",
+    "images": [
+      "https://images.unsplash.com/photo-1584990347449-3990666014e7?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "cookware",
+      "kitchen",
+      "dutchoven"
+    ],
+    "rating": 4.9,
+    "reviewCount": 78,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.744Z",
+    "updatedAt": "2026-09-01T05:45:47.744Z"
+  },
+  {
+    "id": "ccd8aafd-7351-4f5b-a6d7-24cc47130a76",
+    "name": "Smart WiFi Convection Air Fryer 5.8Qt",
+    "slug": "smart-wifi-convection-air-fryer-58qt",
+    "sku": "HOM-SMA-6169",
+    "category": "Home & Kitchen",
+    "price": 129.99,
+    "salePrice": 99.99,
+    "effectivePrice": 99.99,
+    "stock": 55,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Digital touchscreen air fryer with 12 one-touch cooking presets and rapid 360-degree heat circulation.",
+    "images": [
+      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "airfryer",
+      "appliance",
+      "kitchen"
+    ],
+    "rating": 4.7,
+    "reviewCount": 91,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.745Z",
+    "updatedAt": "2026-09-01T05:45:47.745Z"
+  },
+  {
+    "id": "e7d853aa-2e88-4c94-bac6-6febee7d1260",
+    "name": "Damascus Steel 8-Inch Chef Knife",
+    "slug": "damascus-steel-8-inch-chef-knife",
+    "sku": "HOM-DAM-3543",
+    "category": "Home & Kitchen",
+    "price": 89.99,
+    "salePrice": 69.99,
+    "effectivePrice": 69.99,
+    "stock": 70,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "67-layer Japanese VG-10 Damascus steel kitchen knife with ergonomic pakkawood handle and razor-sharp edge.",
+    "images": [
+      "https://images.unsplash.com/photo-1593618998160-e34014e67546?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "knife",
+      "chef",
+      "cutlery"
+    ],
+    "rating": 4.9,
+    "reviewCount": 82,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.746Z",
+    "updatedAt": "2026-09-01T05:45:47.746Z"
+  },
+  {
+    "id": "06a89b77-3fa2-4958-95c2-c01baa775300",
+    "name": "Solid Walnut Wood Monitor Stand Riser",
+    "slug": "solid-walnut-wood-monitor-stand-riser",
+    "sku": "HOM-SOL-3765",
+    "category": "Home & Kitchen",
+    "price": 69.99,
+    "salePrice": 54.99,
+    "effectivePrice": 54.99,
+    "stock": 60,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Handcrafted natural American walnut desk shelf with cork padded feet and keyboard storage dock.",
+    "images": [
+      "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "desk",
+      "wood",
+      "stand"
+    ],
+    "rating": 4.8,
+    "reviewCount": 49,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.747Z",
+    "updatedAt": "2026-09-01T05:45:47.747Z"
+  },
+  {
+    "id": "10aaf4ce-f40b-4ba9-9b0b-d57f0c74ac67",
+    "name": "Ceramic Pour-Over Coffee Dripper Set",
+    "slug": "ceramic-pour-over-coffee-dripper-set",
+    "sku": "HOM-CER-6807",
+    "category": "Home & Kitchen",
+    "price": 44.99,
+    "salePrice": 34.99,
+    "effectivePrice": 34.99,
+    "stock": 85,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Handmade matte black ceramic pour-over cone with 600ml borosilicate glass server and reusable filters.",
     "images": [
       "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80"
     ],
     "tags": [
       "coffee",
-      "kitchen",
-      "ceramic",
-      "barista",
-      "home"
-    ],
-    "rating": 4.6,
-    "reviewCount": 27,
-    "variants": [],
-    "createdAt": "2026-08-29T03:52:49.561Z",
-    "updatedAt": "2026-08-29T03:52:49.561Z"
-  },
-  {
-    "id": "b572e96c-28eb-46ef-8189-7542fc6778f6",
-    "name": "ProGrade Cinema 4K Mirrorless Camera Body",
-    "slug": "prograde-cinema-4k-mirrorless-camera-body",
-    "sku": "ELE-PRO-5113",
-    "category": "Electronics",
-    "price": 1499.99,
-    "salePrice": 1399.99,
-    "effectivePrice": 1399.99,
-    "stock": 14,
-    "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 4,
-    "description": "Full-frame 33MP BSI CMOS sensor with 15 stops of dynamic range, 4K 60p 10-bit 4:2:2 internal video recording, 5-axis in-body image stabilization, and real-time AI subject eye autofocus.",
-    "images": [
-      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80"
-    ],
-    "tags": [
-      "camera",
-      "4k",
-      "photography",
-      "cinema",
-      "video"
-    ],
-    "rating": 5,
-    "reviewCount": 22,
-    "variants": [],
-    "createdAt": "2026-08-29T03:52:49.561Z",
-    "updatedAt": "2026-08-29T03:52:49.561Z"
-  },
-  {
-    "id": "978dc7c8-f056-4077-a8f4-ec3d3640268a",
-    "name": "StudioRef Active Bi-Amplified Desktop Speakers (Pair)",
-    "slug": "studioref-active-bi-amplified-desktop-speakers-pair",
-    "sku": "ELE-STU-8416",
-    "category": "Electronics",
-    "price": 199.99,
-    "salePrice": 169.99,
-    "effectivePrice": 169.99,
-    "stock": 35,
-    "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 8,
-    "description": "5-inch woven Kevlar woofers with 1-inch silk dome tweeters powered by 100W Class-D amplification. Balanced TRS & RCA inputs with custom acoustic boundary EQ controls.",
-    "images": [
-      "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80"
-    ],
-    "tags": [
-      "speakers",
-      "audio",
-      "studio",
-      "monitors",
-      "music"
+      "pourover",
+      "ceramic"
     ],
     "rating": 4.7,
-    "reviewCount": 31,
+    "reviewCount": 38,
     "variants": [],
-    "createdAt": "2026-08-29T03:52:49.562Z",
-    "updatedAt": "2026-08-29T03:52:49.562Z"
+    "createdAt": "2026-09-01T05:45:47.748Z",
+    "updatedAt": "2026-09-01T05:45:47.748Z"
   },
   {
-    "id": "fd1138e7-669e-4281-bb48-c86ab9ccdd16",
-    "name": "HydroShield Vacuum Insulated Stainless Bottle 32oz",
-    "slug": "hydroshield-vacuum-insulated-stainless-bottle-32oz",
-    "sku": "SPO-HYD-3194",
+    "id": "16fecaac-02b2-4518-bf37-fe204530f9a0",
+    "name": "Smart Dimmable LED Desk Lamp",
+    "slug": "smart-dimmable-led-desk-lamp",
+    "sku": "HOM-SMA-6955",
+    "category": "Home & Kitchen",
+    "price": 59.99,
+    "salePrice": 45.99,
+    "effectivePrice": 45.99,
+    "stock": 90,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Architectural aluminum LED lamp with 5 color temperatures, wireless phone charging base, and touch timer.",
+    "images": [
+      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "lamp",
+      "lighting",
+      "desk"
+    ],
+    "rating": 4.6,
+    "reviewCount": 61,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.748Z",
+    "updatedAt": "2026-09-01T05:45:47.748Z"
+  },
+  {
+    "id": "b8479202-2e58-4b5c-98f2-650f3ba0c72b",
+    "name": "Modern System Design Principles Handbook",
+    "slug": "modern-system-design-principles-handbook",
+    "sku": "BOO-MOD-8114",
+    "category": "Books & Office",
+    "price": 49.99,
+    "salePrice": 39.99,
+    "effectivePrice": 39.99,
+    "stock": 120,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Comprehensive guide covering scalable distributed architectures, fault tolerance, API design, and cloud patterns.",
+    "images": [
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "book",
+      "programming",
+      "architecture"
+    ],
+    "rating": 4.9,
+    "reviewCount": 104,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.749Z",
+    "updatedAt": "2026-09-01T05:45:47.749Z"
+  },
+  {
+    "id": "5070cc73-ff12-4d38-910d-9b21ae07c3ea",
+    "name": "Hardcover Dot-Grid Leather Journal",
+    "slug": "hardcover-dot-grid-leather-journal",
+    "sku": "BOO-HAR-4980",
+    "category": "Books & Office",
+    "price": 24.99,
+    "salePrice": 19.99,
+    "effectivePrice": 19.99,
+    "stock": 140,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "160 GSM bleedproof acid-free paper bullet notebook with vegan leather cover, dual bookmarks, and back pocket.",
+    "images": [
+      "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "notebook",
+      "journal",
+      "stationery"
+    ],
+    "rating": 4.8,
+    "reviewCount": 73,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.749Z",
+    "updatedAt": "2026-09-01T05:45:47.749Z"
+  },
+  {
+    "id": "f79835d2-a0c2-4578-931e-2a2509927e9a",
+    "name": "Precision Brass Fountain Pen",
+    "slug": "precision-brass-fountain-pen",
+    "sku": "BOO-PRE-1602",
+    "category": "Books & Office",
+    "price": 48,
+    "salePrice": 38,
+    "effectivePrice": 38,
+    "stock": 75,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Solid machined brass pocket fountain pen with German stainless steel fine nib and international cartridge converter.",
+    "images": [
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "pen",
+      "brass",
+      "fountainpen"
+    ],
+    "rating": 4.9,
+    "reviewCount": 52,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.750Z",
+    "updatedAt": "2026-09-01T05:45:47.750Z"
+  },
+  {
+    "id": "3264b79f-286a-4a68-bc3f-85c48adb44ab",
+    "name": "Minimalist Aluminium Laptop Stand",
+    "slug": "minimalist-aluminium-laptop-stand",
+    "sku": "BOO-MIN-6860",
+    "category": "Books & Office",
+    "price": 39.99,
+    "salePrice": 29.99,
+    "effectivePrice": 29.99,
+    "stock": 110,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Ergonomic 6-angle foldable anodized aluminum laptop elevator with silicone anti-scratch pads.",
+    "images": [
+      "https://images.unsplash.com/photo-1616353071588-708dcff912e2?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "stand",
+      "laptop",
+      "office"
+    ],
+    "rating": 4.7,
+    "reviewCount": 88,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.750Z",
+    "updatedAt": "2026-09-01T05:45:47.750Z"
+  },
+  {
+    "id": "cc66798c-7f50-442c-a931-4fcf820d6c65",
+    "name": "Desk Organiser Felt & Cork Pad",
+    "slug": "desk-organiser-felt-cork-pad",
+    "sku": "BOO-DES-1878",
+    "category": "Books & Office",
+    "price": 32,
+    "salePrice": 24,
+    "effectivePrice": 24,
+    "stock": 95,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Full-size 90x40cm dual-sided wool felt and natural cork desk mat for smooth mouse glide and desk protection.",
+    "images": [
+      "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "deskpad",
+      "mat",
+      "office"
+    ],
+    "rating": 4.6,
+    "reviewCount": 46,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.751Z",
+    "updatedAt": "2026-09-01T05:45:47.751Z"
+  },
+  {
+    "id": "580946db-699c-4b6f-a9b6-645dca6b3017",
+    "name": "QuickLock Adjustable Dumbbell Set (5-50 lbs)",
+    "slug": "quicklock-adjustable-dumbbell-set-5-50-lbs",
+    "sku": "SPO-QUI-4009",
+    "category": "Sports & Fitness",
+    "price": 299.99,
+    "salePrice": 249.99,
+    "effectivePrice": 249.99,
+    "stock": 35,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Pair of quick-dial compact adjustable dumbbells replacing 15 separate sets with anti-slip knurled steel grips.",
+    "images": [
+      "https://images.unsplash.com/photo-1586401100295-7a8096fd231a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "weights",
+      "fitness",
+      "dumbbells"
+    ],
+    "rating": 4.9,
+    "reviewCount": 63,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.751Z",
+    "updatedAt": "2026-09-01T05:45:47.751Z"
+  },
+  {
+    "id": "9d5b3e9c-9cf5-446c-935a-975890f2991a",
+    "name": "Eco-Grip Non-Slip Natural Rubber Yoga Mat",
+    "slug": "eco-grip-non-slip-natural-rubber-yoga-mat",
+    "sku": "SPO-ECO-6860",
+    "category": "Sports & Fitness",
+    "price": 68,
+    "salePrice": 52,
+    "effectivePrice": 52,
+    "stock": 80,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "6mm extra-thick biodegradable natural tree rubber yoga mat with laser-etched alignment guides.",
+    "images": [
+      "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "yoga",
+      "mat",
+      "fitness"
+    ],
+    "rating": 4.8,
+    "reviewCount": 71,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.752Z",
+    "updatedAt": "2026-09-01T05:45:47.752Z"
+  },
+  {
+    "id": "fff9c4de-e111-45b3-abc5-9aed198ef40c",
+    "name": "ProPulse Carbon Running Shoes",
+    "slug": "propulse-carbon-running-shoes",
+    "sku": "SPO-PRO-9667",
+    "category": "Sports & Fitness",
+    "price": 159.99,
+    "salePrice": 129.99,
+    "effectivePrice": 129.99,
+    "stock": 45,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Lightweight marathon racing shoes with full-length carbon fiber propulsion plate and responsive nitrogen-infused foam.",
+    "images": [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "shoes",
+      "running",
+      "marathon"
+    ],
+    "rating": 4.8,
+    "reviewCount": 59,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.753Z",
+    "updatedAt": "2026-09-01T05:45:47.753Z"
+  },
+  {
+    "id": "1f5c086c-c400-49c7-87a2-d51273456f75",
+    "name": "DeepTissue Percussion Massage Gun",
+    "slug": "deeptissue-percussion-massage-gun",
+    "sku": "SPO-DEE-5571",
+    "category": "Sports & Fitness",
+    "price": 119.99,
+    "salePrice": 89.99,
+    "effectivePrice": 89.99,
+    "stock": 65,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Ultra-quiet brushless motor muscle recovery massage gun with 6 interchangeable heads and 30 speed levels.",
+    "images": [
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "massage",
+      "recovery",
+      "fitness"
+    ],
+    "rating": 4.7,
+    "reviewCount": 82,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.753Z",
+    "updatedAt": "2026-09-01T05:45:47.753Z"
+  },
+  {
+    "id": "02c4084e-b81c-447a-a9dd-e08a25aeb2cd",
+    "name": "Insulated Stainless Steel Water Bottle 32oz",
+    "slug": "insulated-stainless-steel-water-bottle-32oz",
+    "sku": "SPO-INS-9042",
     "category": "Sports & Fitness",
     "price": 34.99,
-    "salePrice": 27.99,
-    "effectivePrice": 27.99,
-    "stock": 180,
+    "salePrice": 26.99,
+    "effectivePrice": 26.99,
+    "stock": 130,
     "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 30,
-    "description": "Double-wall vacuum insulation keeping drinks icy cold for 24 hours or piping hot for 12 hours. Pro-grade 18/8 stainless steel, powder-coated sweat-free finish, and leakproof chug lid.",
+    "lowStockThreshold": 10,
+    "description": "Vacuum-insulated 18/8 food-grade stainless steel flask keeping beverages ice cold for 24h or hot for 12h.",
     "images": [
       "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80"
     ],
     "tags": [
-      "water bottle",
-      "fitness",
-      "hydro",
-      "outdoor",
-      "sports"
+      "bottle",
+      "water",
+      "hydration"
     ],
-    "rating": 4.8,
-    "reviewCount": 95,
+    "rating": 4.9,
+    "reviewCount": 112,
     "variants": [],
-    "createdAt": "2026-08-29T03:52:49.562Z",
-    "updatedAt": "2026-08-29T03:52:49.562Z"
+    "createdAt": "2026-09-01T05:45:47.754Z",
+    "updatedAt": "2026-09-01T05:45:47.754Z"
   },
   {
-    "id": "a11ce312-0957-422e-9caf-0e9722df3088",
-    "name": "Aviator Classic Polarized UV400 Sunglasses",
-    "slug": "aviator-classic-polarized-uv400-sunglasses",
-    "sku": "ACC-AVI-6067",
+    "id": "7e765209-dc89-4640-8333-9dadf936386b",
+    "name": "Full-Grain Leather Weekender Duffel Bag",
+    "slug": "full-grain-leather-weekender-duffel-bag",
+    "sku": "ACC-FUL-1653",
     "category": "Accessories & Travel",
-    "price": 119.99,
-    "salePrice": 89.99,
-    "effectivePrice": 89.99,
+    "price": 189,
+    "salePrice": 149,
+    "effectivePrice": 149,
+    "stock": 30,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Handcrafted full-grain vegetable-tanned leather duffel with separate shoe compartment and solid brass YKK zippers.",
+    "images": [
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "bag",
+      "duffel",
+      "leather",
+      "travel"
+    ],
+    "rating": 4.9,
+    "reviewCount": 44,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.754Z",
+    "updatedAt": "2026-09-01T05:45:47.754Z"
+  },
+  {
+    "id": "fae849f8-6d70-45c4-a52b-5d1b7cd30d29",
+    "name": "Minimalist Automatic Mechanical Watch",
+    "slug": "minimalist-automatic-mechanical-watch",
+    "sku": "ACC-MIN-3884",
+    "category": "Accessories & Travel",
+    "price": 289,
+    "salePrice": 229,
+    "effectivePrice": 229,
+    "stock": 25,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Sleek Bauhaus automatic watch featuring Japanese Miyota movement, sapphire crystal, and genuine leather strap.",
+    "images": [
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "watch",
+      "luxury",
+      "accessories"
+    ],
+    "rating": 4.8,
+    "reviewCount": 39,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.754Z",
+    "updatedAt": "2026-09-01T05:45:47.754Z"
+  },
+  {
+    "id": "c0730cb9-6576-412f-ba1f-8d6b4f9af97f",
+    "name": "Polarized Aviator Sunglasses (Titanium)",
+    "slug": "polarized-aviator-sunglasses-titanium",
+    "sku": "ACC-POL-1487",
+    "category": "Accessories & Travel",
+    "price": 119,
+    "salePrice": 89,
+    "effectivePrice": 89,
     "stock": 60,
     "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 12,
-    "description": "Corrosion-resistant monel metal frame with scratch-resistant polarized crystal lenses providing 100% UVA/UVB protection and true color perception in bright glare conditions.",
+    "lowStockThreshold": 10,
+    "description": "Ultra-lightweight aerospace titanium frames with scratch-resistant polarized UV400 glass lenses.",
     "images": [
       "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80"
     ],
     "tags": [
       "sunglasses",
-      "polarized",
-      "fashion",
       "eyewear",
-      "accessories"
+      "titanium"
     ],
     "rating": 4.7,
-    "reviewCount": 45,
+    "reviewCount": 51,
     "variants": [],
-    "createdAt": "2026-08-29T03:52:49.563Z",
-    "updatedAt": "2026-08-29T03:52:49.563Z"
+    "createdAt": "2026-09-01T05:45:47.755Z",
+    "updatedAt": "2026-09-01T05:45:47.755Z"
   },
   {
-    "id": "e58142e6-7f21-401d-97a8-19f1a6d3551c",
-    "name": "AeroLift Ergonomic Aluminum Foldable Laptop Stand",
-    "slug": "aerolift-ergonomic-aluminum-foldable-laptop-stand",
-    "sku": "BOO-AER-1158",
-    "category": "Books & Office",
-    "price": 44.99,
-    "salePrice": 34.99,
-    "effectivePrice": 34.99,
-    "stock": 120,
+    "id": "67f37cec-ac86-43f3-9b8d-5ea83aa20996",
+    "name": "RFID-Blocking Slim Bifold Leather Wallet",
+    "slug": "rfid-blocking-slim-bifold-leather-wallet",
+    "sku": "ACC-RFI-9656",
+    "category": "Accessories & Travel",
+    "price": 45,
+    "salePrice": 34,
+    "effectivePrice": 34,
+    "stock": 140,
     "stockStatus": "IN_STOCK",
-    "lowStockThreshold": 20,
-    "description": "Precision CNC-machined sandblasted aluminum stand elevates laptop screen to eye level. Promotes optimal posture, maximum heat ventilation, and folds flat into travel pouch.",
+    "lowStockThreshold": 10,
+    "description": "Ultra-slim genuine top-grain leather wallet with 8 card slots, quick-access pull tab, and RFID protection shield.",
     "images": [
-      "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80"
     ],
     "tags": [
-      "laptop stand",
-      "desk",
-      "ergonomic",
-      "office",
-      "aluminum"
+      "wallet",
+      "leather",
+      "rfid"
     ],
     "rating": 4.8,
+    "reviewCount": 95,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.755Z",
+    "updatedAt": "2026-09-01T05:45:47.755Z"
+  },
+  {
+    "id": "a30fdeaa-f27d-40dd-9017-ff340fe025e8",
+    "name": "Hardshell Polycarbonate Carry-On Suitcase",
+    "slug": "hardshell-polycarbonate-carry-on-suitcase",
+    "sku": "ACC-HAR-9780",
+    "category": "Accessories & Travel",
+    "price": 199.99,
+    "salePrice": 159.99,
+    "effectivePrice": 159.99,
+    "stock": 35,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "20-inch FAA-approved carry-on spinner luggage with silent Hinomoto 360 wheels and TSA combination lock.",
+    "images": [
+      "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "luggage",
+      "travel",
+      "suitcase"
+    ],
+    "rating": 4.9,
+    "reviewCount": 58,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.756Z",
+    "updatedAt": "2026-09-01T05:45:47.756Z"
+  },
+  {
+    "id": "ac5c6c10-4f27-45ea-9635-31a3bc6ab7ae",
+    "name": "4K Ultra HD Action Camera 60FPS",
+    "slug": "4k-ultra-hd-action-camera-60fps",
+    "sku": "ELE-4KU-8946",
+    "category": "Electronics",
+    "price": 189.99,
+    "salePrice": 149.99,
+    "effectivePrice": 149.99,
+    "stock": 40,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Waterproof 40m sports action cam with dual color screens, EIS 6-axis stabilization, and 170-degree wide angle.",
+    "images": [
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "camera",
+      "actioncam",
+      "waterproof"
+    ],
+    "rating": 4.7,
+    "reviewCount": 33,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.756Z",
+    "updatedAt": "2026-09-01T05:45:47.756Z"
+  },
+  {
+    "id": "830c30d1-4e81-4ab9-9b15-9fd09442d100",
+    "name": "MagCharge 3-in-1 Wireless Charging Stand",
+    "slug": "magcharge-3-in-1-wireless-charging-stand",
+    "sku": "ELE-MAG-7527",
+    "category": "Electronics",
+    "price": 69.99,
+    "salePrice": 54.99,
+    "effectivePrice": 54.99,
+    "stock": 85,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "15W magnetic fast wireless charging dock for phone, smartwatch, and wireless earbuds simultaneously.",
+    "images": [
+      "https://images.unsplash.com/photo-1586816879360-004f5b0c51e3?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "charger",
+      "wireless",
+      "stand"
+    ],
+    "rating": 4.8,
+    "reviewCount": 72,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.757Z",
+    "updatedAt": "2026-09-01T05:45:47.757Z"
+  },
+  {
+    "id": "0d660f4c-cc9e-445f-aea8-3e5c23c36e96",
+    "name": "ProGaming RGB Surround Sound Headset",
+    "slug": "progaming-rgb-surround-sound-headset",
+    "sku": "ELE-PRO-8032",
+    "category": "Electronics",
+    "price": 99.99,
+    "salePrice": 79.99,
+    "effectivePrice": 79.99,
+    "stock": 65,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "7.1 virtual surround sound headset with 50mm neodymium drivers, noise-canceling mic, and cooling gel ear cushions.",
+    "images": [
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "headset",
+      "gaming",
+      "audio"
+    ],
+    "rating": 4.6,
+    "reviewCount": 51,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.757Z",
+    "updatedAt": "2026-09-01T05:45:47.757Z"
+  },
+  {
+    "id": "ffea9a9b-6665-4353-8bf5-1966022f92c6",
+    "name": "Windproof Lightweight Running Windbreaker",
+    "slug": "windproof-lightweight-running-windbreaker",
+    "sku": "APP-WIN-3575",
+    "category": "Apparel & Fashion",
+    "price": 79.99,
+    "salePrice": 59.99,
+    "effectivePrice": 59.99,
+    "stock": 75,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Ultra-packable water-repellent running jacket with reflective safety strips and breathable underarm vents.",
+    "images": [
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "jacket",
+      "running",
+      "windbreaker"
+    ],
+    "rating": 4.8,
+    "reviewCount": 44,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.758Z",
+    "updatedAt": "2026-09-01T05:45:47.758Z"
+  },
+  {
+    "id": "b912a9e8-8343-4404-b0e4-52cbe5396b8f",
+    "name": "Classic Polarized Wayfarer Sunglasses",
+    "slug": "classic-polarized-wayfarer-sunglasses",
+    "sku": "APP-CLA-5644",
+    "category": "Apparel & Fashion",
+    "price": 89,
+    "salePrice": 69,
+    "effectivePrice": 69,
+    "stock": 90,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Handcrafted acetate frames with crystal green polarized lenses providing 100% UV protection.",
+    "images": [
+      "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "sunglasses",
+      "eyewear",
+      "classic"
+    ],
+    "rating": 4.9,
     "reviewCount": 68,
     "variants": [],
-    "createdAt": "2026-08-29T03:52:49.563Z",
-    "updatedAt": "2026-08-29T03:52:49.563Z"
+    "createdAt": "2026-09-01T05:45:47.758Z",
+    "updatedAt": "2026-09-01T05:45:47.758Z"
+  },
+  {
+    "id": "f9f1eef4-48fa-4a42-a737-7d62622f8961",
+    "name": "Organic Bamboo Bed Sheet Set (Queen)",
+    "slug": "organic-bamboo-bed-sheet-set-queen",
+    "sku": "HOM-ORG-7333",
+    "category": "Home & Kitchen",
+    "price": 129.99,
+    "salePrice": 99.99,
+    "effectivePrice": 99.99,
+    "stock": 45,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "300 thread count 100% organic viscose from bamboo bed sheets with deep pockets and cooling silky texture.",
+    "images": [
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "bedding",
+      "bamboo",
+      "sheets"
+    ],
+    "rating": 4.9,
+    "reviewCount": 81,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.759Z",
+    "updatedAt": "2026-09-01T05:45:47.759Z"
+  },
+  {
+    "id": "c1271637-22fd-452e-b1b1-51834888cb76",
+    "name": "Smart Stainless Steel Electric Kettle",
+    "slug": "smart-stainless-steel-electric-kettle",
+    "sku": "HOM-SMA-7019",
+    "category": "Home & Kitchen",
+    "price": 79.99,
+    "salePrice": 64.99,
+    "effectivePrice": 64.99,
+    "stock": 70,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Gooseneck precision temperature control electric kettle with LED display and 60-minute keep-warm hold.",
+    "images": [
+      "https://images.unsplash.com/photo-1574914629385-46448b767aec?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "kettle",
+      "coffee",
+      "kitchen"
+    ],
+    "rating": 4.8,
+    "reviewCount": 63,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.759Z",
+    "updatedAt": "2026-09-01T05:45:47.759Z"
+  },
+  {
+    "id": "e8bf0161-ef13-47e7-944f-996edf24c822",
+    "name": "Non-Stick Granite Induction Frying Pan",
+    "slug": "non-stick-granite-induction-frying-pan",
+    "sku": "HOM-NON-9669",
+    "category": "Home & Kitchen",
+    "price": 49.99,
+    "salePrice": 39.99,
+    "effectivePrice": 39.99,
+    "stock": 85,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "11-inch eco-friendly granite non-stick skillet compatible with all stovetops including induction.",
+    "images": [
+      "https://images.unsplash.com/photo-1584990347449-3990666014e7?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "cookware",
+      "pan",
+      "kitchen"
+    ],
+    "rating": 4.7,
+    "reviewCount": 77,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.760Z",
+    "updatedAt": "2026-09-01T05:45:47.760Z"
+  },
+  {
+    "id": "f67db087-247f-46de-94d6-8d1109a7bc0c",
+    "name": "Acoustic Soundproofing Foam Panels (12-Pack)",
+    "slug": "acoustic-soundproofing-foam-panels-12-pack",
+    "sku": "BOO-ACO-7669",
+    "category": "Books & Office",
+    "price": 39.99,
+    "salePrice": 29.99,
+    "effectivePrice": 29.99,
+    "stock": 100,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "High-density 2-inch wedge sound absorbing foam panels for home studio, streaming, and podcast rooms.",
+    "images": [
+      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "acoustic",
+      "studio",
+      "office"
+    ],
+    "rating": 4.6,
+    "reviewCount": 39,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.760Z",
+    "updatedAt": "2026-09-01T05:45:47.761Z"
+  },
+  {
+    "id": "8e0fb47d-af7e-459e-966a-9b0d4409f1d4",
+    "name": "Wireless Bluetooth Presentation Clicker",
+    "slug": "wireless-bluetooth-presentation-clicker",
+    "sku": "BOO-WIR-3965",
+    "category": "Books & Office",
+    "price": 29.99,
+    "salePrice": 22.99,
+    "effectivePrice": 22.99,
+    "stock": 120,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Rechargeable laser pointer presentation remote with 100ft operating range and universal USB plug-and-play.",
+    "images": [
+      "https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "clicker",
+      "presentation",
+      "office"
+    ],
+    "rating": 4.8,
+    "reviewCount": 52,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.761Z",
+    "updatedAt": "2026-09-01T05:45:47.761Z"
+  },
+  {
+    "id": "165759f0-aa69-43e3-9936-59e9e654bea4",
+    "name": "Multi-Grip Pull-Up & Dip Station Tower",
+    "slug": "multi-grip-pull-up-dip-station-tower",
+    "sku": "SPO-MUL-6464",
+    "category": "Sports & Fitness",
+    "price": 199.99,
+    "salePrice": 159.99,
+    "effectivePrice": 159.99,
+    "stock": 25,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Heavy-duty steel home gym power tower for pull-ups, chin-ups, vertical knee raises, and push-ups.",
+    "images": [
+      "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "gym",
+      "fitness",
+      "pullup"
+    ],
+    "rating": 4.8,
+    "reviewCount": 47,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.762Z",
+    "updatedAt": "2026-09-01T05:45:47.762Z"
+  },
+  {
+    "id": "abdee239-b611-4a7c-98e0-553401f560c3",
+    "name": "High-Density Foam Roller for Muscle Therapy",
+    "slug": "high-density-foam-roller-for-muscle-therapy",
+    "sku": "SPO-HIG-7662",
+    "category": "Sports & Fitness",
+    "price": 24.99,
+    "salePrice": 18.99,
+    "effectivePrice": 18.99,
+    "stock": 130,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "36-inch round EPP foam roller for deep tissue massage, physical therapy, and spinal alignment.",
+    "images": [
+      "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "foamroller",
+      "recovery",
+      "fitness"
+    ],
+    "rating": 4.9,
+    "reviewCount": 84,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.763Z",
+    "updatedAt": "2026-09-01T05:45:47.763Z"
+  },
+  {
+    "id": "608732b7-3629-471b-b314-a50841c4fc24",
+    "name": "Canvas Waterproof Camera Backpack",
+    "slug": "canvas-waterproof-camera-backpack",
+    "sku": "ACC-CAN-8144",
+    "category": "Accessories & Travel",
+    "price": 89.99,
+    "salePrice": 69.99,
+    "effectivePrice": 69.99,
+    "stock": 45,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "Vintage waxed canvas photography rucksack with padded customizable dividers and tripod holder.",
+    "images": [
+      "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "backpack",
+      "camera",
+      "travel"
+    ],
+    "rating": 4.8,
+    "reviewCount": 56,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.764Z",
+    "updatedAt": "2026-09-01T05:45:47.764Z"
+  },
+  {
+    "id": "351de097-d9f5-4d3f-b266-923a495c659c",
+    "name": "Universal Global Travel Plug Adapter",
+    "slug": "universal-global-travel-plug-adapter",
+    "sku": "ACC-UNI-5254",
+    "category": "Accessories & Travel",
+    "price": 29.99,
+    "salePrice": 22.99,
+    "effectivePrice": 22.99,
+    "stock": 158,
+    "stockStatus": "IN_STOCK",
+    "lowStockThreshold": 10,
+    "description": "All-in-one international power adapter with 4 USB ports and Type-C for 150+ countries.",
+    "images": [
+      "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80"
+    ],
+    "tags": [
+      "travel",
+      "adapter",
+      "accessories"
+    ],
+    "rating": 5,
+    "reviewCount": 1,
+    "variants": [],
+    "createdAt": "2026-09-01T05:45:47.765Z",
+    "updatedAt": "2026-09-01T05:48:13.896Z"
   }
 ]

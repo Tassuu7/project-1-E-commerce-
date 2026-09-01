@@ -1,6 +1,6 @@
 /**
- * Customer Authentication & Account Management
- * Clean, Simple, Pure Customer Experience
+ * Unified Authentication & Role-Based Session Manager
+ * OmniCommerce Enterprise
  */
 
 class AuthManager {
@@ -19,6 +19,7 @@ class AuthManager {
       if (res.success && res.data) {
         this.currentUser = res.data;
         this.updateUI();
+        this.fetchNotificationCount();
         return this.currentUser;
       }
     } catch (err) {
@@ -37,6 +38,13 @@ class AuthManager {
         this.updateUI();
         this.closeAuthModal();
         showToast(`Welcome back, ${this.currentUser.name}!`, 'success');
+
+        // Role-based smart redirection
+        if (this.currentUser.role === 'ADMIN' && !window.location.pathname.includes('admin.html')) {
+          setTimeout(() => { window.location.href = '/admin.html'; }, 600);
+        } else if (this.currentUser.role === 'DELIVERY_PERSON' && !window.location.pathname.includes('delivery.html')) {
+          setTimeout(() => { window.location.href = '/delivery.html'; }, 600);
+        }
         return res.data;
       }
     } catch (err) {
@@ -45,15 +53,15 @@ class AuthManager {
     }
   }
 
-  static async register(name, email, password) {
+  static async register(name, email, password, role = 'CUSTOMER') {
     try {
-      const res = await APIClient.post('/auth/register', { name, email, password });
+      const res = await APIClient.post('/auth/register', { name, email, password, role });
       if (res.success && res.data.token) {
         localStorage.setItem('omni_token', res.data.token);
         this.currentUser = res.data.user;
         this.updateUI();
         this.closeAuthModal();
-        showToast(`Welcome to the store, ${this.currentUser.name}!`, 'success');
+        showToast(`Welcome to EverydayStore, ${this.currentUser.name}!`, 'success');
         return res.data;
       }
     } catch (err) {
@@ -72,16 +80,41 @@ class AuthManager {
     }
   }
 
+  static async fetchNotificationCount() {
+    if (!this.currentUser) return;
+    try {
+      const res = await APIClient.get('/notifications');
+      if (res.success) {
+        const unreadCount = res.unreadCount || 0;
+        const badge = document.getElementById('notif-badge-count');
+        if (badge) {
+          badge.textContent = unreadCount;
+          badge.style.display = unreadCount > 0 ? 'inline-block' : 'none';
+        }
+      }
+    } catch (err) {
+      // Ignored for guest
+    }
+  }
+
   static updateUI() {
     const authContainer = document.getElementById('nav-auth-container');
     if (!authContainer) return;
 
     if (this.currentUser) {
+      const isAdmin = this.currentUser.role === 'ADMIN';
+      const isDelivery = this.currentUser.role === 'DELIVERY_PERSON';
+
       authContainer.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 0.75rem;">
-          <span style="font-size: 0.9rem; color: #4b5563;">Hi, <strong>${this.currentUser.name}</strong></span>
+        <div style="display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap;">
+          <span style="font-size: 0.95rem; color: var(--text-main); font-weight: 600;">Hi, <strong>${this.currentUser.name}</strong></span>
+          ${isAdmin ? `<a href="/admin.html" class="btn btn-secondary btn-sm" style="font-weight: 700;">Admin Dashboard</a>` : ''}
+          ${isDelivery ? `<a href="/delivery.html" class="btn btn-secondary btn-sm" style="font-weight: 700;">Courier Portal</a>` : ''}
           <a href="/orders.html" class="btn btn-secondary btn-sm">My Orders</a>
-          <button class="btn btn-dark btn-sm" onclick="AuthManager.logout()">Sign Out</button>
+          <button class="btn btn-secondary btn-sm" onclick="showNotificationModal()" title="View Notifications" style="position: relative;">
+            Notifications <span id="notif-badge-count" class="cart-count" style="display: none; margin-left: 4px;">0</span>
+          </button>
+          <button class="btn btn-dark btn-sm" onclick="AuthManager.logout(true)">Sign Out</button>
         </div>
       `;
     } else {
@@ -99,7 +132,7 @@ class AuthManager {
       <div id="auth-modal-overlay" class="modal-overlay" onclick="if(event.target === this) AuthManager.closeAuthModal()">
         <div class="modal-dialog">
           <div class="modal-header">
-            <h3 id="auth-modal-title" class="modal-title">Customer Account</h3>
+            <h3 id="auth-modal-title" class="modal-title">Sign In</h3>
             <button class="modal-close" onclick="AuthManager.closeAuthModal()">&times;</button>
           </div>
           <div class="modal-body">
@@ -112,7 +145,7 @@ class AuthManager {
             <form id="auth-form-login" onsubmit="handleAuthSubmit(event, 'login')">
               <div class="form-group">
                 <label class="form-label">Email Address</label>
-                <input type="email" id="login-email" class="form-control" placeholder="jane@example.com" required>
+                <input type="email" id="login-email" class="form-control" placeholder="customer@example.com" required>
               </div>
               <div class="form-group">
                 <label class="form-label">Password</label>
@@ -120,10 +153,14 @@ class AuthManager {
               </div>
               <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Sign In</button>
               
-              <div style="margin-top: 1.25rem; text-align: center;">
-                <button type="button" class="btn btn-secondary btn-sm" style="width: 100%;" onclick="fillCustomerDemo()">
-                  Quick Fill Demo Account
-                </button>
+              <!-- Quick Role Select for Demo Testing -->
+              <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem; text-align: center;">Quick Demo Credentials:</div>
+                <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                  <button type="button" class="btn btn-secondary btn-sm" onclick="fillDemo('customer')">Customer</button>
+                  <button type="button" class="btn btn-secondary btn-sm" onclick="fillDemo('admin')">Store Admin</button>
+                  <button type="button" class="btn btn-secondary btn-sm" onclick="fillDemo('delivery')">Courier</button>
+                </div>
               </div>
             </form>
 
@@ -143,6 +180,25 @@ class AuthManager {
               </div>
               <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Create Account</button>
             </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notifications Modal -->
+      <div id="notif-modal-overlay" class="modal-overlay" onclick="if(event.target === this) closeNotificationModal()">
+        <div class="modal-dialog" style="max-width: 550px;">
+          <div class="modal-header">
+            <h3 class="modal-title">In-App Notifications</h3>
+            <button class="modal-close" onclick="closeNotificationModal()">&times;</button>
+          </div>
+          <div class="modal-body" style="padding: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span style="font-size: 0.9rem; color: var(--text-muted);">Real-time dispatch & status alerts</span>
+              <button class="btn btn-secondary btn-sm" onclick="markAllNotificationsRead()">Mark All Read</button>
+            </div>
+            <div id="notifications-list" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 380px; overflow-y: auto;">
+              <p style="color: var(--text-muted); text-align: center; padding: 2rem;">Loading notifications...</p>
+            </div>
           </div>
         </div>
       </div>
@@ -197,11 +253,60 @@ async function handleAuthSubmit(event, type) {
   }
 }
 
-function fillCustomerDemo() {
+function fillDemo(role) {
   const emailInput = document.getElementById('login-email');
   const passInput = document.getElementById('login-password');
-  emailInput.value = 'jane@example.com';
-  passInput.value = 'CustomerPassword123!';
+  if (role === 'customer') {
+    emailInput.value = 'customer@example.com';
+    passInput.value = 'CustomerPass2026!';
+  } else if (role === 'admin') {
+    emailInput.value = 'admin@omnicommerce.com';
+    passInput.value = 'AdminPassword2026!';
+  } else if (role === 'delivery') {
+    emailInput.value = 'delivery@omnicommerce.com';
+    passInput.value = 'DeliveryPass2026!';
+  }
+}
+
+async function showNotificationModal() {
+  const overlay = document.getElementById('notif-modal-overlay');
+  if (overlay) overlay.classList.add('active');
+
+  const listEl = document.getElementById('notifications-list');
+  try {
+    const res = await APIClient.get('/notifications');
+    if (res.success && res.data && res.data.length > 0) {
+      listEl.innerHTML = res.data.map(n => `
+        <div style="padding: 1rem; border-radius: var(--radius); border: 1px solid var(--border); background: ${n.read ? 'var(--bg-muted)' : 'var(--bg-card)'};">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem;">
+            <strong style="color: var(--text-main); font-size: 0.95rem;">${n.title}</strong>
+            <small style="color: var(--text-light); font-size: 0.75rem;">${new Date(n.createdAt).toLocaleTimeString()}</small>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.875rem; line-height: 1.4; margin: 0;">${n.message}</p>
+        </div>
+      `).join('');
+    } else {
+      listEl.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 2rem;">No new notifications.</p>';
+    }
+  } catch (err) {
+    listEl.innerHTML = `<p style="color: var(--sale-red); text-align: center; padding: 1rem;">Failed to load notifications: ${err.message}</p>`;
+  }
+}
+
+function closeNotificationModal() {
+  const overlay = document.getElementById('notif-modal-overlay');
+  if (overlay) overlay.classList.remove('active');
+}
+
+async function markAllNotificationsRead() {
+  try {
+    await APIClient.patch('/notifications/read-all');
+    showToast('All notifications marked as read', 'info');
+    AuthManager.fetchNotificationCount();
+    showNotificationModal();
+  } catch (err) {
+    // Handled
+  }
 }
 
 function showToast(message, type = 'info') {
