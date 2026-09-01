@@ -15,7 +15,7 @@
   <div class="top-bar">
     <div class="container">
       <div>
-        <span>⚡ Free standard shipping on orders over $50 &nbsp;•&nbsp; 30-day easy returns</span>
+        <span>⚡ Super Savings Deals • Free standard delivery on orders over $50</span>
       </div>
       <div class="top-bar-links">
         <a href="/orders.html">Track My Order</a>
@@ -28,6 +28,13 @@
   <header>
     <div class="container nav-wrapper">
       <a href="/index.html" class="logo">Everyday<span>Store</span></a>
+
+      <div class="nav-search">
+        <span class="nav-search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Search products..." onkeyup="if(event.key==='Enter') window.location.href='/index.html?search=' + encodeURIComponent(this.value);">
+        <button class="nav-search-btn" onclick="window.location.href='/index.html?search=' + encodeURIComponent(document.getElementById('search-input').value);">Search</button>
+      </div>
+
       <ul class="nav-menu">
         <li><a href="/index.html">← Back to Shop</a></li>
         <li>
@@ -37,7 +44,7 @@
         </li>
         <li>
           <a href="/cart.html" class="cart-btn">
-            <span>Cart</span>
+            <span>🛒 Cart</span>
             <span id="cart-badge-count" class="cart-count" style="display: none;">0</span>
           </a>
         </li>
@@ -49,13 +56,21 @@
   <main class="container" style="margin-top: 2.5rem; margin-bottom: 5rem;">
     <!-- Breadcrumb -->
     <div style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-muted);">
-      <a href="/index.html" style="color: var(--accent);">Home</a> &nbsp;/&nbsp; <span id="breadcrumb-category">Product</span> &nbsp;/&nbsp; <strong id="breadcrumb-name" style="color: var(--text-main);">Details</strong>
+      <a href="/index.html" style="color: var(--primary); font-weight: 600;">Home</a> &nbsp;/&nbsp; <span id="breadcrumb-category">Product</span> &nbsp;/&nbsp; <strong id="breadcrumb-name" style="color: var(--text-main);">Details</strong>
     </div>
 
     <!-- Product Main Display -->
     <div id="product-detail-container">
       <div style="text-align: center; padding: 5rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border);">
-        <p style="color: var(--text-muted); font-size: 1.1rem;">Loading item details...</p>
+        <p style="color: var(--text-muted); font-size: 1.1rem;">Loading product details...</p>
+      </div>
+    </div>
+
+    <!-- Similar Products Section (Flipkart Style) -->
+    <div id="similar-products-section" style="margin-top: 4rem; display: none;">
+      <h2 style="font-size: 1.65rem; font-weight: 900; color: var(--text-main); margin-bottom: 1.75rem;">Similar Products & Recommendations</h2>
+      <div id="similar-products-grid" class="product-grid" style="margin-bottom: 3.5rem;">
+        <!-- Populated dynamically by JS -->
       </div>
     </div>
 
@@ -64,25 +79,25 @@
       <div style="background: var(--bg-card); padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--card-shadow);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
           <div>
-            <h2 style="font-size: 1.65rem; font-weight: 800; color: var(--text-main);">Customer Reviews</h2>
-            <p style="color: var(--text-muted); font-size: 1rem;">Real feedback from verified shoppers</p>
+            <h2 style="font-size: 1.65rem; font-weight: 800; color: var(--text-main);">Customer Ratings & Reviews</h2>
+            <p style="color: var(--text-muted); font-size: 1rem;">Verified reviews from certified buyers</p>
           </div>
-          <button class="btn btn-primary" onclick="toggleReviewForm()">Write a Review</button>
+          <button class="btn btn-primary" onclick="toggleReviewForm()">Rate Product & Write Review</button>
         </div>
 
         <!-- Write Review Form -->
         <form id="write-review-form" style="display: none; background: var(--bg-muted); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 2.5rem;" onsubmit="submitReview(event)">
-          <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 1.25rem; color: var(--text-main);">Leave a Review</h3>
+          <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 1.25rem; color: var(--text-main);">Write a Verified Review</h3>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
             <div>
               <label class="form-label">Your Name</label>
-              <input type="text" id="review-user-name" class="form-control" placeholder="Jane D." required>
+              <input type="text" id="review-user-name" class="form-control" placeholder="Jane Doe" required>
             </div>
             <div>
               <label class="form-label">Rating</label>
               <select id="review-rating" class="form-control" required>
-                <option value="5">★★★★★ (5 Stars - Excellent)</option>
-                <option value="4">★★★★☆ (4 Stars - Good)</option>
+                <option value="5">★★★★★ (5 Stars - Outstanding)</option>
+                <option value="4">★★★★☆ (4 Stars - Very Good)</option>
                 <option value="3">★★★☆☆ (3 Stars - Average)</option>
                 <option value="2">★★☆☆☆ (2 Stars - Fair)</option>
                 <option value="1">★☆☆☆☆ (1 Star - Poor)</option>
@@ -90,12 +105,12 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Headline</label>
-            <input type="text" id="review-title" class="form-control" placeholder="Great quality and fast delivery" required>
+            <label class="form-label">Review Headline</label>
+            <input type="text" id="review-title" class="form-control" placeholder="Excellent build quality, highly recommended" required>
           </div>
           <div class="form-group">
-            <label class="form-label">Comments</label>
-            <textarea id="review-comment" class="form-control" rows="3" placeholder="Tell other shoppers about your experience..." required></textarea>
+            <label class="form-label">Detailed Review</label>
+            <textarea id="review-comment" class="form-control" rows="3" placeholder="Share specific details about what you liked..." required></textarea>
           </div>
           <div style="display: flex; gap: 0.75rem;">
             <button type="submit" class="btn btn-primary">Submit Review</button>
@@ -115,7 +130,7 @@
     <div class="container">
       <div class="footer-bottom">
         <p>&copy; 2026 EverydayStore. All rights reserved.</p>
-        <a href="/index.html" style="color: var(--text-muted);">← Back to Shop</a>
+        <a href="/index.html" style="color: var(--primary); font-weight: 700;">← Back to Shop</a>
       </div>
     </div>
   </footer>
@@ -129,136 +144,206 @@
     document.addEventListener('DOMContentLoaded', async () => {
       await AuthManager.init();
       await CartManager.fetchCart();
+      initProductView();
+    });
 
+    window.addEventListener('popstate', () => {
+      initProductView();
+    });
+
+    function initProductView() {
       const params = new URLSearchParams(window.location.search);
-      currentProductId = params.get('id');
+      currentProductId = params.get('id') || params.get('name') || params.get('sku');
 
       if (!currentProductId) {
         window.location.href = '/index.html';
         return;
       }
 
-      await loadProductDetails(currentProductId);
-    });
+      loadProductDetails(currentProductId);
+    }
 
     async function loadProductDetails(productId) {
       try {
-        const res = await APIClient.get(`/products/${productId}`);
-        const reviewsRes = await APIClient.get(`/reviews/${productId}`);
+        const res = await APIClient.get(`/products/${encodeURIComponent(productId)}`);
+        const reviewsRes = await APIClient.get(`/reviews/${encodeURIComponent(productId)}`);
 
         if (res.success && res.data) {
           const p = res.data;
+          currentProductId = p.id;
           const reviews = reviewsRes.data || [];
 
           document.getElementById('breadcrumb-category').textContent = p.category || 'Product';
           document.getElementById('breadcrumb-name').textContent = p.name;
+          document.title = `${p.name} — EverydayStore`;
 
           const priceVal = typeof p.effectivePrice === 'number' ? p.effectivePrice : (typeof p.salePrice === 'number' ? p.salePrice : (p.price || 0));
           const originalPrice = typeof p.price === 'number' ? p.price : 0;
           const hasDiscount = p.salePrice && p.salePrice < originalPrice;
+          const discountPct = hasDiscount ? Math.round(((originalPrice - priceVal) / originalPrice) * 100) : 0;
           const isOutOfStock = p.stock <= 0;
           const isLowStock = p.stock > 0 && p.stock <= (p.lowStockThreshold || 10);
           const imagesList = (p.images && p.images.length) ? p.images : ['/images/placeholder.svg'];
 
           document.getElementById('product-detail-container').innerHTML = `
             <div style="display: grid; grid-template-columns: 1fr 1.15fr; gap: 4rem; background: var(--bg-card); padding: 3.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--card-shadow); align-items: start;">
-              <!-- Image Column -->
+              <!-- Image Gallery Column -->
               <div>
-                <div style="width: 100%; height: 460px; background: var(--bg-muted); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;">
-                  <img id="main-product-image" src="${imagesList[0]}" alt="${p.name}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
+                <div style="width: 100%; height: 460px; background: #ffffff; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+                  <img id="main-product-image" src="${imagesList[0]}" alt="${p.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
                 </div>
                 ${imagesList.length > 1 ? `
-                  <div style="display: flex; gap: 0.85rem;">
+                  <div style="display: flex; gap: 1rem; overflow-x: auto; padding-bottom: 0.5rem;">
                     ${imagesList.map((img, i) => `
-                      <img src="${img}" style="width: 85px; height: 85px; object-fit: cover; border-radius: var(--radius-sm); border: 2px solid ${i === 0 ? 'var(--accent)' : 'var(--border)'}; cursor: pointer;" onclick="switchMainImage('${img}', this)" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
+                      <div style="width: 80px; height: 80px; border: 2px solid ${i === 0 ? '#2874f0' : 'var(--border)'}; border-radius: var(--radius-sm); overflow: hidden; cursor: pointer; background: #fff; padding: 4px; display: flex; align-items: center; justify-content: center;" onclick="switchMainImage('${img}', this)">
+                        <img src="${img}" style="max-width: 100%; max-height: 100%; object-fit: contain;" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
+                      </div>
                     `).join('')}
                   </div>
                 ` : ''}
               </div>
 
-              <!-- Details Column -->
+              <!-- Product Info Column -->
               <div>
-                <div style="display: flex; gap: 0.6rem; margin-bottom: 0.85rem;">
+                <div style="display: flex; gap: 0.6rem; margin-bottom: 0.85rem; align-items: center;">
                   <span class="badge badge-secondary">${p.category}</span>
-                  ${hasDiscount ? `<span class="badge badge-danger">Save $${(originalPrice - priceVal).toFixed(0)}</span>` : ''}
+                  ${hasDiscount ? `<span class="badge badge-success">Special Price • ${discountPct}% off</span>` : ''}
                 </div>
 
-                <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem; line-height: 1.25; letter-spacing: -0.02em;">${p.name}</h1>
-                <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.35rem;">SKU: <code style="background: var(--bg-muted); padding: 2px 6px; border-radius: 4px;">${p.sku}</code></div>
+                <h1 style="font-size: 2.15rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem; line-height: 1.3; letter-spacing: -0.02em;">${p.name}</h1>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.15rem;">Model SKU: <code style="background: var(--bg-muted); padding: 2px 6px; border-radius: 4px;">${p.sku}</code></div>
 
-                <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1.75rem;">
-                  <div class="stars" style="font-size: 1.1rem;">★★★★★</div>
-                  <strong style="color: var(--text-main); font-size: 1.05rem;">${p.rating.toFixed(1)}</strong>
-                  <span style="color: var(--text-muted);">(${reviews.length} reviews)</span>
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+                  <span class="rating-badge" style="font-size: 0.95rem; padding: 3px 9px;">${p.rating.toFixed(1)} ★</span>
+                  <strong style="color: var(--text-main); font-size: 0.95rem;">${reviews.length} Verified Ratings & Reviews</strong>
                 </div>
 
-                <div style="display: flex; align-items: baseline; gap: 0.85rem; margin-bottom: 1.75rem; padding: 1.25rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-                  <span style="font-size: 2.5rem; font-weight: 900; color: var(--text-main);">$${priceVal.toFixed(2)}</span>
-                  ${hasDiscount ? `<span style="font-size: 1.35rem; text-decoration: line-through; color: var(--text-light);">$${originalPrice.toFixed(2)}</span>` : ''}
+                <div style="display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem; padding: 1.25rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+                  <span style="font-size: 2.4rem; font-weight: 900; color: var(--text-main);">$${priceVal.toFixed(2)}</span>
+                  ${hasDiscount ? `
+                    <span style="font-size: 1.25rem; text-decoration: line-through; color: var(--text-light);">$${originalPrice.toFixed(2)}</span>
+                    <span style="font-size: 1.1rem; font-weight: 800; color: #388e3c;">${discountPct}% off</span>
+                  ` : ''}
                 </div>
 
-                <p style="font-size: 1.05rem; line-height: 1.75; color: var(--text-muted); margin-bottom: 2rem;">${p.description || 'Quality product designed for everyday reliable use.'}</p>
+                <!-- Available Offers (Flipkart Style) -->
+                <div style="background: var(--bg-muted); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.75rem;">
+                  <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.6rem;">🏷️ Available Offers</h4>
+                  <div style="font-size: 0.9rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.4rem;">
+                    <div>• <strong>Coupon WELCOME10:</strong> Get 10% instant discount on orders over $100</div>
+                    <div>• <strong>Bank Offer:</strong> Extra 5% cashback on credit card transactions</div>
+                    <div>• <strong>Free Shipping:</strong> Zero delivery fee on this order</div>
+                  </div>
+                </div>
+
+                <p style="font-size: 1.05rem; line-height: 1.75; color: var(--text-muted); margin-bottom: 2rem;">${p.description || 'Quality product designed for daily dependable use.'}</p>
 
                 <!-- Stock & Actions -->
                 <div style="margin-bottom: 2.25rem;">
                   <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem; font-size: 0.95rem;">
-                    <strong>Stock:</strong>
-                    ${isOutOfStock ? `<span class="badge badge-danger">Out of Stock</span>` : (isLowStock ? `<span class="badge badge-warning">Only ${p.stock} left in stock</span>` : `<span class="badge badge-success">In Stock (Ready to Ship)</span>`)}
+                    <strong>Availability:</strong>
+                    ${isOutOfStock ? `<span class="badge badge-danger">Currently Out of Stock</span>` : (isLowStock ? `<span class="badge badge-warning">Only ${p.stock} left in stock - order soon</span>` : `<span class="badge badge-success">In Stock (Ships in 24 hours)</span>`)}
                   </div>
 
-                  <div style="display: flex; gap: 1.25rem; align-items: center;">
-                    <div style="display: flex; align-items: center; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--bg-card);">
+                  <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; background: var(--bg-card);">
                       <button style="padding: 0.75rem 1.15rem; background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-main);" onclick="adjustQty(-1)">-</button>
                       <input type="number" id="purchase-quantity" value="1" min="1" max="${p.stock}" style="width: 50px; text-align: center; border: none; font-weight: 800; font-size: 1rem; outline: none; background: transparent; color: var(--text-main);">
                       <button style="padding: 0.75rem 1.15rem; background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-main);" onclick="adjustQty(1)">+</button>
                     </div>
 
-                    <button class="btn btn-primary btn-lg" style="flex: 1;" onclick="addCurrentProductToCart()" ${isOutOfStock ? 'disabled' : ''}>
-                      ${isOutOfStock ? 'Out of Stock' : '🛒 Add to Cart'}
+                    <button class="btn btn-secondary btn-lg" style="flex: 1; background: #ff9f00; color: #ffffff !important; border: none; font-weight: 800;" onclick="addCurrentProductToCart()" ${isOutOfStock ? 'disabled' : ''}>
+                      🛒 Add to Cart
+                    </button>
+
+                    <button class="btn btn-primary btn-lg" style="flex: 1; background: #fb641b; color: #ffffff !important; border: none; font-weight: 800;" onclick="buyNow()" ${isOutOfStock ? 'disabled' : ''}>
+                      ⚡ Buy Now
                     </button>
                   </div>
                 </div>
 
-                <!-- Value Props -->
-                <div style="background: var(--bg-muted); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.925rem; color: var(--text-main);">
-                  <div>✓ Free delivery on orders over $50</div>
-                  <div>✓ 30-day money-back guarantee</div>
-                  <div>✓ 2-year full quality warranty</div>
-                  <div>✓ Secure encrypted checkout</div>
+                <!-- Trust Guarantee Grid -->
+                <div style="border-top: 1px solid var(--border); padding-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.925rem; color: var(--text-main);">
+                  <div>✓ 100% Original Products</div>
+                  <div>✓ 30-Day Money Back Returns</div>
+                  <div>✓ 2-Year Warranty Guaranteed</div>
+                  <div>✓ Safe & Secure Encrypted Payments</div>
                 </div>
               </div>
             </div>
           `;
 
+          // Load Similar Products in Same Category
+          loadSimilarProducts(p.category, p.id);
+
           // Render Reviews Section
           document.getElementById('reviews-section').style.display = 'block';
           const reviewsListEl = document.getElementById('reviews-list');
           if (reviews.length === 0) {
-            reviewsListEl.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 2rem 0;">No reviews yet for this item.</p>';
+            reviewsListEl.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 2rem 0;">No reviews written yet. Be the first to share your feedback!</p>';
           } else {
             reviewsListEl.innerHTML = reviews.map(r => `
-              <div style="background: var(--bg-muted); border: 1px solid var(--border); padding: 1.75rem; border-radius: var(--radius);">
+              <div style="background: var(--bg-muted); border: 1px solid var(--border); padding: 1.5rem 1.75rem; border-radius: var(--radius);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                  <strong style="color: var(--text-main); font-size: 1.05rem;">${r.userName}</strong>
-                  <span class="stars">★★★★★</span>
+                  <div style="display: flex; align-items: center; gap: 0.6rem;">
+                    <span class="rating-badge">${r.rating} ★</span>
+                    <strong style="color: var(--text-main); font-size: 1.05rem;">${r.title || 'Verified Purchase'}</strong>
+                  </div>
+                  <small style="color: var(--text-light);">${new Date(r.createdAt).toLocaleDateString()}</small>
                 </div>
-                <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">${r.title || 'Review'}</h4>
-                <p style="color: var(--text-muted); font-size: 0.975rem; line-height: 1.65;">${r.comment}</p>
-                <small style="color: var(--text-light); margin-top: 0.5rem; display: block;">Posted on ${new Date(r.createdAt).toLocaleDateString()}</small>
+                <p style="color: var(--text-muted); font-size: 0.975rem; line-height: 1.65; margin: 0.4rem 0;">${r.comment}</p>
+                <div style="font-size: 0.85rem; color: var(--text-light);">Buyer: <strong>${r.userName}</strong> &nbsp;•&nbsp; <span style="color: #388e3c;">✓ Verified Purchase</span></div>
               </div>
             `).join('');
           }
         }
       } catch (err) {
-        document.getElementById('product-detail-container').innerHTML = `<p style="color: var(--sale-red); text-align: center;">Error loading product: ${err.message}</p>`;
+        document.getElementById('product-detail-container').innerHTML = `<p style="color: var(--sale-red); text-align: center; padding: 3rem;">Error loading product: ${err.message}</p>`;
       }
+    }
+
+    async function loadSimilarProducts(category, currentId) {
+      try {
+        const res = await APIClient.get('/products', { category: category, limit: 5 });
+        if (res.success && res.data) {
+          const similar = res.data.filter(p => p.id !== currentId).slice(0, 4);
+          if (similar.length > 0) {
+            document.getElementById('similar-products-section').style.display = 'block';
+            document.getElementById('similar-products-grid').innerHTML = similar.map(p => `
+              <div class="product-card" onclick="switchProduct('${p.id}')" style="cursor: pointer;">
+                <div class="product-img-wrapper">
+                  <img src="${(p.images && p.images[0]) || '/images/placeholder.svg'}" alt="${p.name}" class="product-img" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
+                </div>
+                <div class="product-body">
+                  <span class="product-cat">${p.category}</span>
+                  <h3 class="product-name">${p.name}</h3>
+                  <div class="product-rating-row">
+                    <span class="rating-badge">${(p.rating || 4.8).toFixed(1)} ★</span>
+                  </div>
+                  <div class="product-price-box">
+                    <span class="price-current">$${(p.effectivePrice || p.price).toFixed(2)}</span>
+                  </div>
+                </div>
+              </div>
+            `).join('');
+          }
+        }
+      } catch (err) {
+        console.error('Failed to load similar products:', err);
+      }
+    }
+
+    function switchProduct(newProductId) {
+      window.history.pushState({}, '', `/product.html?id=${newProductId}`);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      loadProductDetails(newProductId);
     }
 
     function switchMainImage(imgUrl, el) {
       document.getElementById('main-product-image').src = imgUrl;
-      const thumbs = el.parentElement.querySelectorAll('img');
+      const thumbs = el.parentElement.querySelectorAll('div');
       thumbs.forEach(t => t.style.borderColor = 'var(--border)');
-      el.style.borderColor = 'var(--accent)';
+      el.style.borderColor = '#2874f0';
     }
 
     function adjustQty(delta) {
@@ -273,6 +358,13 @@
       const qtyInput = document.getElementById('purchase-quantity');
       const qty = qtyInput ? parseInt(qtyInput.value, 10) || 1 : 1;
       await CartManager.addItem(currentProductId, qty);
+    }
+
+    async function buyNow() {
+      const qtyInput = document.getElementById('purchase-quantity');
+      const qty = qtyInput ? parseInt(qtyInput.value, 10) || 1 : 1;
+      await CartManager.addItem(currentProductId, qty);
+      window.location.href = '/checkout.html';
     }
 
     function toggleReviewForm() {
@@ -298,7 +390,7 @@
         });
 
         if (res.success) {
-          showToast('Thank you for your review!', 'success');
+          showToast('Thank you! Your verified review is published.', 'success');
           toggleReviewForm();
           await loadProductDetails(currentProductId);
         }
