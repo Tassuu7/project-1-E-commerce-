@@ -32,10 +32,10 @@
         Everyday<span>Store</span>
       </a>
 
-      <!-- Large Search Bar -->
+      <!-- EXTRA LARGE, HIGHLY VISIBLE SEARCH BAR -->
       <div class="nav-search">
         <span class="nav-search-icon">🔍</span>
-        <input type="text" id="search-input" placeholder="Search quality products..." onkeyup="handleSearch(this.value)">
+        <input type="text" id="search-input" placeholder="Search 20+ items, electronics, apparel, home, fitness..." onkeyup="handleSearch(this.value)">
       </div>
 
       <!-- Nav Links, Theme Switcher & Cart -->
@@ -66,10 +66,21 @@
         <span class="hero-tag">New Season Arrivals</span>
         <h1 class="hero-title">Quality essentials, made for everyday life.</h1>
         <p class="hero-desc">Discover dependable electronics, comfortable clothing, and practical home goods curated for honest quality and comfort.</p>
-        <div class="hero-actions">
+        
+        <div class="hero-actions" style="margin-bottom: 1.75rem;">
           <a href="#shop-catalog" class="btn btn-primary btn-lg">
             Shop All Products ↓
           </a>
+        </div>
+
+        <!-- Quick Trending Search Tags -->
+        <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+          <span style="font-size: 0.9rem; font-weight: 700; color: var(--text-muted);">Quick Search:</span>
+          <button class="badge badge-secondary" style="cursor: pointer; padding: 5px 12px; font-size: 0.85rem;" onclick="quickSearch('Laptop')">💻 Laptop</button>
+          <button class="badge badge-secondary" style="cursor: pointer; padding: 5px 12px; font-size: 0.85rem;" onclick="quickSearch('Headphones')">🎧 Headphones</button>
+          <button class="badge badge-secondary" style="cursor: pointer; padding: 5px 12px; font-size: 0.85rem;" onclick="quickSearch('Shirt')">👕 Oxford Shirt</button>
+          <button class="badge badge-secondary" style="cursor: pointer; padding: 5px 12px; font-size: 0.85rem;" onclick="quickSearch('Chair')">🛋️ Mesh Chair</button>
+          <button class="badge badge-secondary" style="cursor: pointer; padding: 5px 12px; font-size: 0.85rem;" onclick="quickSearch('Dumbbell')">⚡ Dumbbells</button>
         </div>
       </div>
 

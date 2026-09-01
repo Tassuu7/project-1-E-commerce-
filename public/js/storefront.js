@@ -1,5 +1,5 @@
 /**
- * Storefront Catalog - Clean, Natural, Human-Centric Script
+ * Storefront Catalog - Clean, Fast, Real-Time Filtering
  */
 
 let allProducts = [];
@@ -34,12 +34,6 @@ async function loadProducts() {
   const countEl = document.getElementById('catalog-count-text');
   if (!grid) return;
 
-  grid.innerHTML = `
-    <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #6b7280;">
-      <p>Loading items...</p>
-    </div>
-  `;
-
   const searchQuery = document.getElementById('search-input')?.value || '';
   const sortBy = document.getElementById('sort-select')?.value || 'newest';
 
@@ -54,7 +48,13 @@ async function loadProducts() {
     if (res.success && res.data) {
       allProducts = res.data;
       if (countEl) {
-        countEl.textContent = `Showing ${allProducts.length} items`;
+        if (searchQuery) {
+          countEl.innerHTML = `Found <strong>${allProducts.length} items</strong> for "<em>${searchQuery}</em>"`;
+        } else if (selectedCategory !== 'ALL') {
+          countEl.innerHTML = `Showing <strong>${allProducts.length} items</strong> in <em>${selectedCategory}</em>`;
+        } else {
+          countEl.innerHTML = `Showing all <strong>${allProducts.length} curated products</strong>`;
+        }
       }
       renderProductGrid(allProducts);
     }
@@ -73,9 +73,10 @@ function renderProductGrid(products) {
 
   if (!products || products.length === 0) {
     grid.innerHTML = `
-      <div style="grid-column: 1/-1; text-align: center; padding: 5rem 2rem; background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-lg);">
-        <h3 style="font-size: 1.25rem; font-weight: 700; color: #111827; margin-bottom: 0.5rem;">No items found</h3>
-        <p style="color: #6b7280; font-size: 0.95rem; margin-bottom: 1.5rem;">Try searching for something else or browse all categories.</p>
+      <div style="grid-column: 1/-1; text-align: center; padding: 5rem 2rem; background: var(--bg-card); border: 2px dashed var(--border); border-radius: var(--radius-lg);">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">No items matched your search</h3>
+        <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 1.75rem;">Try searching for something else or explore all categories.</p>
         <button class="btn btn-secondary" onclick="resetFilters()">View All Items</button>
       </div>
     `;
@@ -117,7 +118,7 @@ function renderProductGrid(products) {
           </div>
 
           <button class="btn-add-cart" onclick="CartManager.addItem('${p.id}')" ${isOutOfStock ? 'disabled' : ''}>
-            ${isOutOfStock ? 'Out of Stock' : 'Add to Cart'}
+            ${isOutOfStock ? 'Out of Stock' : '🛒 Add to Cart'}
           </button>
         </div>
       </div>
@@ -136,6 +137,19 @@ function filterByCategory(categoryName, btnElement) {
 
 function handleSearch(query) {
   loadProducts();
+}
+
+function quickSearch(term) {
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) {
+    searchInput.value = term;
+    searchInput.focus();
+    loadProducts();
+    const catalogEl = document.getElementById('shop-catalog');
+    if (catalogEl) {
+      catalogEl.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
 
 function resetFilters() {
