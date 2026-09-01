@@ -1,124 +1,85 @@
-/* OmniCommerce Enterprise - Executive Admin Control Panel Styles */
+/* EverydayStore — Clean, Simple Admin Control Panel Styles (Non-Blue, Neutral Theme) */
 
-.admin-layout {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  min-height: calc(100vh - 80px);
-  background: var(--bg-page);
+:root {
+  --admin-bg-page: #f4f4f6;        /* Soft neutral light-gray background */
+  --admin-bg-card: #ffffff;        /* Crisp white card surface */
+  --admin-bg-muted: #ececee;       /* Subtle neutral muted surface */
+  --admin-border: #e2e2e6;         /* Clean neutral border */
+  --admin-text-main: #18181b;      /* Deep charcoal primary text */
+  --admin-text-muted: #52525b;     /* Neutral secondary text */
+  --admin-text-light: #71717a;
 }
 
-@media (max-width: 900px) {
-  .admin-layout {
-    grid-template-columns: 1fr;
-  }
+[data-theme="dark"] {
+  --admin-bg-page: #121214;        /* Dark sleek neutral background */
+  --admin-bg-card: #1c1c20;        /* Dark zinc card surface */
+  --admin-bg-muted: #27272a;       /* Dark neutral muted surface */
+  --admin-border: #333338;         /* Dark subtle border */
+  --admin-text-main: #f4f4f6;      /* Crisp light primary text */
+  --admin-text-muted: #a1a1aa;     /* Neutral secondary text */
+  --admin-text-light: #71717a;
 }
 
-.admin-sidebar {
-  background: var(--bg-card);
-  color: var(--text-main);
-  padding: 2rem 1.25rem;
-  border-right: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
+body.admin-body {
+  background-color: var(--admin-bg-page) !important;
+  color: var(--admin-text-main);
 }
 
-.admin-user-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
-  background: var(--bg-muted);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  margin-bottom: 1.75rem;
-}
-
-.admin-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-full);
-  background: var(--btn-primary-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--btn-primary-text);
-}
-
-.admin-menu {
-  list-style: none;
+.admin-stat-card {
+  background: var(--admin-bg-card);
+  border: 1px solid var(--admin-border);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  transition: all 0.15s ease;
 }
 
-.admin-menu a {
-  color: var(--text-muted);
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-weight: 600;
-  font-size: 0.925rem;
-  transition: var(--transition);
+.admin-stat-card:hover {
+  border-color: #a1a1aa;
+  transform: translateY(-2px);
 }
 
-.admin-menu a:hover,
-.admin-menu a.active {
-  background: var(--btn-primary-bg);
-  color: var(--btn-primary-text);
-}
-
-.admin-content {
-  padding: 2.5rem;
-  overflow-y: auto;
-}
-
-.admin-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.admin-header h1 {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--text-main);
-  letter-spacing: -0.03em;
-}
-
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.metric-card {
-  background: var(--bg-card);
-  padding: 1.75rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--card-shadow);
-}
-
-.metric-card h3 {
-  font-size: 0.85rem;
+.admin-stat-label {
+  font-size: 0.825rem;
   font-weight: 700;
-  color: var(--text-muted);
+  color: var(--admin-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.04em;
 }
 
-.metric-card .metric-val {
-  font-size: 2rem;
+.admin-stat-value {
+  font-size: 2.1rem;
   font-weight: 800;
-  color: var(--text-main);
-  letter-spacing: -0.02em;
+  color: var(--admin-text-main);
+  line-height: 1.1;
+}
+
+.admin-section-card {
+  background: var(--admin-bg-card);
+  border: 1px solid var(--admin-border);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  margin-bottom: 2rem;
+}
+
+.admin-nav-tile {
+  padding: 0.95rem 1.25rem;
+  background: var(--admin-bg-muted);
+  border: 1px solid var(--admin-border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.admin-nav-tile:hover {
+  background: var(--admin-bg-card);
+  border-color: #a1a1aa;
+  transform: translateY(-1px);
 }
