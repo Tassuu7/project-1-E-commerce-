@@ -1,11 +1,11 @@
-/* Clean, Human-Crafted Storefront Theme */
+/* Clean, Human-Crafted Storefront Theme with Modern Rounded Corners */
 
 /* 1. Natural Hero Banner */
 .hero-section {
   width: 100%;
   background: var(--bg-muted);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: 16px;
   margin: 1.75rem 0 2.5rem;
   padding: 3.5rem 4rem;
   display: grid;
@@ -18,12 +18,12 @@
   display: inline-block;
   background: var(--border);
   color: var(--text-main);
-  font-size: 0.8rem;
+  font-size: 0.825rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 4px 10px;
-  border-radius: var(--radius-sm);
+  padding: 5px 12px;
+  border-radius: 6px;
   margin-bottom: 1.25rem;
 }
 
@@ -53,7 +53,7 @@
 .hero-img-box {
   width: 100%;
   height: 340px;
-  border-radius: var(--radius-lg);
+  border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--card-shadow);
   background: #ffffff;
@@ -87,7 +87,7 @@
   font-size: 0.925rem;
   font-weight: 600;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: 8px;
   background: var(--bg-card);
   color: var(--text-main);
   cursor: pointer;
@@ -102,11 +102,11 @@
   margin-bottom: 5rem;
 }
 
-/* 4. Natural Clean Product Card */
+/* 4. Natural Clean Product Card with Modern Smooth Curved Corners */
 .product-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 14px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -116,8 +116,8 @@
 }
 
 .product-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   border-color: #9ca3af;
 }
 
@@ -129,7 +129,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem;
+  padding: 1.5rem;
   border-bottom: 1px solid var(--border-light);
 }
 
@@ -150,19 +150,19 @@
 
 .product-tag-discount {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 12px;
+  left: 12px;
   background: var(--sale-red);
   color: #ffffff;
   font-size: 0.75rem;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: var(--radius-sm);
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 6px;
   text-transform: uppercase;
 }
 
 .product-body {
-  padding: 1.25rem;
+  padding: 1.35rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -203,8 +203,8 @@
   color: var(--text-main);
   font-size: 0.8rem;
   font-weight: 700;
-  padding: 2px 7px;
-  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+  border-radius: 6px;
 }
 
 .product-rating-row {
@@ -249,7 +249,7 @@
 .delivery-tag {
   font-size: 0.8rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 1.15rem;
 }
 
 .btn-add-cart {
@@ -257,9 +257,9 @@
   background: #111827;
   color: #ffffff;
   font-weight: 700;
-  font-size: 0.925rem;
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius);
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
   transition: var(--transition);
@@ -284,7 +284,7 @@
 .value-props-section {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: 16px;
   padding: 3.5rem;
   margin: 3.5rem 0 5rem;
 }
