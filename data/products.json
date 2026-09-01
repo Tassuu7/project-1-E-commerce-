@@ -909,7 +909,7 @@
     "price": 159.99,
     "salePrice": 129.99,
     "effectivePrice": 129.99,
-    "stock": 45,
+    "stock": 44,
     "stockStatus": "IN_STOCK",
     "lowStockThreshold": 10,
     "description": "Lightweight marathon racing shoes with full-length carbon fiber propulsion plate and responsive nitrogen-infused foam.",
@@ -925,7 +925,7 @@
     "reviewCount": 59,
     "variants": [],
     "createdAt": "2026-09-01T05:45:47.753Z",
-    "updatedAt": "2026-09-01T05:45:47.753Z"
+    "updatedAt": "2026-09-01T07:22:04.489Z"
   },
   {
     "id": "1f5c086c-c400-49c7-87a2-d51273456f75",
@@ -1018,7 +1018,7 @@
     "price": 289,
     "salePrice": 229,
     "effectivePrice": 229,
-    "stock": 25,
+    "stock": 23,
     "stockStatus": "IN_STOCK",
     "lowStockThreshold": 10,
     "description": "Sleek Bauhaus automatic watch featuring Japanese Miyota movement, sapphire crystal, and genuine leather strap.",
@@ -1034,7 +1034,7 @@
     "reviewCount": 39,
     "variants": [],
     "createdAt": "2026-09-01T05:45:47.754Z",
-    "updatedAt": "2026-09-01T05:45:47.754Z"
+    "updatedAt": "2026-09-01T08:17:33.594Z"
   },
   {
     "id": "c0730cb9-6576-412f-ba1f-8d6b4f9af97f",
@@ -1099,7 +1099,7 @@
     "price": 199.99,
     "salePrice": 159.99,
     "effectivePrice": 159.99,
-    "stock": 35,
+    "stock": 33,
     "stockStatus": "IN_STOCK",
     "lowStockThreshold": 10,
     "description": "20-inch FAA-approved carry-on spinner luggage with silent Hinomoto 360 wheels and TSA combination lock.",
@@ -1115,7 +1115,7 @@
     "reviewCount": 58,
     "variants": [],
     "createdAt": "2026-09-01T05:45:47.756Z",
-    "updatedAt": "2026-09-01T05:45:47.756Z"
+    "updatedAt": "2026-09-01T07:19:15.239Z"
   },
   {
     "id": "ac5c6c10-4f27-45ea-9635-31a3bc6ab7ae",
@@ -1234,7 +1234,7 @@
     "price": 89,
     "salePrice": 69,
     "effectivePrice": 69,
-    "stock": 90,
+    "stock": 89,
     "stockStatus": "IN_STOCK",
     "lowStockThreshold": 10,
     "description": "Handcrafted acetate frames with crystal green polarized lenses providing 100% UV protection.",
@@ -1250,7 +1250,7 @@
     "reviewCount": 68,
     "variants": [],
     "createdAt": "2026-09-01T05:45:47.758Z",
-    "updatedAt": "2026-09-01T05:45:47.758Z"
+    "updatedAt": "2026-09-01T07:07:54.759Z"
   },
   {
     "id": "f9f1eef4-48fa-4a42-a737-7d62622f8961",
@@ -1261,7 +1261,7 @@
     "price": 129.99,
     "salePrice": 99.99,
     "effectivePrice": 99.99,
-    "stock": 45,
+    "stock": 44,
     "stockStatus": "IN_STOCK",
     "lowStockThreshold": 10,
     "description": "300 thread count 100% organic viscose from bamboo bed sheets with deep pockets and cooling silky texture.",
@@ -1277,7 +1277,7 @@
     "reviewCount": 81,
     "variants": [],
     "createdAt": "2026-09-01T05:45:47.759Z",
-    "updatedAt": "2026-09-01T05:45:47.759Z"
+    "updatedAt": "2026-09-01T07:13:06.054Z"
   },
   {
     "id": "c1271637-22fd-452e-b1b1-51834888cb76",
@@ -1477,7 +1477,7 @@
     "price": 29.99,
     "salePrice": 22.99,
     "effectivePrice": 22.99,
-    "stock": 156,
+    "stock": 152,
     "stockStatus": "IN_STOCK",
     "lowStockThreshold": 10,
     "description": "All-in-one international power adapter with 4 USB ports and Type-C for 150+ countries.",
@@ -1490,9 +1490,9 @@
       "accessories"
     ],
     "rating": 5,
-    "reviewCount": 2,
+    "reviewCount": 4,
     "variants": [],
     "createdAt": "2026-09-01T05:45:47.765Z",
-    "updatedAt": "2026-09-01T07:03:31.221Z"
+    "updatedAt": "2026-09-01T08:22:24.164Z"
   }
 ]

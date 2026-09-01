@@ -64,5 +64,16 @@
     "phone": "",
     "createdAt": "2026-09-01T05:51:00.356Z",
     "updatedAt": "2026-09-01T05:51:00.356Z"
+  },
+  {
+    "id": "c980d849-0b87-46e9-82bb-4c4fa5cead6d",
+    "name": "tasleema",
+    "email": "shaiktasleemasadiya@mail.com",
+    "passwordHash": "7e70d4b09283c7addf3588d54dc8f9131d973538f5cf61de672514b0a850ef27",
+    "role": "CUSTOMER",
+    "addresses": [],
+    "phone": "",
+    "createdAt": "2026-09-01T07:17:23.449Z",
+    "updatedAt": "2026-09-01T07:17:23.449Z"
   }
 ]

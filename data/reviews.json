@@ -118,5 +118,29 @@
     "verifiedPurchase": true,
     "status": "APPROVED",
     "createdAt": "2026-09-01T07:03:31.220Z"
+  },
+  {
+    "id": "6a1d115a-64fa-43a1-b619-f66f71523178",
+    "productId": "351de097-d9f5-4d3f-b266-923a495c659c",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "userName": "Customer User",
+    "rating": 5,
+    "title": "Perfect condition and fast delivery",
+    "comment": "Delivered promptly by the courier. Excellent product!",
+    "verifiedPurchase": true,
+    "status": "APPROVED",
+    "createdAt": "2026-09-01T07:34:01.443Z"
+  },
+  {
+    "id": "aae7f749-3540-4d59-9385-981ef5a60a40",
+    "productId": "351de097-d9f5-4d3f-b266-923a495c659c",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "userName": "Customer User",
+    "rating": 5,
+    "title": "Perfect condition and fast delivery",
+    "comment": "Delivered promptly by the courier. Excellent product!",
+    "verifiedPurchase": true,
+    "status": "APPROVED",
+    "createdAt": "2026-09-01T08:22:24.162Z"
   }
 ]

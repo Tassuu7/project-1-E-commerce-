@@ -207,7 +207,7 @@
     "items": [],
     "appliedCoupon": null,
     "createdAt": "2026-09-01T06:46:54.451Z",
-    "updatedAt": "2026-09-01T06:46:54.451Z"
+    "updatedAt": "2026-09-01T07:07:54.783Z"
   },
   {
     "id": "test_suite_cart_1788246211158",
@@ -216,5 +216,69 @@
     "appliedCoupon": null,
     "createdAt": "2026-09-01T07:03:31.162Z",
     "updatedAt": "2026-09-01T07:03:31.188Z"
+  },
+  {
+    "id": "cart_gfx5fagao",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T07:07:55.418Z",
+    "updatedAt": "2026-09-01T07:13:06.070Z"
+  },
+  {
+    "id": "cart_w9jhvtvkx",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T07:13:06.649Z",
+    "updatedAt": "2026-09-01T07:17:47.199Z"
+  },
+  {
+    "id": "cart_4bvxq1gd2",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T07:17:47.824Z",
+    "updatedAt": "2026-09-01T07:19:15.252Z"
+  },
+  {
+    "id": "cart_3oa8zttbp",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T07:19:15.860Z",
+    "updatedAt": "2026-09-01T07:22:04.508Z"
+  },
+  {
+    "id": "cart_ikl30ysrh",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T07:22:05.133Z",
+    "updatedAt": "2026-09-01T08:17:33.621Z"
+  },
+  {
+    "id": "test_suite_cart_1788248041381",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T07:34:01.383Z",
+    "updatedAt": "2026-09-01T07:34:01.417Z"
+  },
+  {
+    "id": "cart_7t9leb05x",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T08:17:34.224Z",
+    "updatedAt": "2026-09-01T08:17:34.224Z"
+  },
+  {
+    "id": "test_suite_cart_1788250944088",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T08:22:24.089Z",
+    "updatedAt": "2026-09-01T08:22:24.113Z"
   }
 ]
