@@ -24,28 +24,34 @@ class Order {
     paymentStatus = PAYMENT_STATUS.PENDING,
     orderStatus = ORDER_STATUS.PENDING,
     trackingNumber = null,
+    deliveryPersonId = null,
+    deliveryPersonName = null,
+    deliveredAt = null,
     statusHistory = [],
     createdAt = new Date().toISOString(),
     updatedAt = new Date().toISOString()
-  }) {
+  } = {}) {
     this.id = id;
     this.orderNumber = orderNumber;
     this.userId = userId;
     this.customerName = customerName;
     this.customerEmail = customerEmail;
     this.items = items;
-    this.subtotal = parseFloat(subtotal);
-    this.discountAmount = parseFloat(discountAmount);
-    this.taxAmount = parseFloat(taxAmount);
-    this.shippingAmount = parseFloat(shippingAmount);
-    this.grandTotal = parseFloat(grandTotal);
+    this.subtotal = parseFloat(subtotal || 0);
+    this.discountAmount = parseFloat(discountAmount || 0);
+    this.taxAmount = parseFloat(taxAmount || 0);
+    this.shippingAmount = parseFloat(shippingAmount || 0);
+    this.grandTotal = parseFloat(grandTotal || 0);
     this.shippingAddress = shippingAddress;
     this.paymentMethod = paymentMethod;
     this.paymentStatus = paymentStatus;
-    this.orderStatus = orderStatus;
+    this.orderStatus = orderStatus || ORDER_STATUS.PENDING;
     this.trackingNumber = trackingNumber;
+    this.deliveryPersonId = deliveryPersonId;
+    this.deliveryPersonName = deliveryPersonName;
+    this.deliveredAt = deliveredAt;
     this.statusHistory = statusHistory.length ? statusHistory : [
-      { status: orderStatus, timestamp: createdAt, note: 'Order created.' }
+      { status: this.orderStatus, timestamp: createdAt, note: 'Order created.' }
     ];
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
@@ -53,13 +59,21 @@ class Order {
 
   static getValidTransitions(currentStatus) {
     const transitions = {
-      [ORDER_STATUS.PENDING]: [ORDER_STATUS.PAID, ORDER_STATUS.CANCELLED],
-      [ORDER_STATUS.PAID]: [ORDER_STATUS.PROCESSING, ORDER_STATUS.CANCELLED, ORDER_STATUS.REFUNDED],
-      [ORDER_STATUS.PROCESSING]: [ORDER_STATUS.SHIPPED, ORDER_STATUS.CANCELLED],
-      [ORDER_STATUS.SHIPPED]: [ORDER_STATUS.DELIVERED, ORDER_STATUS.REFUNDED],
-      [ORDER_STATUS.DELIVERED]: [ORDER_STATUS.REFUNDED],
+      [ORDER_STATUS.PENDING]: [ORDER_STATUS.PAID, ORDER_STATUS.CONFIRMED, ORDER_STATUS.CANCELLED],
+      [ORDER_STATUS.PENDING_PAYMENT]: [ORDER_STATUS.PAID, ORDER_STATUS.CONFIRMED, ORDER_STATUS.CANCELLED],
+      [ORDER_STATUS.PAID]: [ORDER_STATUS.CONFIRMED, ORDER_STATUS.PROCESSING, ORDER_STATUS.PACKED, ORDER_STATUS.ASSIGNED_TO_DELIVERY, ORDER_STATUS.CANCELLED, ORDER_STATUS.REFUNDED],
+      [ORDER_STATUS.CONFIRMED]: [ORDER_STATUS.PROCESSING, ORDER_STATUS.PACKED, ORDER_STATUS.READY_FOR_DISPATCH, ORDER_STATUS.ASSIGNED_TO_DELIVERY, ORDER_STATUS.CANCELLED],
+      [ORDER_STATUS.PROCESSING]: [ORDER_STATUS.PACKED, ORDER_STATUS.READY_FOR_DISPATCH, ORDER_STATUS.ASSIGNED_TO_DELIVERY, ORDER_STATUS.SHIPPED, ORDER_STATUS.OUT_FOR_DELIVERY, ORDER_STATUS.CANCELLED],
+      [ORDER_STATUS.PACKED]: [ORDER_STATUS.READY_FOR_DISPATCH, ORDER_STATUS.ASSIGNED_TO_DELIVERY, ORDER_STATUS.SHIPPED, ORDER_STATUS.OUT_FOR_DELIVERY, ORDER_STATUS.CANCELLED],
+      [ORDER_STATUS.READY_FOR_DISPATCH]: [ORDER_STATUS.ASSIGNED_TO_DELIVERY, ORDER_STATUS.OUT_FOR_DELIVERY, ORDER_STATUS.CANCELLED],
+      [ORDER_STATUS.ASSIGNED_TO_DELIVERY]: [ORDER_STATUS.OUT_FOR_DELIVERY, ORDER_STATUS.DELIVERED, ORDER_STATUS.CANCELLED],
+      [ORDER_STATUS.OUT_FOR_DELIVERY]: [ORDER_STATUS.DELIVERED, ORDER_STATUS.CANCELLED],
+      [ORDER_STATUS.SHIPPED]: [ORDER_STATUS.OUT_FOR_DELIVERY, ORDER_STATUS.DELIVERED, ORDER_STATUS.REFUNDED],
+      [ORDER_STATUS.DELIVERED]: [ORDER_STATUS.RETURN_REQUESTED, ORDER_STATUS.REFUNDED],
       [ORDER_STATUS.CANCELLED]: [],
-      [ORDER_STATUS.REFUNDED]: []
+      [ORDER_STATUS.REFUNDED]: [],
+      [ORDER_STATUS.RETURN_REQUESTED]: [ORDER_STATUS.RETURNED, ORDER_STATUS.REFUNDED],
+      [ORDER_STATUS.RETURNED]: [ORDER_STATUS.REFUNDED]
     };
     return transitions[currentStatus] || [];
   }

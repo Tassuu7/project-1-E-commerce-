@@ -37,7 +37,7 @@
     },
     "paymentMethod": "STRIPE_CREDIT_CARD",
     "paymentStatus": "CAPTURED",
-    "orderStatus": "DELIVERED",
+    "orderStatus": "ASSIGNED_TO_DELIVERY",
     "trackingNumber": "FE134432601942",
     "statusHistory": [
       {
@@ -47,7 +47,7 @@
       }
     ],
     "createdAt": "2026-08-31T15:31:53.718Z",
-    "updatedAt": "2026-08-31T15:31:53.718Z"
+    "updatedAt": "2026-09-01T06:48:20.780Z"
   },
   {
     "id": "dd7aca8e-db49-4248-ae8e-dfd39e012bec",
@@ -79,7 +79,7 @@
     },
     "paymentMethod": "PAYPAL",
     "paymentStatus": "CAPTURED",
-    "orderStatus": "SHIPPED",
+    "orderStatus": "ASSIGNED_TO_DELIVERY",
     "trackingNumber": "UP987112020325",
     "statusHistory": [
       {
@@ -89,7 +89,7 @@
       }
     ],
     "createdAt": "2026-08-31T15:31:53.718Z",
-    "updatedAt": "2026-08-31T15:31:53.718Z"
+    "updatedAt": "2026-09-01T06:00:10.717Z"
   },
   {
     "id": "87a91558-055d-4966-9a6a-8fa6bcb18202",
@@ -121,7 +121,7 @@
     },
     "paymentMethod": "STRIPE_CREDIT_CARD",
     "paymentStatus": "CAPTURED",
-    "orderStatus": "PAID",
+    "orderStatus": "ASSIGNED_TO_DELIVERY",
     "trackingNumber": "FE834183559558",
     "statusHistory": [
       {
@@ -136,7 +136,7 @@
       }
     ],
     "createdAt": "2026-09-01T05:07:24.403Z",
-    "updatedAt": "2026-09-01T05:07:24.409Z"
+    "updatedAt": "2026-09-01T06:00:14.275Z"
   },
   {
     "id": "56b44fe8-5005-4301-9788-e3e2ab27e6cd",
@@ -375,5 +375,131 @@
     ],
     "createdAt": "2026-09-01T05:48:13.847Z",
     "updatedAt": "2026-09-01T05:48:13.888Z"
+  },
+  {
+    "id": "95f159e8-f890-4155-9741-c49aa2febb30",
+    "orderNumber": "ORD-20260901-86F196",
+    "userId": "a808c58c-e09a-414f-b6c8-a8bc9d277da0",
+    "customerName": "tasleema",
+    "customerEmail": "shaiktasleemasadiya7@gmail.com",
+    "items": [
+      {
+        "productId": "c1271637-22fd-452e-b1b1-51834888cb76",
+        "name": "Smart Stainless Steel Electric Kettle",
+        "price": 64.99,
+        "quantity": 1,
+        "sku": "HOM-SMA-7019",
+        "image": "https://images.unsplash.com/photo-1574914629385-46448b767aec?auto=format&fit=crop&w=800&q=80"
+      }
+    ],
+    "subtotal": 64.99,
+    "discountAmount": 0,
+    "taxAmount": 5.2,
+    "shippingAmount": 9.99,
+    "grandTotal": 80.18,
+    "shippingAddress": {
+      "street": "123,market road",
+      "city": "narasaropet",
+      "state": "Ap",
+      "zip": "522601",
+      "country": "USA"
+    },
+    "paymentMethod": "STRIPE_CREDIT_CARD",
+    "paymentStatus": "CAPTURED",
+    "orderStatus": "PAID",
+    "trackingNumber": "FE726342633065",
+    "statusHistory": [
+      {
+        "status": "PAID",
+        "timestamp": "2026-09-01T05:51:27.949Z",
+        "note": "Order created."
+      }
+    ],
+    "createdAt": "2026-09-01T05:51:27.949Z",
+    "updatedAt": "2026-09-01T05:51:27.957Z"
+  },
+  {
+    "id": "d74a341b-4499-4f05-a642-6c6275cd864a",
+    "orderNumber": "ORD-20260901-3ED887",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "customerName": "Customer User",
+    "customerEmail": "customer@example.com",
+    "items": [
+      {
+        "productId": "f67db087-247f-46de-94d6-8d1109a7bc0c",
+        "name": "Acoustic Soundproofing Foam Panels (12-Pack)",
+        "price": 29.99,
+        "quantity": 1,
+        "sku": "BOO-ACO-7669",
+        "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80"
+      }
+    ],
+    "subtotal": 29.99,
+    "discountAmount": 0,
+    "taxAmount": 2.4,
+    "shippingAmount": 9.99,
+    "grandTotal": 42.38,
+    "shippingAddress": {
+      "street": "123,market road",
+      "city": "narasaropet",
+      "state": "Ap",
+      "zip": "522601",
+      "country": "USA"
+    },
+    "paymentMethod": "CASH_ON_DELIVERY",
+    "paymentStatus": "CAPTURED",
+    "orderStatus": "PAID",
+    "trackingNumber": "FE655965927283",
+    "statusHistory": [
+      {
+        "status": "PAID",
+        "timestamp": "2026-09-01T06:46:53.800Z",
+        "note": "Order created."
+      }
+    ],
+    "createdAt": "2026-09-01T06:46:53.800Z",
+    "updatedAt": "2026-09-01T06:46:53.811Z"
+  },
+  {
+    "id": "e526dd60-6bba-4f2e-bab2-59fdd73ef638",
+    "orderNumber": "ORD-20260901-827BD8",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "customerName": "Customer User",
+    "customerEmail": "customer@example.com",
+    "items": [
+      {
+        "productId": "351de097-d9f5-4d3f-b266-923a495c659c",
+        "name": "Universal Global Travel Plug Adapter",
+        "price": 22.99,
+        "quantity": 2,
+        "sku": "ACC-UNI-5254",
+        "image": "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80"
+      }
+    ],
+    "subtotal": 45.98,
+    "discountAmount": 4.6,
+    "taxAmount": 4.18,
+    "shippingAmount": 9.99,
+    "grandTotal": 55.55,
+    "shippingAddress": {
+      "street": "100 University Way",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98105",
+      "country": "USA"
+    },
+    "paymentMethod": "STRIPE_CREDIT_CARD",
+    "paymentStatus": "CAPTURED",
+    "orderStatus": "DELIVERED",
+    "trackingNumber": "FE390012385196",
+    "statusHistory": [
+      {
+        "status": "PAID",
+        "timestamp": "2026-09-01T07:03:31.180Z",
+        "note": "Order created."
+      }
+    ],
+    "createdAt": "2026-09-01T07:03:31.180Z",
+    "updatedAt": "2026-09-01T07:03:31.215Z"
   }
 ]

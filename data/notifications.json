@@ -21,7 +21,7 @@
     "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
     "read": true,
     "createdAt": "2026-09-01T05:48:13.854Z",
-    "updatedAt": "2026-09-01T05:48:13.915Z"
+    "updatedAt": "2026-09-01T07:03:31.239Z"
   },
   {
     "id": "20db52f5-968d-4a19-9454-783316f38f07",
@@ -57,7 +57,7 @@
     "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
     "read": true,
     "createdAt": "2026-09-01T05:48:13.874Z",
-    "updatedAt": "2026-09-01T05:48:13.914Z"
+    "updatedAt": "2026-09-01T07:03:31.239Z"
   },
   {
     "id": "dc987f21-3923-4fec-a459-0360272e9364",
@@ -69,7 +69,7 @@
     "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
     "read": true,
     "createdAt": "2026-09-01T05:48:13.881Z",
-    "updatedAt": "2026-09-01T05:48:13.914Z"
+    "updatedAt": "2026-09-01T07:03:31.239Z"
   },
   {
     "id": "41fd87dd-3c1c-4763-b378-022477ff78f9",
@@ -81,6 +81,222 @@
     "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
     "read": true,
     "createdAt": "2026-09-01T05:48:13.889Z",
-    "updatedAt": "2026-09-01T05:48:13.913Z"
+    "updatedAt": "2026-09-01T07:03:31.238Z"
+  },
+  {
+    "id": "7d807d51-3ca1-4720-bbd6-af91ccee0c26",
+    "userId": "a808c58c-e09a-414f-b6c8-a8bc9d277da0",
+    "role": "CUSTOMER",
+    "type": "ORDER_PLACED",
+    "title": "Order Confirmed",
+    "message": "Your order ORD-20260901-86F196 ($80.18) has been placed and confirmed.",
+    "orderId": "95f159e8-f890-4155-9741-c49aa2febb30",
+    "read": false,
+    "createdAt": "2026-09-01T05:51:27.960Z",
+    "updatedAt": "2026-09-01T05:51:27.960Z"
+  },
+  {
+    "id": "c1d5a4e4-ceb9-4fc5-95d3-5d3b002315d4",
+    "userId": null,
+    "role": "ADMIN",
+    "type": "ORDER_PLACED",
+    "title": "New Customer Order Placed",
+    "message": "Order ORD-20260901-86F196 received from tasleema ($80.18).",
+    "orderId": "95f159e8-f890-4155-9741-c49aa2febb30",
+    "read": false,
+    "createdAt": "2026-09-01T05:51:27.963Z",
+    "updatedAt": "2026-09-01T05:51:27.963Z"
+  },
+  {
+    "id": "8b38ebb9-6f82-4c31-94ec-b8cc1672115b",
+    "userId": "4668e540-62ca-4cee-b6e2-b7e3c71e90d7",
+    "role": "DELIVERY_PERSON",
+    "type": "DELIVERY_ASSIGNED",
+    "title": "New Delivery Assigned",
+    "message": "You have been assigned to deliver order ORD-20260831-56634B to San Francisco.",
+    "orderId": "e33afac5-a0c2-4639-8cfe-3b6ee911a929",
+    "read": false,
+    "createdAt": "2026-09-01T06:00:04.878Z",
+    "updatedAt": "2026-09-01T06:00:04.878Z"
+  },
+  {
+    "id": "d296db70-1698-4e75-9887-814458417c12",
+    "userId": "68db7655-556c-4633-a295-45cd2c59225b",
+    "role": "CUSTOMER",
+    "type": "ORDER_DISPATCHED",
+    "title": "Order Assigned for Dispatch",
+    "message": "Your order ORD-20260831-56634B has been assigned to courier Alex Courier for dispatch.",
+    "orderId": "e33afac5-a0c2-4639-8cfe-3b6ee911a929",
+    "read": false,
+    "createdAt": "2026-09-01T06:00:04.880Z",
+    "updatedAt": "2026-09-01T06:00:04.880Z"
+  },
+  {
+    "id": "ac04eea6-045a-4c20-b86e-54991892c4b4",
+    "userId": "4668e540-62ca-4cee-b6e2-b7e3c71e90d7",
+    "role": "DELIVERY_PERSON",
+    "type": "DELIVERY_ASSIGNED",
+    "title": "New Delivery Assigned",
+    "message": "You have been assigned to deliver order ORD-20260831-1FD1D9 to New York.",
+    "orderId": "dd7aca8e-db49-4248-ae8e-dfd39e012bec",
+    "read": false,
+    "createdAt": "2026-09-01T06:00:10.721Z",
+    "updatedAt": "2026-09-01T06:00:10.721Z"
+  },
+  {
+    "id": "956f89b0-cac1-4ae1-96d0-3b0c2634a81b",
+    "userId": "68db7655-556c-4633-a295-45cd2c59225b",
+    "role": "CUSTOMER",
+    "type": "ORDER_DISPATCHED",
+    "title": "Order Assigned for Dispatch",
+    "message": "Your order ORD-20260831-1FD1D9 has been assigned to courier Alex Courier for dispatch.",
+    "orderId": "dd7aca8e-db49-4248-ae8e-dfd39e012bec",
+    "read": false,
+    "createdAt": "2026-09-01T06:00:10.723Z",
+    "updatedAt": "2026-09-01T06:00:10.724Z"
+  },
+  {
+    "id": "bf841903-c8a1-4561-bdbb-b1336c1e15c8",
+    "userId": "ae1f8569-a3b8-4345-ba81-e0481093346c",
+    "role": "DELIVERY_PERSON",
+    "type": "DELIVERY_ASSIGNED",
+    "title": "New Delivery Assigned",
+    "message": "You have been assigned to deliver order ORD-20260901-734180 to Springfield.",
+    "orderId": "87a91558-055d-4966-9a6a-8fa6bcb18202",
+    "read": false,
+    "createdAt": "2026-09-01T06:00:14.277Z",
+    "updatedAt": "2026-09-01T06:00:14.277Z"
+  },
+  {
+    "id": "513803be-d19f-451b-bf34-8185ec3a35b6",
+    "userId": "GUEST",
+    "role": "CUSTOMER",
+    "type": "ORDER_DISPATCHED",
+    "title": "Order Assigned for Dispatch",
+    "message": "Your order ORD-20260901-734180 has been assigned to courier Sam Dispatch for dispatch.",
+    "orderId": "87a91558-055d-4966-9a6a-8fa6bcb18202",
+    "read": false,
+    "createdAt": "2026-09-01T06:00:14.279Z",
+    "updatedAt": "2026-09-01T06:00:14.279Z"
+  },
+  {
+    "id": "048174a7-6e08-41ac-b221-7b2f40f233ba",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "ORDER_PLACED",
+    "title": "Order Confirmed",
+    "message": "Your order ORD-20260901-3ED887 ($42.38) has been placed and confirmed.",
+    "orderId": "d74a341b-4499-4f05-a642-6c6275cd864a",
+    "read": true,
+    "createdAt": "2026-09-01T06:46:53.814Z",
+    "updatedAt": "2026-09-01T07:03:31.238Z"
+  },
+  {
+    "id": "c7903c9d-057b-49e6-b7c3-6f16efb9380c",
+    "userId": null,
+    "role": "ADMIN",
+    "type": "ORDER_PLACED",
+    "title": "New Customer Order Placed",
+    "message": "Order ORD-20260901-3ED887 received from Customer User ($42.38).",
+    "orderId": "d74a341b-4499-4f05-a642-6c6275cd864a",
+    "read": false,
+    "createdAt": "2026-09-01T06:46:53.817Z",
+    "updatedAt": "2026-09-01T06:46:53.817Z"
+  },
+  {
+    "id": "72e5013a-26cf-4108-ad86-3d533582b6c8",
+    "userId": "4668e540-62ca-4cee-b6e2-b7e3c71e90d7",
+    "role": "DELIVERY_PERSON",
+    "type": "DELIVERY_ASSIGNED",
+    "title": "New Delivery Assigned",
+    "message": "You have been assigned to deliver order ORD-20260831-56634B to San Francisco.",
+    "orderId": "e33afac5-a0c2-4639-8cfe-3b6ee911a929",
+    "read": false,
+    "createdAt": "2026-09-01T06:48:20.782Z",
+    "updatedAt": "2026-09-01T06:48:20.782Z"
+  },
+  {
+    "id": "02643fab-3fb0-48a4-b3b7-faf197276ff5",
+    "userId": "68db7655-556c-4633-a295-45cd2c59225b",
+    "role": "CUSTOMER",
+    "type": "ORDER_DISPATCHED",
+    "title": "Order Assigned for Dispatch",
+    "message": "Your order ORD-20260831-56634B has been assigned to courier Alex Courier for dispatch.",
+    "orderId": "e33afac5-a0c2-4639-8cfe-3b6ee911a929",
+    "read": false,
+    "createdAt": "2026-09-01T06:48:20.784Z",
+    "updatedAt": "2026-09-01T06:48:20.784Z"
+  },
+  {
+    "id": "975929c1-f0e6-4a63-b5a6-21f147ccd924",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "ORDER_PLACED",
+    "title": "Order Confirmed",
+    "message": "Your order ORD-20260901-827BD8 ($55.55) has been placed and confirmed.",
+    "orderId": "e526dd60-6bba-4f2e-bab2-59fdd73ef638",
+    "read": true,
+    "createdAt": "2026-09-01T07:03:31.186Z",
+    "updatedAt": "2026-09-01T07:03:31.237Z"
+  },
+  {
+    "id": "e908718b-9dff-4a4a-879c-08b578951a1e",
+    "userId": null,
+    "role": "ADMIN",
+    "type": "ORDER_PLACED",
+    "title": "New Customer Order Placed",
+    "message": "Order ORD-20260901-827BD8 received from Customer User ($55.55).",
+    "orderId": "e526dd60-6bba-4f2e-bab2-59fdd73ef638",
+    "read": false,
+    "createdAt": "2026-09-01T07:03:31.187Z",
+    "updatedAt": "2026-09-01T07:03:31.187Z"
+  },
+  {
+    "id": "7b88ba6b-c0c0-4122-921b-2a2a42acb22f",
+    "userId": "4668e540-62ca-4cee-b6e2-b7e3c71e90d7",
+    "role": "DELIVERY_PERSON",
+    "type": "DELIVERY_ASSIGNED",
+    "title": "New Delivery Assigned",
+    "message": "You have been assigned to deliver order ORD-20260901-827BD8 to Seattle.",
+    "orderId": "e526dd60-6bba-4f2e-bab2-59fdd73ef638",
+    "read": false,
+    "createdAt": "2026-09-01T07:03:31.202Z",
+    "updatedAt": "2026-09-01T07:03:31.202Z"
+  },
+  {
+    "id": "bdbc9b29-13e6-4f50-998c-9d6bc2e67ab2",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "ORDER_DISPATCHED",
+    "title": "Order Assigned for Dispatch",
+    "message": "Your order ORD-20260901-827BD8 has been assigned to courier Alex Courier for dispatch.",
+    "orderId": "e526dd60-6bba-4f2e-bab2-59fdd73ef638",
+    "read": true,
+    "createdAt": "2026-09-01T07:03:31.204Z",
+    "updatedAt": "2026-09-01T07:03:31.236Z"
+  },
+  {
+    "id": "ad22cb01-3cf2-4428-8a07-1ee59d389c9d",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "OUT_FOR_DELIVERY",
+    "title": "Out for Delivery!",
+    "message": "Your package ORD-20260901-827BD8 is out for delivery today with courier Alex Courier.",
+    "orderId": "e526dd60-6bba-4f2e-bab2-59fdd73ef638",
+    "read": true,
+    "createdAt": "2026-09-01T07:03:31.209Z",
+    "updatedAt": "2026-09-01T07:03:31.235Z"
+  },
+  {
+    "id": "fe7c8d4c-9c8c-413b-8708-13f0b430ede6",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "DELIVERED",
+    "title": "Package Delivered Successfully",
+    "message": "Your order ORD-20260901-827BD8 has been delivered. Thank you for shopping with EverydayStore!",
+    "orderId": "e526dd60-6bba-4f2e-bab2-59fdd73ef638",
+    "read": true,
+    "createdAt": "2026-09-01T07:03:31.216Z",
+    "updatedAt": "2026-09-01T07:03:31.234Z"
   }
 ]

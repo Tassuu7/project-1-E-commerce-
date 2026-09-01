@@ -106,5 +106,17 @@
     "verifiedPurchase": true,
     "status": "APPROVED",
     "createdAt": "2026-09-01T05:48:13.895Z"
+  },
+  {
+    "id": "862f66b6-d026-4ed3-8742-e987e4becc74",
+    "productId": "351de097-d9f5-4d3f-b266-923a495c659c",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "userName": "Customer User",
+    "rating": 5,
+    "title": "Perfect condition and fast delivery",
+    "comment": "Delivered promptly by the courier. Excellent product!",
+    "verifiedPurchase": true,
+    "status": "APPROVED",
+    "createdAt": "2026-09-01T07:03:31.220Z"
   }
 ]

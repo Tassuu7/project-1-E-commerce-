@@ -183,7 +183,7 @@
     "items": [],
     "appliedCoupon": null,
     "createdAt": "2026-09-01T05:25:31.875Z",
-    "updatedAt": "2026-09-01T05:25:31.875Z"
+    "updatedAt": "2026-09-01T05:51:27.965Z"
   },
   {
     "id": "test_suite_cart_1788241693834",
@@ -192,5 +192,29 @@
     "appliedCoupon": null,
     "createdAt": "2026-09-01T05:48:13.835Z",
     "updatedAt": "2026-09-01T05:48:13.856Z"
+  },
+  {
+    "id": "cart_04fpvzsri",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T05:51:28.606Z",
+    "updatedAt": "2026-09-01T06:46:53.820Z"
+  },
+  {
+    "id": "cart_4dnjm6zj2",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T06:46:54.451Z",
+    "updatedAt": "2026-09-01T06:46:54.451Z"
+  },
+  {
+    "id": "test_suite_cart_1788246211158",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T07:03:31.162Z",
+    "updatedAt": "2026-09-01T07:03:31.188Z"
   }
 ]

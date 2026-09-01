@@ -6,12 +6,12 @@
 const express = require('express');
 const router = express.Router();
 const OrderController = require('../controllers/orderController');
-const { requireAuth, requireRole } = require('../middleware/auth');
+const { requireAuth, requireRole, forbidRole } = require('../middleware/auth');
 
-// Public / Customer Checkout
-router.post('/checkout', OrderController.checkout);
+// Public / Customer Checkout (Delivery personnel forbidden)
+router.post('/checkout', forbidRole('DELIVERY_PERSON'), OrderController.checkout);
 
-// Get Customer Orders
+// Get Customer Orders (isolated to owner)
 router.get('/user', OrderController.getUserOrders);
 
 // Admin-only listing of all orders

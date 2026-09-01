@@ -1288,7 +1288,7 @@
     "price": 79.99,
     "salePrice": 64.99,
     "effectivePrice": 64.99,
-    "stock": 70,
+    "stock": 69,
     "stockStatus": "IN_STOCK",
     "lowStockThreshold": 10,
     "description": "Gooseneck precision temperature control electric kettle with LED display and 60-minute keep-warm hold.",
@@ -1304,7 +1304,7 @@
     "reviewCount": 63,
     "variants": [],
     "createdAt": "2026-09-01T05:45:47.759Z",
-    "updatedAt": "2026-09-01T05:45:47.759Z"
+    "updatedAt": "2026-09-01T05:51:27.945Z"
   },
   {
     "id": "e8bf0161-ef13-47e7-944f-996edf24c822",
@@ -1342,7 +1342,7 @@
     "price": 39.99,
     "salePrice": 29.99,
     "effectivePrice": 29.99,
-    "stock": 100,
+    "stock": 99,
     "stockStatus": "IN_STOCK",
     "lowStockThreshold": 10,
     "description": "High-density 2-inch wedge sound absorbing foam panels for home studio, streaming, and podcast rooms.",
@@ -1358,7 +1358,7 @@
     "reviewCount": 39,
     "variants": [],
     "createdAt": "2026-09-01T05:45:47.760Z",
-    "updatedAt": "2026-09-01T05:45:47.761Z"
+    "updatedAt": "2026-09-01T06:46:53.790Z"
   },
   {
     "id": "8e0fb47d-af7e-459e-966a-9b0d4409f1d4",
@@ -1477,7 +1477,7 @@
     "price": 29.99,
     "salePrice": 22.99,
     "effectivePrice": 22.99,
-    "stock": 158,
+    "stock": 156,
     "stockStatus": "IN_STOCK",
     "lowStockThreshold": 10,
     "description": "All-in-one international power adapter with 4 USB ports and Type-C for 150+ countries.",
@@ -1490,9 +1490,9 @@
       "accessories"
     ],
     "rating": 5,
-    "reviewCount": 1,
+    "reviewCount": 2,
     "variants": [],
     "createdAt": "2026-09-01T05:45:47.765Z",
-    "updatedAt": "2026-09-01T05:48:13.896Z"
+    "updatedAt": "2026-09-01T07:03:31.221Z"
   }
 ]

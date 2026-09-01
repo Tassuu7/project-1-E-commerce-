@@ -53,5 +53,16 @@
     "phone": "+1-206-555-0188",
     "createdAt": "2026-09-01T05:45:47.731Z",
     "updatedAt": "2026-09-01T05:45:47.731Z"
+  },
+  {
+    "id": "a808c58c-e09a-414f-b6c8-a8bc9d277da0",
+    "name": "tasleema",
+    "email": "shaiktasleemasadiya7@gmail.com",
+    "passwordHash": "7e70d4b09283c7addf3588d54dc8f9131d973538f5cf61de672514b0a850ef27",
+    "role": "CUSTOMER",
+    "addresses": [],
+    "phone": "",
+    "createdAt": "2026-09-01T05:51:00.356Z",
+    "updatedAt": "2026-09-01T05:51:00.356Z"
   }
 ]

@@ -20,6 +20,13 @@ class AuthManager {
         this.currentUser = res.data;
         this.updateUI();
         this.fetchNotificationCount();
+
+        // Enforce route isolation: Delivery personnel are restricted to delivery.html
+        if (this.currentUser.role === 'DELIVERY_PERSON' && !window.location.pathname.includes('delivery.html')) {
+          window.location.href = '/delivery.html';
+          return this.currentUser;
+        }
+
         return this.currentUser;
       }
     } catch (err) {
@@ -41,9 +48,9 @@ class AuthManager {
 
         // Role-based smart redirection
         if (this.currentUser.role === 'ADMIN' && !window.location.pathname.includes('admin.html')) {
-          setTimeout(() => { window.location.href = '/admin.html'; }, 600);
+          setTimeout(() => { window.location.href = '/admin.html'; }, 500);
         } else if (this.currentUser.role === 'DELIVERY_PERSON' && !window.location.pathname.includes('delivery.html')) {
-          setTimeout(() => { window.location.href = '/delivery.html'; }, 600);
+          setTimeout(() => { window.location.href = '/delivery.html'; }, 500);
         }
         return res.data;
       }
@@ -110,7 +117,7 @@ class AuthManager {
           <span style="font-size: 0.95rem; color: var(--text-main); font-weight: 600;">Hi, <strong>${this.currentUser.name}</strong></span>
           ${isAdmin ? `<a href="/admin.html" class="btn btn-secondary btn-sm" style="font-weight: 700;">Admin Dashboard</a>` : ''}
           ${isDelivery ? `<a href="/delivery.html" class="btn btn-secondary btn-sm" style="font-weight: 700;">Courier Portal</a>` : ''}
-          <a href="/orders.html" class="btn btn-secondary btn-sm">My Orders</a>
+          ${!isDelivery ? `<a href="/orders.html" class="btn btn-secondary btn-sm">My Orders</a>` : ''}
           <button class="btn btn-secondary btn-sm" onclick="showNotificationModal()" title="View Notifications" style="position: relative;">
             Notifications <span id="notif-badge-count" class="cart-count" style="display: none; margin-left: 4px;">0</span>
           </button>
