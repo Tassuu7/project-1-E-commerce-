@@ -11,16 +11,10 @@
 </head>
 <body>
 
-  <!-- Top Bar -->
+  <!-- Top Announcement Bar (Clean & Centered) -->
   <div class="top-bar">
     <div class="container">
-      <div>
-        <span>Real-time shipment tracking with verified dispatch updates</span>
-      </div>
-      <div class="top-bar-links">
-        <a href="/index.html">← Back to Shop</a>
-        <a href="/cart.html">View Cart</a>
-      </div>
+      <span>Free standard delivery on orders over $50 • 30-Day Easy Returns</span>
     </div>
   </div>
 
@@ -28,8 +22,15 @@
   <header>
     <div class="container nav-wrapper">
       <a href="/index.html" class="logo">Everyday<span>Store</span></a>
+
+      <div class="nav-search">
+        <input type="text" id="search-input" placeholder="Search products..." onkeyup="if(event.key==='Enter') window.location.href='/index.html?search=' + encodeURIComponent(this.value);">
+        <button class="nav-search-btn" onclick="window.location.href='/index.html?search=' + encodeURIComponent(document.getElementById('search-input').value);">Search</button>
+      </div>
+
       <ul class="nav-menu">
         <li><a href="/index.html">Shop</a></li>
+        <li><a href="/orders.html" class="active">Orders</a></li>
         <li>
           <button id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Theme">
             Dark Mode
