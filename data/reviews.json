@@ -142,5 +142,41 @@
     "verifiedPurchase": true,
     "status": "APPROVED",
     "createdAt": "2026-09-01T08:22:24.162Z"
+  },
+  {
+    "id": "fa5de3ba-84af-443c-b403-5ad0dbc82dc2",
+    "productId": "351de097-d9f5-4d3f-b266-923a495c659c",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "userName": "Customer User",
+    "rating": 5,
+    "title": "Perfect condition and fast delivery",
+    "comment": "Delivered promptly by the courier. Excellent product!",
+    "verifiedPurchase": true,
+    "status": "APPROVED",
+    "createdAt": "2026-09-01T08:25:56.794Z"
+  },
+  {
+    "id": "1eaa3d70-f9c8-478d-a535-1101837e37cb",
+    "productId": "351de097-d9f5-4d3f-b266-923a495c659c",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "userName": "Customer User",
+    "rating": 5,
+    "title": "Perfect condition and fast delivery",
+    "comment": "Delivered promptly by the courier. Excellent product!",
+    "verifiedPurchase": true,
+    "status": "APPROVED",
+    "createdAt": "2026-09-01T08:28:46.009Z"
+  },
+  {
+    "id": "4c47fd0a-0501-48ee-ac68-77e08ccee20e",
+    "productId": "351de097-d9f5-4d3f-b266-923a495c659c",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "userName": "Customer User",
+    "rating": 5,
+    "title": "Perfect condition and fast delivery",
+    "comment": "Delivered promptly by the courier. Excellent product!",
+    "verifiedPurchase": true,
+    "status": "APPROVED",
+    "createdAt": "2026-09-01T08:33:36.793Z"
   }
 ]

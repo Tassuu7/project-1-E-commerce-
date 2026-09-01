@@ -280,5 +280,29 @@
     "appliedCoupon": null,
     "createdAt": "2026-09-01T08:22:24.089Z",
     "updatedAt": "2026-09-01T08:22:24.113Z"
+  },
+  {
+    "id": "test_suite_cart_1788251156716",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T08:25:56.717Z",
+    "updatedAt": "2026-09-01T08:25:56.750Z"
+  },
+  {
+    "id": "test_suite_cart_1788251325947",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T08:28:45.947Z",
+    "updatedAt": "2026-09-01T08:28:45.972Z"
+  },
+  {
+    "id": "test_suite_cart_1788251616737",
+    "userId": null,
+    "items": [],
+    "appliedCoupon": null,
+    "createdAt": "2026-09-01T08:33:36.734Z",
+    "updatedAt": "2026-09-01T08:33:36.754Z"
   }
 ]

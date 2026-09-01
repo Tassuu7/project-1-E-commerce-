@@ -21,7 +21,7 @@
     "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
     "read": true,
     "createdAt": "2026-09-01T05:48:13.854Z",
-    "updatedAt": "2026-09-01T08:22:24.204Z"
+    "updatedAt": "2026-09-01T08:33:36.832Z"
   },
   {
     "id": "20db52f5-968d-4a19-9454-783316f38f07",
@@ -57,7 +57,7 @@
     "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
     "read": true,
     "createdAt": "2026-09-01T05:48:13.874Z",
-    "updatedAt": "2026-09-01T08:22:24.202Z"
+    "updatedAt": "2026-09-01T08:33:36.830Z"
   },
   {
     "id": "dc987f21-3923-4fec-a459-0360272e9364",
@@ -69,7 +69,7 @@
     "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
     "read": true,
     "createdAt": "2026-09-01T05:48:13.881Z",
-    "updatedAt": "2026-09-01T08:22:24.201Z"
+    "updatedAt": "2026-09-01T08:33:36.829Z"
   },
   {
     "id": "41fd87dd-3c1c-4763-b378-022477ff78f9",
@@ -81,7 +81,7 @@
     "orderId": "3cf49032-7ca0-4541-a88d-a604ee93eba1",
     "read": true,
     "createdAt": "2026-09-01T05:48:13.889Z",
-    "updatedAt": "2026-09-01T08:22:24.199Z"
+    "updatedAt": "2026-09-01T08:33:36.829Z"
   },
   {
     "id": "7d807d51-3ca1-4720-bbd6-af91ccee0c26",
@@ -189,7 +189,7 @@
     "orderId": "d74a341b-4499-4f05-a642-6c6275cd864a",
     "read": true,
     "createdAt": "2026-09-01T06:46:53.814Z",
-    "updatedAt": "2026-09-01T08:22:24.198Z"
+    "updatedAt": "2026-09-01T08:33:36.828Z"
   },
   {
     "id": "c7903c9d-057b-49e6-b7c3-6f16efb9380c",
@@ -237,7 +237,7 @@
     "orderId": "e526dd60-6bba-4f2e-bab2-59fdd73ef638",
     "read": true,
     "createdAt": "2026-09-01T07:03:31.186Z",
-    "updatedAt": "2026-09-01T08:22:24.197Z"
+    "updatedAt": "2026-09-01T08:33:36.828Z"
   },
   {
     "id": "e908718b-9dff-4a4a-879c-08b578951a1e",
@@ -273,7 +273,7 @@
     "orderId": "e526dd60-6bba-4f2e-bab2-59fdd73ef638",
     "read": true,
     "createdAt": "2026-09-01T07:03:31.204Z",
-    "updatedAt": "2026-09-01T08:22:24.197Z"
+    "updatedAt": "2026-09-01T08:33:36.828Z"
   },
   {
     "id": "ad22cb01-3cf2-4428-8a07-1ee59d389c9d",
@@ -285,7 +285,7 @@
     "orderId": "e526dd60-6bba-4f2e-bab2-59fdd73ef638",
     "read": true,
     "createdAt": "2026-09-01T07:03:31.209Z",
-    "updatedAt": "2026-09-01T08:22:24.195Z"
+    "updatedAt": "2026-09-01T08:33:36.827Z"
   },
   {
     "id": "fe7c8d4c-9c8c-413b-8708-13f0b430ede6",
@@ -297,7 +297,7 @@
     "orderId": "e526dd60-6bba-4f2e-bab2-59fdd73ef638",
     "read": true,
     "createdAt": "2026-09-01T07:03:31.216Z",
-    "updatedAt": "2026-09-01T08:22:24.193Z"
+    "updatedAt": "2026-09-01T08:33:36.827Z"
   },
   {
     "id": "538ff720-83df-4ef8-a933-b6d372067374",
@@ -309,7 +309,7 @@
     "orderId": "a7541bbe-92f9-4f6d-97dd-ac9c11f0ac7b",
     "read": true,
     "createdAt": "2026-09-01T07:07:54.776Z",
-    "updatedAt": "2026-09-01T08:22:24.192Z"
+    "updatedAt": "2026-09-01T08:33:36.826Z"
   },
   {
     "id": "f5a5529e-cf26-40c2-bbc0-9fbe0c1edde2",
@@ -345,7 +345,7 @@
     "orderId": "a7541bbe-92f9-4f6d-97dd-ac9c11f0ac7b",
     "read": true,
     "createdAt": "2026-09-01T07:08:45.268Z",
-    "updatedAt": "2026-09-01T08:22:24.192Z"
+    "updatedAt": "2026-09-01T08:33:36.825Z"
   },
   {
     "id": "61388894-ef39-42d9-827e-88a58864e529",
@@ -357,7 +357,7 @@
     "orderId": "f004de2d-b117-4624-aa32-8d599c4b9cc8",
     "read": true,
     "createdAt": "2026-09-01T07:13:06.067Z",
-    "updatedAt": "2026-09-01T08:22:24.191Z"
+    "updatedAt": "2026-09-01T08:33:36.824Z"
   },
   {
     "id": "b5bd039f-137f-4ebc-b17d-ac270c53979e",
@@ -453,7 +453,7 @@
     "orderId": "8d21d738-aef9-4349-a67a-5e0c543a2454",
     "read": true,
     "createdAt": "2026-09-01T07:19:15.250Z",
-    "updatedAt": "2026-09-01T08:22:24.190Z"
+    "updatedAt": "2026-09-01T08:33:36.824Z"
   },
   {
     "id": "38ff152a-d94a-4534-b29b-40bfe22389f4",
@@ -489,7 +489,7 @@
     "orderId": "8d21d738-aef9-4349-a67a-5e0c543a2454",
     "read": true,
     "createdAt": "2026-09-01T07:19:39.851Z",
-    "updatedAt": "2026-09-01T08:22:24.189Z"
+    "updatedAt": "2026-09-01T08:33:36.823Z"
   },
   {
     "id": "08eac5af-2f4d-4e7f-8136-67ad7f55bbf2",
@@ -501,7 +501,7 @@
     "orderId": "04649d84-8a9e-48da-8b9b-488d8b2e7437",
     "read": true,
     "createdAt": "2026-09-01T07:22:04.505Z",
-    "updatedAt": "2026-09-01T08:22:24.188Z"
+    "updatedAt": "2026-09-01T08:33:36.823Z"
   },
   {
     "id": "c6b864b1-ae4c-41d2-b178-53fa959dc8ee",
@@ -525,7 +525,7 @@
     "orderId": "edf1ae98-c999-45a9-820a-9c696cac14d7",
     "read": true,
     "createdAt": "2026-09-01T07:34:01.411Z",
-    "updatedAt": "2026-09-01T08:22:24.187Z"
+    "updatedAt": "2026-09-01T08:33:36.822Z"
   },
   {
     "id": "2ba2bed9-6adf-4a1c-b55a-09d992b6a79e",
@@ -561,7 +561,7 @@
     "orderId": "edf1ae98-c999-45a9-820a-9c696cac14d7",
     "read": true,
     "createdAt": "2026-09-01T07:34:01.428Z",
-    "updatedAt": "2026-09-01T08:22:24.186Z"
+    "updatedAt": "2026-09-01T08:33:36.822Z"
   },
   {
     "id": "d446752b-0135-4faa-b033-e4c63083769e",
@@ -573,7 +573,7 @@
     "orderId": "edf1ae98-c999-45a9-820a-9c696cac14d7",
     "read": true,
     "createdAt": "2026-09-01T07:34:01.435Z",
-    "updatedAt": "2026-09-01T08:22:24.186Z"
+    "updatedAt": "2026-09-01T08:33:36.821Z"
   },
   {
     "id": "0589cd03-6214-4ef1-9063-a09bd79eb68d",
@@ -585,7 +585,7 @@
     "orderId": "edf1ae98-c999-45a9-820a-9c696cac14d7",
     "read": true,
     "createdAt": "2026-09-01T07:34:01.439Z",
-    "updatedAt": "2026-09-01T08:22:24.185Z"
+    "updatedAt": "2026-09-01T08:33:36.821Z"
   },
   {
     "id": "abd9a887-3bc4-4d3e-927c-eb1527a996ca",
@@ -621,7 +621,7 @@
     "orderId": "1b818a5f-1716-4aae-b0ab-b8dbf907e39d",
     "read": true,
     "createdAt": "2026-09-01T08:22:24.110Z",
-    "updatedAt": "2026-09-01T08:22:24.184Z"
+    "updatedAt": "2026-09-01T08:33:36.820Z"
   },
   {
     "id": "27117757-d3b1-447c-a0ad-81f3461a5d41",
@@ -657,7 +657,7 @@
     "orderId": "1b818a5f-1716-4aae-b0ab-b8dbf907e39d",
     "read": true,
     "createdAt": "2026-09-01T08:22:24.132Z",
-    "updatedAt": "2026-09-01T08:22:24.183Z"
+    "updatedAt": "2026-09-01T08:33:36.820Z"
   },
   {
     "id": "b0658859-d490-4539-a700-9eaf66bcf773",
@@ -669,7 +669,7 @@
     "orderId": "1b818a5f-1716-4aae-b0ab-b8dbf907e39d",
     "read": true,
     "createdAt": "2026-09-01T08:22:24.142Z",
-    "updatedAt": "2026-09-01T08:22:24.182Z"
+    "updatedAt": "2026-09-01T08:33:36.819Z"
   },
   {
     "id": "5cb8de70-aa3c-4b38-b2a9-44732213468b",
@@ -681,6 +681,222 @@
     "orderId": "1b818a5f-1716-4aae-b0ab-b8dbf907e39d",
     "read": true,
     "createdAt": "2026-09-01T08:22:24.154Z",
-    "updatedAt": "2026-09-01T08:22:24.181Z"
+    "updatedAt": "2026-09-01T08:33:36.818Z"
+  },
+  {
+    "id": "18f9b5cf-566a-4dcc-adc5-9a48cdad448d",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "ORDER_PLACED",
+    "title": "Order Confirmed",
+    "message": "Your order ORD-20260901-7D314B ($55.55) has been placed and confirmed.",
+    "orderId": "c9dfdc18-dc63-45c6-8154-0fd04720e9d4",
+    "read": true,
+    "createdAt": "2026-09-01T08:25:56.747Z",
+    "updatedAt": "2026-09-01T08:33:36.817Z"
+  },
+  {
+    "id": "f7814d41-7a04-4107-9e09-946838a9d3bf",
+    "userId": null,
+    "role": "ADMIN",
+    "type": "ORDER_PLACED",
+    "title": "New Customer Order Placed",
+    "message": "Order ORD-20260901-7D314B received from Customer User ($55.55).",
+    "orderId": "c9dfdc18-dc63-45c6-8154-0fd04720e9d4",
+    "read": false,
+    "createdAt": "2026-09-01T08:25:56.748Z",
+    "updatedAt": "2026-09-01T08:25:56.748Z"
+  },
+  {
+    "id": "d523695c-1ecf-4844-8bfc-79e923ab6697",
+    "userId": "4668e540-62ca-4cee-b6e2-b7e3c71e90d7",
+    "role": "DELIVERY_PERSON",
+    "type": "DELIVERY_ASSIGNED",
+    "title": "New Delivery Assigned",
+    "message": "You have been assigned to deliver order ORD-20260901-7D314B to Seattle.",
+    "orderId": "c9dfdc18-dc63-45c6-8154-0fd04720e9d4",
+    "read": false,
+    "createdAt": "2026-09-01T08:25:56.763Z",
+    "updatedAt": "2026-09-01T08:25:56.763Z"
+  },
+  {
+    "id": "2e463343-f5c7-4e81-9921-d651a5b6246e",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "ORDER_DISPATCHED",
+    "title": "Order Assigned for Dispatch",
+    "message": "Your order ORD-20260901-7D314B has been assigned to courier Alex Courier for dispatch.",
+    "orderId": "c9dfdc18-dc63-45c6-8154-0fd04720e9d4",
+    "read": true,
+    "createdAt": "2026-09-01T08:25:56.765Z",
+    "updatedAt": "2026-09-01T08:33:36.817Z"
+  },
+  {
+    "id": "acc0fa58-f5ad-412f-a0ef-572469dbdad1",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "OUT_FOR_DELIVERY",
+    "title": "Out for Delivery!",
+    "message": "Your package ORD-20260901-7D314B is out for delivery today with courier Alex Courier.",
+    "orderId": "c9dfdc18-dc63-45c6-8154-0fd04720e9d4",
+    "read": true,
+    "createdAt": "2026-09-01T08:25:56.774Z",
+    "updatedAt": "2026-09-01T08:33:36.816Z"
+  },
+  {
+    "id": "8cf53dbe-2bc7-4994-8448-e9f165e8c861",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "DELIVERED",
+    "title": "Package Delivered Successfully",
+    "message": "Your order ORD-20260901-7D314B has been delivered. Thank you for shopping with EverydayStore!",
+    "orderId": "c9dfdc18-dc63-45c6-8154-0fd04720e9d4",
+    "read": true,
+    "createdAt": "2026-09-01T08:25:56.782Z",
+    "updatedAt": "2026-09-01T08:33:36.816Z"
+  },
+  {
+    "id": "c1da0d69-2272-4d67-a066-82351af86731",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "ORDER_PLACED",
+    "title": "Order Confirmed",
+    "message": "Your order ORD-20260901-7AFB0A ($55.55) has been placed and confirmed.",
+    "orderId": "c25f0242-3084-4170-a6c1-73916afc3daa",
+    "read": true,
+    "createdAt": "2026-09-01T08:28:45.970Z",
+    "updatedAt": "2026-09-01T08:33:36.815Z"
+  },
+  {
+    "id": "0900805e-58f7-4df3-9566-34a819a91ee7",
+    "userId": null,
+    "role": "ADMIN",
+    "type": "ORDER_PLACED",
+    "title": "New Customer Order Placed",
+    "message": "Order ORD-20260901-7AFB0A received from Customer User ($55.55).",
+    "orderId": "c25f0242-3084-4170-a6c1-73916afc3daa",
+    "read": false,
+    "createdAt": "2026-09-01T08:28:45.971Z",
+    "updatedAt": "2026-09-01T08:28:45.971Z"
+  },
+  {
+    "id": "4554c708-c338-4e60-9aab-5d50c2189683",
+    "userId": "4668e540-62ca-4cee-b6e2-b7e3c71e90d7",
+    "role": "DELIVERY_PERSON",
+    "type": "DELIVERY_ASSIGNED",
+    "title": "New Delivery Assigned",
+    "message": "You have been assigned to deliver order ORD-20260901-7AFB0A to Seattle.",
+    "orderId": "c25f0242-3084-4170-a6c1-73916afc3daa",
+    "read": false,
+    "createdAt": "2026-09-01T08:28:45.985Z",
+    "updatedAt": "2026-09-01T08:28:45.985Z"
+  },
+  {
+    "id": "688f07bb-0eee-4b97-9c6d-ee2a10e88413",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "ORDER_DISPATCHED",
+    "title": "Order Assigned for Dispatch",
+    "message": "Your order ORD-20260901-7AFB0A has been assigned to courier Alex Courier for dispatch.",
+    "orderId": "c25f0242-3084-4170-a6c1-73916afc3daa",
+    "read": true,
+    "createdAt": "2026-09-01T08:28:45.986Z",
+    "updatedAt": "2026-09-01T08:33:36.815Z"
+  },
+  {
+    "id": "34e5fc85-fa3e-42c0-9920-dc4f3c9edaed",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "OUT_FOR_DELIVERY",
+    "title": "Out for Delivery!",
+    "message": "Your package ORD-20260901-7AFB0A is out for delivery today with courier Alex Courier.",
+    "orderId": "c25f0242-3084-4170-a6c1-73916afc3daa",
+    "read": true,
+    "createdAt": "2026-09-01T08:28:45.995Z",
+    "updatedAt": "2026-09-01T08:33:36.814Z"
+  },
+  {
+    "id": "fbea2bbb-8578-4118-94cf-c73c3943b367",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "DELIVERED",
+    "title": "Package Delivered Successfully",
+    "message": "Your order ORD-20260901-7AFB0A has been delivered. Thank you for shopping with EverydayStore!",
+    "orderId": "c25f0242-3084-4170-a6c1-73916afc3daa",
+    "read": true,
+    "createdAt": "2026-09-01T08:28:46.003Z",
+    "updatedAt": "2026-09-01T08:33:36.812Z"
+  },
+  {
+    "id": "2ed43f64-7db9-4245-b1fd-cbf5c08edb78",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "ORDER_PLACED",
+    "title": "Order Confirmed",
+    "message": "Your order ORD-20260901-119C5B ($55.55) has been placed and confirmed.",
+    "orderId": "ace277ed-70dc-4e53-95d9-d34a8262a7a7",
+    "read": true,
+    "createdAt": "2026-09-01T08:33:36.752Z",
+    "updatedAt": "2026-09-01T08:33:36.812Z"
+  },
+  {
+    "id": "762ed948-84fe-4b28-9816-fc2bd53e9a13",
+    "userId": null,
+    "role": "ADMIN",
+    "type": "ORDER_PLACED",
+    "title": "New Customer Order Placed",
+    "message": "Order ORD-20260901-119C5B received from Customer User ($55.55).",
+    "orderId": "ace277ed-70dc-4e53-95d9-d34a8262a7a7",
+    "read": false,
+    "createdAt": "2026-09-01T08:33:36.753Z",
+    "updatedAt": "2026-09-01T08:33:36.753Z"
+  },
+  {
+    "id": "c4b81b2c-f442-49c2-910c-015b5c32aa9e",
+    "userId": "4668e540-62ca-4cee-b6e2-b7e3c71e90d7",
+    "role": "DELIVERY_PERSON",
+    "type": "DELIVERY_ASSIGNED",
+    "title": "New Delivery Assigned",
+    "message": "You have been assigned to deliver order ORD-20260901-119C5B to Seattle.",
+    "orderId": "ace277ed-70dc-4e53-95d9-d34a8262a7a7",
+    "read": false,
+    "createdAt": "2026-09-01T08:33:36.768Z",
+    "updatedAt": "2026-09-01T08:33:36.768Z"
+  },
+  {
+    "id": "32ce92fd-c852-42c1-9045-e7f12e7016fe",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "ORDER_DISPATCHED",
+    "title": "Order Assigned for Dispatch",
+    "message": "Your order ORD-20260901-119C5B has been assigned to courier Alex Courier for dispatch.",
+    "orderId": "ace277ed-70dc-4e53-95d9-d34a8262a7a7",
+    "read": true,
+    "createdAt": "2026-09-01T08:33:36.769Z",
+    "updatedAt": "2026-09-01T08:33:36.811Z"
+  },
+  {
+    "id": "ac4220ba-5216-4b1e-ac70-d869a6184be9",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "OUT_FOR_DELIVERY",
+    "title": "Out for Delivery!",
+    "message": "Your package ORD-20260901-119C5B is out for delivery today with courier Alex Courier.",
+    "orderId": "ace277ed-70dc-4e53-95d9-d34a8262a7a7",
+    "read": true,
+    "createdAt": "2026-09-01T08:33:36.780Z",
+    "updatedAt": "2026-09-01T08:33:36.811Z"
+  },
+  {
+    "id": "79999de2-ad41-4aaa-a1b0-aee8f6c09746",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "role": "CUSTOMER",
+    "type": "DELIVERED",
+    "title": "Package Delivered Successfully",
+    "message": "Your order ORD-20260901-119C5B has been delivered. Thank you for shopping with EverydayStore!",
+    "orderId": "ace277ed-70dc-4e53-95d9-d34a8262a7a7",
+    "read": true,
+    "createdAt": "2026-09-01T08:33:36.787Z",
+    "updatedAt": "2026-09-01T08:33:36.810Z"
   }
 ]

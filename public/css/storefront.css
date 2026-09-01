@@ -1,53 +1,43 @@
-/* Simple, Human-Crafted Storefront Theme */
+/* Clean, Human-Crafted Storefront Theme with Modern Rounded Corners */
 
 /* 1. Natural Hero Banner */
 .hero-section {
   width: 100%;
-  background: var(--bg-card);
+  background: var(--bg-muted);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: 16px;
   margin: 1.75rem 0 2.5rem;
   padding: 3.5rem 4rem;
   display: grid;
   grid-template-columns: 1.35fr 0.65fr;
   align-items: center;
   gap: 3.5rem;
-  box-shadow: var(--card-shadow);
-}
-
-@media (max-width: 900px) {
-  .hero-section {
-    grid-template-columns: 1fr;
-    padding: 2.5rem 2rem;
-    gap: 2rem;
-  }
 }
 
 .hero-tag {
   display: inline-block;
-  background: var(--bg-muted);
-  border: 1px solid var(--border);
+  background: var(--border);
   color: var(--text-main);
-  font-size: 0.8rem;
+  font-size: 0.825rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   padding: 5px 12px;
-  border-radius: var(--radius-full);
+  border-radius: 6px;
   margin-bottom: 1.25rem;
 }
 
 .hero-title {
-  font-size: 2.75rem;
+  font-size: 3rem;
   font-weight: 800;
   color: var(--text-main);
-  letter-spacing: -0.035em;
-  line-height: 1.18;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
   margin-bottom: 1.25rem;
 }
 
 .hero-desc {
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 2rem;
@@ -62,8 +52,8 @@
 
 .hero-img-box {
   width: 100%;
-  height: 320px;
-  border-radius: var(--radius);
+  height: 340px;
+  border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--card-shadow);
   background: #ffffff;
@@ -81,33 +71,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2.5rem 0 1.5rem;
+  margin: 2rem 0 1.5rem;
   flex-wrap: wrap;
   gap: 1.25rem;
 }
 
 .catalog-count-text {
-  font-size: 1.1rem;
-  font-weight: 800;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--text-main);
-  letter-spacing: -0.02em;
 }
 
 .catalog-sort-select {
   padding: 0.6rem 1.25rem;
   font-size: 0.925rem;
   font-weight: 600;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  border-radius: 8px;
   background: var(--bg-card);
   color: var(--text-main);
   cursor: pointer;
   outline: none;
-  transition: var(--transition);
-}
-
-.catalog-sort-select:focus {
-  border-color: var(--text-main);
 }
 
 /* 3. Fluid Product Grid */
@@ -118,11 +102,11 @@
   margin-bottom: 5rem;
 }
 
-/* 4. Natural Product Card with Modern Smooth Curved Corners */
+/* 4. Natural Clean Product Card with Modern Smooth Curved Corners */
 .product-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 14px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -133,14 +117,14 @@
 
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--card-shadow-hover);
-  border-color: var(--input-border);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: #9ca3af;
 }
 
 .product-img-wrapper {
   position: relative;
   width: 100%;
-  height: 270px;
+  height: 280px;
   background: #ffffff;
   display: flex;
   align-items: center;
@@ -172,9 +156,9 @@
   color: #ffffff;
   font-size: 0.75rem;
   font-weight: 800;
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-  letter-spacing: 0.02em;
+  padding: 3px 9px;
+  border-radius: 6px;
+  text-transform: uppercase;
 }
 
 .product-body {
@@ -189,21 +173,21 @@
   color: var(--text-light);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.4rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
 }
 
 .product-name {
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-main);
-  line-height: 1.4;
-  margin-bottom: 0.6rem;
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 2.9rem;
+  height: 2.7rem;
 }
 
 .product-name a:hover {
@@ -213,14 +197,14 @@
 .rating-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.2rem;
   background: var(--bg-muted);
   border: 1px solid var(--border);
   color: var(--text-main);
   font-size: 0.8rem;
   font-weight: 700;
-  padding: 3px 8px;
-  border-radius: var(--radius-full);
+  padding: 2px 8px;
+  border-radius: 6px;
 }
 
 .product-rating-row {
@@ -240,7 +224,7 @@
   display: flex;
   align-items: baseline;
   gap: 0.65rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
   margin-top: auto;
 }
 
@@ -248,7 +232,6 @@
   font-size: 1.45rem;
   font-weight: 800;
   color: var(--text-main);
-  letter-spacing: -0.02em;
 }
 
 .price-original {
@@ -264,41 +247,80 @@
 }
 
 .delivery-tag {
-  font-size: 0.825rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   margin-bottom: 1.15rem;
 }
 
-/* Value Props Strip */
+.btn-add-cart {
+  width: 100%;
+  background: #111827;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+[data-theme="dark"] .btn-add-cart {
+  background: #f9fafb;
+  color: #111827;
+}
+
+.btn-add-cart:hover {
+  opacity: 0.9;
+}
+
+.btn-add-cart:disabled {
+  background: var(--border);
+  color: var(--text-light);
+  cursor: not-allowed;
+}
+
+/* 5. Value Props Section */
 .value-props-section {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2.5rem 3rem;
-  margin-bottom: 4.5rem;
-  box-shadow: var(--card-shadow);
+  border-radius: 16px;
+  padding: 3.5rem;
+  margin: 3.5rem 0 5rem;
 }
 
 .value-props-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-@media (max-width: 768px) {
-  .value-props-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  gap: 3rem;
+  text-align: center;
 }
 
 .value-prop-item h4 {
-  font-size: 1rem;
-  font-weight: 800;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--text-main);
-  margin-bottom: 0.35rem;
+  margin: 0.5rem 0 0.25rem;
 }
 
 .value-prop-item p {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
+}
+
+@media (max-width: 1200px) {
+  .hero-title { font-size: 2.5rem; }
+  .product-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+}
+
+@media (max-width: 960px) {
+  .hero-section { grid-template-columns: 1fr; padding: 2.5rem 2rem; }
+  .hero-img-box { display: none; }
+  .value-props-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+@media (max-width: 640px) {
+  .hero-title { font-size: 2rem; }
+  .product-grid { grid-template-columns: 1fr; }
+  .value-props-grid { grid-template-columns: 1fr; }
 }

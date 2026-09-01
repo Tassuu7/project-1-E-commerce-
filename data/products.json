@@ -1477,7 +1477,7 @@
     "price": 29.99,
     "salePrice": 22.99,
     "effectivePrice": 22.99,
-    "stock": 152,
+    "stock": 146,
     "stockStatus": "IN_STOCK",
     "lowStockThreshold": 10,
     "description": "All-in-one international power adapter with 4 USB ports and Type-C for 150+ countries.",
@@ -1490,9 +1490,9 @@
       "accessories"
     ],
     "rating": 5,
-    "reviewCount": 4,
+    "reviewCount": 7,
     "variants": [],
     "createdAt": "2026-09-01T05:45:47.765Z",
-    "updatedAt": "2026-09-01T08:22:24.164Z"
+    "updatedAt": "2026-09-01T08:33:36.795Z"
   }
 ]

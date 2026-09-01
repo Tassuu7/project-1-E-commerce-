@@ -902,5 +902,140 @@
     ],
     "createdAt": "2026-09-01T08:22:24.105Z",
     "updatedAt": "2026-09-01T08:22:24.153Z"
+  },
+  {
+    "id": "c9dfdc18-dc63-45c6-8154-0fd04720e9d4",
+    "orderNumber": "ORD-20260901-7D314B",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "customerName": "Customer User",
+    "customerEmail": "customer@example.com",
+    "items": [
+      {
+        "productId": "351de097-d9f5-4d3f-b266-923a495c659c",
+        "name": "Universal Global Travel Plug Adapter",
+        "price": 22.99,
+        "quantity": 2,
+        "sku": "ACC-UNI-5254",
+        "image": "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80"
+      }
+    ],
+    "subtotal": 45.98,
+    "discountAmount": 4.6,
+    "taxAmount": 4.18,
+    "shippingAmount": 9.99,
+    "grandTotal": 55.55,
+    "shippingAddress": {
+      "street": "100 University Way",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98105",
+      "country": "USA"
+    },
+    "paymentMethod": "STRIPE_CREDIT_CARD",
+    "paymentStatus": "CAPTURED",
+    "orderStatus": "DELIVERED",
+    "trackingNumber": "FE715941419538",
+    "deliveryPersonId": "4668e540-62ca-4cee-b6e2-b7e3c71e90d7",
+    "deliveryPersonName": "Alex Courier",
+    "deliveredAt": "2026-09-01T08:25:56.781Z",
+    "statusHistory": [
+      {
+        "status": "PAID",
+        "timestamp": "2026-09-01T08:25:56.739Z",
+        "note": "Order created."
+      }
+    ],
+    "createdAt": "2026-09-01T08:25:56.739Z",
+    "updatedAt": "2026-09-01T08:25:56.781Z"
+  },
+  {
+    "id": "c25f0242-3084-4170-a6c1-73916afc3daa",
+    "orderNumber": "ORD-20260901-7AFB0A",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "customerName": "Customer User",
+    "customerEmail": "customer@example.com",
+    "items": [
+      {
+        "productId": "351de097-d9f5-4d3f-b266-923a495c659c",
+        "name": "Universal Global Travel Plug Adapter",
+        "price": 22.99,
+        "quantity": 2,
+        "sku": "ACC-UNI-5254",
+        "image": "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80"
+      }
+    ],
+    "subtotal": 45.98,
+    "discountAmount": 4.6,
+    "taxAmount": 4.18,
+    "shippingAmount": 9.99,
+    "grandTotal": 55.55,
+    "shippingAddress": {
+      "street": "100 University Way",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98105",
+      "country": "USA"
+    },
+    "paymentMethod": "STRIPE_CREDIT_CARD",
+    "paymentStatus": "CAPTURED",
+    "orderStatus": "DELIVERED",
+    "trackingNumber": "FE349266652426",
+    "deliveryPersonId": "4668e540-62ca-4cee-b6e2-b7e3c71e90d7",
+    "deliveryPersonName": "Alex Courier",
+    "deliveredAt": "2026-09-01T08:28:46.002Z",
+    "statusHistory": [
+      {
+        "status": "PAID",
+        "timestamp": "2026-09-01T08:28:45.964Z",
+        "note": "Order created."
+      }
+    ],
+    "createdAt": "2026-09-01T08:28:45.964Z",
+    "updatedAt": "2026-09-01T08:28:46.002Z"
+  },
+  {
+    "id": "ace277ed-70dc-4e53-95d9-d34a8262a7a7",
+    "orderNumber": "ORD-20260901-119C5B",
+    "userId": "d4c2f744-fe11-455e-95cc-d93897a425f7",
+    "customerName": "Customer User",
+    "customerEmail": "customer@example.com",
+    "items": [
+      {
+        "productId": "351de097-d9f5-4d3f-b266-923a495c659c",
+        "name": "Universal Global Travel Plug Adapter",
+        "price": 22.99,
+        "quantity": 2,
+        "sku": "ACC-UNI-5254",
+        "image": "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80"
+      }
+    ],
+    "subtotal": 45.98,
+    "discountAmount": 4.6,
+    "taxAmount": 4.18,
+    "shippingAmount": 9.99,
+    "grandTotal": 55.55,
+    "shippingAddress": {
+      "street": "100 University Way",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98105",
+      "country": "USA"
+    },
+    "paymentMethod": "STRIPE_CREDIT_CARD",
+    "paymentStatus": "CAPTURED",
+    "orderStatus": "DELIVERED",
+    "trackingNumber": "FE953199734761",
+    "deliveryPersonId": "4668e540-62ca-4cee-b6e2-b7e3c71e90d7",
+    "deliveryPersonName": "Alex Courier",
+    "deliveredAt": "2026-09-01T08:33:36.786Z",
+    "statusHistory": [
+      {
+        "status": "PAID",
+        "timestamp": "2026-09-01T08:33:36.747Z",
+        "note": "Order created."
+      }
+    ],
+    "createdAt": "2026-09-01T08:33:36.747Z",
+    "updatedAt": "2026-09-01T08:33:36.786Z"
   }
 ]
