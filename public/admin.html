@@ -3,34 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Store Management Dashboard — EverydayStore</title>
+  <title>Admin Dashboard — EverydayStore Operations</title>
   <script src="/js/theme.js"></script>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/admin.css">
+  <style>
+    .admin-stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+    .admin-stat-card:hover {
+      border-color: #9ca3af;
+      transform: translateY(-2px);
+    }
+    .admin-stat-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .admin-stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+    .admin-section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 2rem;
+    }
+    .admin-nav-tile {
+      padding: 0.9rem 1.15rem;
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .admin-nav-tile:hover {
+      background: var(--bg-card);
+      border-color: #9ca3af;
+      transform: translateY(-1px);
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Top Bar -->
+  <!-- Top Announcement / Status Bar -->
   <div class="top-bar">
     <div class="container">
       <div>
-        <span>Store Operations & Fulfillment Management</span>
+        <span>EverydayStore Operations & Management Suite</span>
       </div>
       <div class="top-bar-links">
-        <a href="/index.html">← Back to Customer Store</a>
+        <a href="/index.html" style="color: var(--text-light); text-decoration: none; font-size: 0.85rem;">← Customer Storefront</a>
       </div>
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Main Navigation Header -->
   <header>
     <div class="container nav-wrapper">
-      <a href="/admin.html" class="logo">Everyday<span>Store</span> <span style="font-size: 0.8rem; background: var(--bg-muted); border: 1px solid var(--border); padding: 3px 8px; border-radius: 4px; font-weight: 600;">Manager</span></a>
+      <a href="/admin.html" class="logo">
+        Everyday<span>Store</span>
+        <span style="font-size: 0.8rem; background: var(--bg-muted); border: 1px solid var(--border); padding: 3px 8px; border-radius: 4px; font-weight: 600; margin-left: 6px;">Admin Panel</span>
+      </a>
+
       <ul class="nav-menu">
-        <li><a href="/index.html">Customer Store</a></li>
-        <li><a href="/orders.html">Orders</a></li>
-        <li><a href="/cart.html">Cart</a></li>
+        <li><a href="/index.html">Storefront</a></li>
+        <li><a href="/delivery.html">Delivery Portal</a></li>
+        <li><a href="/orders.html">My Orders</a></li>
         <li>
           <button id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Theme">
             Dark Mode
@@ -41,131 +99,129 @@
     </div>
   </header>
 
-  <!-- Login Shield for Non-Admin -->
-  <div id="admin-auth-gate" style="display: none; max-width: 440px; margin: 4.5rem auto; padding: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--card-shadow);">
-    <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">Staff Access Required</h2>
-    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Sign in with store manager credentials to view performance and manage orders.</p>
+  <!-- Login Gate for Non-Admin / Staff -->
+  <div id="admin-auth-gate" style="display: none; max-width: 460px; margin: 4.5rem auto; padding: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--card-shadow);">
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <h2 style="font-size: 1.45rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.4rem;">Staff Authentication</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">Sign in with administrator credentials to manage store operations.</p>
+    </div>
 
     <form onsubmit="handleAdminLogin(event)">
       <div class="form-group">
-        <label class="form-label">Manager Email</label>
+        <label class="form-label">Administrator Email</label>
         <input type="email" id="admin-email-input" class="form-control" value="admin@omnicommerce.com" required>
       </div>
       <div class="form-group">
         <label class="form-label">Password</label>
         <input type="password" id="admin-pass-input" class="form-control" value="AdminPassword2026!" required>
       </div>
-      <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In as Manager</button>
-      <div style="margin-top: 1.25rem; text-align: center;">
+      <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem;">Sign In to Admin Dashboard</button>
+      <div style="margin-top: 1.5rem; text-align: center;">
         <a href="/index.html" style="font-size: 0.9rem; color: var(--text-muted);">← Return to Customer Store</a>
       </div>
     </form>
   </div>
 
-  <!-- Admin Main Dashboard -->
-  <div id="admin-main-panel" class="container" style="margin-top: 2.5rem; margin-bottom: 5rem; display: none;">
-    <!-- Dashboard Header -->
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+  <!-- Admin Main Dashboard Panel -->
+  <main id="admin-main-panel" class="container" style="margin-top: 2.5rem; margin-bottom: 5rem; display: none;">
+    
+    <!-- Top Action Header -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem;">
       <div>
-        <h1 style="font-size: 2rem; font-weight: 800; color: var(--text-main);">Store Operations Dashboard</h1>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">Overview of live orders, inventory stock, and all store pages</p>
+        <h1 style="font-size: 2.15rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.35rem;">Store Operations Dashboard</h1>
+        <p style="color: var(--text-muted); font-size: 1rem;">Real-time overview of revenue performance, customer orders, inventory stock, and logistics.</p>
       </div>
-      <div style="display: flex; gap: 0.75rem;">
-        <button class="btn btn-secondary btn-sm" onclick="refreshDashboard()">Refresh Data</button>
-        <button class="btn btn-primary btn-sm" onclick="openAddProductModal()">+ Add Product</button>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <button class="btn btn-secondary btn-sm" onclick="refreshDashboard()">Refresh Overview</button>
+        <button class="btn btn-primary btn-sm" onclick="openAddProductModal()">+ Add New Product</button>
       </div>
     </div>
 
-    <!-- Quick Navigation Hub to All Store Pages -->
-    <div style="background: var(--bg-card); padding: 1.5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border); margin-bottom: 2rem; box-shadow: var(--card-shadow);">
-      <h3 style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 1rem;">Quick Navigation Hub</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-        <a href="/index.html" target="_blank" style="padding: 0.85rem 1rem; background: var(--bg-muted); border: 1px solid var(--border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: space-between;">
+    <!-- Quick Navigation Hub -->
+    <div style="background: var(--bg-card); padding: 1.5rem 1.75rem; border-radius: 14px; border: 1px solid var(--border); margin-bottom: 2rem; box-shadow: var(--card-shadow);">
+      <div style="font-size: 0.9rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em;">Portal Navigation Hub</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.85rem;">
+        <a href="/index.html" target="_blank" class="admin-nav-tile">
           <div>
-            <strong style="font-size: 0.9rem; color: var(--text-main);">Storefront Catalog</strong>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">index.html</div>
+            <strong style="font-size: 0.925rem; color: var(--text-main);">Storefront Catalog</strong>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Customer shopping view</div>
           </div>
-          <span style="color: var(--text-light);">↗</span>
+          <span style="color: var(--text-light); font-size: 0.85rem;">↗</span>
         </a>
 
-        <a href="/product.html?id=b84e04bc-6de5-46fc-ac4b-7f6f540f9ca0" target="_blank" style="padding: 0.85rem 1rem; background: var(--bg-muted); border: 1px solid var(--border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: space-between;">
+        <a href="/delivery.html" target="_blank" class="admin-nav-tile">
           <div>
-            <strong style="font-size: 0.9rem; color: var(--text-main);">Product Details</strong>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">product.html</div>
+            <strong style="font-size: 0.925rem; color: var(--text-main);">Courier Logistics Portal</strong>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Delivery assignments</div>
           </div>
-          <span style="color: var(--text-light);">↗</span>
+          <span style="color: var(--text-light); font-size: 0.85rem;">↗</span>
         </a>
 
-        <a href="/cart.html" target="_blank" style="padding: 0.85rem 1rem; background: var(--bg-muted); border: 1px solid var(--border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: space-between;">
+        <a href="/orders.html" target="_blank" class="admin-nav-tile">
           <div>
-            <strong style="font-size: 0.9rem; color: var(--text-main);">Shopping Cart</strong>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">cart.html</div>
+            <strong style="font-size: 0.925rem; color: var(--text-main);">Customer Order Tracker</strong>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Live timeline tracking</div>
           </div>
-          <span style="color: var(--text-light);">↗</span>
+          <span style="color: var(--text-light); font-size: 0.85rem;">↗</span>
         </a>
 
-        <a href="/checkout.html" target="_blank" style="padding: 0.85rem 1rem; background: var(--bg-muted); border: 1px solid var(--border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: space-between;">
+        <a href="/api/health" target="_blank" class="admin-nav-tile">
           <div>
-            <strong style="font-size: 0.9rem; color: var(--text-main);">Checkout Wizard</strong>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">checkout.html</div>
+            <strong style="font-size: 0.925rem; color: var(--text-main);">System Health Check</strong>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">REST API status</div>
           </div>
-          <span style="color: var(--text-light);">↗</span>
-        </a>
-
-        <a href="/orders.html" target="_blank" style="padding: 0.85rem 1rem; background: var(--bg-muted); border: 1px solid var(--border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: space-between;">
-          <div>
-            <strong style="font-size: 0.9rem; color: var(--text-main);">Customer Tracking</strong>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">orders.html</div>
-          </div>
-          <span style="color: var(--text-light);">↗</span>
-        </a>
-
-        <a href="/api/health" target="_blank" style="padding: 0.85rem 1rem; background: var(--bg-muted); border: 1px solid var(--border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: space-between;">
-          <div>
-            <strong style="font-size: 0.9rem; color: var(--text-main);">API System Health</strong>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">api/health</div>
-          </div>
-          <span style="color: var(--text-light);">↗</span>
+          <span style="color: var(--text-light); font-size: 0.85rem;">↗</span>
         </a>
       </div>
     </div>
 
-    <!-- KPI Metric Cards -->
-    <div id="admin-metrics-container" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
-      <div style="background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--card-shadow);">
-        <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Total Gross Revenue</span>
-        <div id="kpi-revenue" style="font-size: 1.85rem; font-weight: 800; color: var(--text-main); margin-top: 0.35rem;">$0.00</div>
+    <!-- Key Performance Indicator Cards -->
+    <div id="admin-metrics-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
+      <div class="admin-stat-card">
+        <span class="admin-stat-label">Total Gross Revenue</span>
+        <div id="kpi-revenue" class="admin-stat-value">$0.00</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Paid and confirmed orders</span>
       </div>
-      <div style="background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--card-shadow);">
-        <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Total Orders Fulfilled</span>
-        <div id="kpi-orders" style="font-size: 1.85rem; font-weight: 800; color: var(--text-main); margin-top: 0.35rem;">0</div>
+
+      <div class="admin-stat-card">
+        <span class="admin-stat-label">Orders Placed</span>
+        <div id="kpi-orders" class="admin-stat-value">0</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Total customer orders</span>
       </div>
-      <div style="background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--card-shadow);">
-        <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Avg Order Value</span>
-        <div id="kpi-aov" style="font-size: 1.85rem; font-weight: 800; color: var(--text-main); margin-top: 0.35rem;">$0.00</div>
+
+      <div class="admin-stat-card">
+        <span class="admin-stat-label">Average Order Value</span>
+        <div id="kpi-aov" class="admin-stat-value">$0.00</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Average basket size</span>
       </div>
-      <div style="background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--card-shadow);">
-        <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Active Customers</span>
-        <div id="kpi-customers" style="font-size: 1.85rem; font-weight: 800; color: var(--text-main); margin-top: 0.35rem;">0</div>
+
+      <div class="admin-stat-card">
+        <span class="admin-stat-label">Active Customers</span>
+        <div id="kpi-customers" class="admin-stat-value">0</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Registered accounts</span>
       </div>
     </div>
 
-    <!-- Live Orders Table -->
-    <div style="background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border); padding: 2rem; box-shadow: var(--card-shadow); margin-bottom: 2rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main);">Live Orders & Status Updates</h3>
-        <span class="badge badge-success">Live Orders</span>
+    <!-- Live Customer Orders Table -->
+    <div class="admin-section-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.75rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.2rem;">Live Customer Orders</h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Assign registered delivery couriers and update order fulfillment statuses</p>
+        </div>
+        <button class="btn btn-secondary btn-sm" onclick="loadAdminOrders()">Refresh Orders</button>
       </div>
 
       <div style="overflow-x: auto;">
         <table class="data-table">
           <thead>
             <tr>
-              <th>Order ID</th>
-              <th>Customer</th>
-              <th>Total</th>
-              <th>Status</th>
-              <th>Date</th>
+              <th>Order ID & Tracking</th>
+              <th>Customer Details</th>
+              <th>Total Amount</th>
+              <th>Current Status</th>
+              <th>Assign Courier</th>
+              <th>Placed Date</th>
               <th>Update Status</th>
             </tr>
           </thead>
@@ -176,23 +232,29 @@
       </div>
     </div>
 
-    <!-- Product Inventory Table -->
-    <div style="background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border); padding: 2rem; box-shadow: var(--card-shadow);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main);">Product Catalog Inventory</h3>
-        <button class="btn btn-secondary btn-sm" onclick="loadAdminProducts()">Reload Catalog</button>
+    <!-- Product Catalog & Inventory Section -->
+    <div class="admin-section-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.75rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.2rem;">Product Inventory Catalog</h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Manage catalog pricing, stock levels, categories, and active products</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn btn-secondary btn-sm" onclick="loadAdminProducts()">Reload Products</button>
+          <button class="btn btn-primary btn-sm" onclick="openAddProductModal()">+ Add Product</button>
+        </div>
       </div>
 
       <div style="overflow-x: auto;">
         <table class="data-table">
           <thead>
             <tr>
-              <th>Product Item</th>
+              <th>Product Details</th>
               <th>Category</th>
               <th>Price</th>
-              <th>Stock Level</th>
-              <th>Rating</th>
-              <th>Action</th>
+              <th>Available Stock</th>
+              <th>Customer Rating</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody id="admin-products-tbody">
@@ -201,19 +263,19 @@
         </table>
       </div>
     </div>
-  </div>
+  </main>
 
   <!-- Add Product Modal -->
   <div id="add-product-modal" class="modal-overlay" onclick="if(event.target===this) closeAddProductModal()">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="max-width: 540px;">
       <div class="modal-header">
-        <h3 class="modal-title">Add New Product</h3>
+        <h3 class="modal-title">Create New Catalog Product</h3>
         <button class="modal-close" onclick="closeAddProductModal()">&times;</button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="padding: 1.5rem 1.75rem;">
         <form onsubmit="handleCreateProduct(event)">
           <div class="form-group">
-            <label class="form-label">Product Name</label>
+            <label class="form-label">Product Title</label>
             <input type="text" id="new-prod-name" class="form-control" placeholder="Wireless Noise-Canceling Headphones" required>
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
@@ -225,36 +287,47 @@
                 <option value="Home & Kitchen">Home & Kitchen</option>
                 <option value="Books & Office">Books & Office</option>
                 <option value="Sports & Fitness">Sports & Fitness</option>
+                <option value="Accessories & Travel">Accessories & Travel</option>
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label">Price ($)</label>
+              <label class="form-label">Price ($ USD)</label>
               <input type="number" id="new-prod-price" class="form-control" step="0.01" placeholder="49.99" required>
             </div>
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
-              <label class="form-label">Stock Quantity</label>
-              <input type="number" id="new-prod-stock" class="form-control" value="50" required>
+              <label class="form-label">Initial Stock Quantity</label>
+              <input type="number" id="new-prod-stock" class="form-control" value="50" min="1" required>
             </div>
             <div class="form-group">
-              <label class="form-label">SKU</label>
+              <label class="form-label">SKU Identifier</label>
               <input type="text" id="new-prod-sku" class="form-control" placeholder="AUDIO-WH100" required>
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Image URL</label>
+            <label class="form-label">Primary Image URL</label>
             <input type="url" id="new-prod-image" class="form-control" placeholder="https://images.unsplash.com/..." required>
           </div>
           <div class="form-group">
-            <label class="form-label">Description</label>
-            <textarea id="new-prod-desc" class="form-control" rows="2" placeholder="Quality product designed for daily use..."></textarea>
+            <label class="form-label">Product Description</label>
+            <textarea id="new-prod-desc" class="form-control" rows="3" placeholder="High-quality craftsmanship designed for reliable everyday use..."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Create Product</button>
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem; margin-top: 0.5rem;">Save & Publish Product</button>
         </form>
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 EverydayStore Operations. All rights reserved.</p>
+        <a href="/index.html" style="color: var(--text-muted);">← Return to Storefront</a>
+      </div>
+    </div>
+  </footer>
 
   <script src="/js/api.js"></script>
   <script src="/js/auth.js"></script>
@@ -280,7 +353,7 @@
         await AuthManager.login(email, pass);
         window.location.reload();
       } catch (err) {
-        showToast('Invalid staff credentials', 'danger');
+        showToast('Invalid administrator credentials', 'danger');
       }
     }
 
@@ -288,7 +361,7 @@
       await loadAdminMetrics();
       await loadAdminOrders();
       await loadAdminProducts();
-      showToast('Dashboard refreshed!', 'info');
+      showToast('Admin data refreshed', 'info');
     }
   </script>
 </body>
