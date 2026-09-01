@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EverydayStore — Online Shopping for Tech, Fashion, Home & Essentials</title>
+  <title>EverydayStore — Online Store for Tech, Apparel, Home & Essentials</title>
   <script src="/js/theme.js"></script>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/components.css">
@@ -15,27 +15,26 @@
   <div class="top-bar">
     <div class="container">
       <div>
-        <span>⚡ Super Savings Deals • Free delivery on orders over $50 • 30-Day Easy Returns</span>
+        <span>Free standard delivery on orders over $50 • 30-Day Easy Returns</span>
       </div>
       <div class="top-bar-links">
-        <a href="/orders.html">Track My Order</a>
-        <a href="/cart.html">View Cart</a>
+        <a href="/orders.html">Track Order</a>
+        <a href="/cart.html">Shopping Cart</a>
       </div>
     </div>
   </div>
 
-  <!-- Professional Flipkart-Style Header -->
+  <!-- Clean, Natural Header -->
   <header>
     <div class="container nav-wrapper">
-      <!-- Big Bold Brand Logo -->
+      <!-- Brand Logo -->
       <a href="/index.html" class="logo">
         Everyday<span>Store</span>
       </a>
 
-      <!-- EXTRA LARGE SEARCH BAR WITH SEARCH BUTTON -->
+      <!-- Large Clean Search Bar -->
       <div class="nav-search">
-        <span class="nav-search-icon">🔍</span>
-        <input type="text" id="search-input" placeholder="Search for products, brands and more (e.g. Laptop, Headphones, Shirt)..." onkeyup="if(event.key==='Enter') loadProducts(); else handleSearch(this.value);">
+        <input type="text" id="search-input" placeholder="Search products, categories, or brands..." onkeyup="if(event.key==='Enter') loadProducts(); else handleSearch(this.value);">
         <button class="nav-search-btn" onclick="loadProducts()">Search</button>
       </div>
 
@@ -44,12 +43,12 @@
         <li><a href="/index.html" class="active">Shop</a></li>
         <li>
           <button id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Theme">
-            🌙 Dark Mode
+            Dark Mode
           </button>
         </li>
         <li>
           <a href="/cart.html" class="cart-btn">
-            <span>🛒 Cart</span>
+            <span>Cart</span>
             <span id="cart-badge-count" class="cart-count" style="display: none;">0</span>
           </a>
         </li>
@@ -60,65 +59,47 @@
     </div>
   </header>
 
-  <!-- Top Category Navigation Strip (Flipkart Retail Style) -->
+  <!-- Clean Category Strip (No AI Emojis/Icons) -->
   <div class="category-top-strip">
     <div class="container">
       <div class="category-strip-inner" id="category-strip-container">
-        <div class="category-strip-card active" onclick="filterByCategory('ALL', this)">
-          <span class="category-strip-icon">🛍️</span>
-          <span class="category-strip-title">All Products</span>
-        </div>
-        <div class="category-strip-card" onclick="filterByCategory('Electronics', this)">
-          <span class="category-strip-icon">💻</span>
-          <span class="category-strip-title">Electronics</span>
-        </div>
-        <div class="category-strip-card" onclick="filterByCategory('Apparel & Fashion', this)">
-          <span class="category-strip-icon">👗</span>
-          <span class="category-strip-title">Fashion</span>
-        </div>
-        <div class="category-strip-card" onclick="filterByCategory('Home & Kitchen', this)">
-          <span class="category-strip-icon">🛋️</span>
-          <span class="category-strip-title">Home & Kitchen</span>
-        </div>
-        <div class="category-strip-card" onclick="filterByCategory('Books & Office', this)">
-          <span class="category-strip-icon">📚</span>
-          <span class="category-strip-title">Books & Office</span>
-        </div>
-        <div class="category-strip-card" onclick="filterByCategory('Sports & Fitness', this)">
-          <span class="category-strip-icon">⚡</span>
-          <span class="category-strip-title">Sports & Fitness</span>
-        </div>
+        <button class="category-strip-btn active" onclick="filterByCategory('ALL', this)">All Items</button>
+        <button class="category-strip-btn" onclick="filterByCategory('Electronics', this)">Electronics</button>
+        <button class="category-strip-btn" onclick="filterByCategory('Apparel & Fashion', this)">Clothing & Apparel</button>
+        <button class="category-strip-btn" onclick="filterByCategory('Home & Kitchen', this)">Home & Kitchen</button>
+        <button class="category-strip-btn" onclick="filterByCategory('Books & Office', this)">Books & Office</button>
+        <button class="category-strip-btn" onclick="filterByCategory('Sports & Fitness', this)">Sports & Fitness</button>
       </div>
     </div>
   </div>
 
   <main class="container">
-    <!-- Big Savings Deals Banner -->
+    <!-- Single Clean Trending Search Line (Only in One Place) -->
+    <div style="margin-top: 1.25rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.875rem; color: var(--text-muted); flex-wrap: wrap;">
+      <span style="font-weight: 600; color: var(--text-main);">Popular searches:</span>
+      <span style="cursor: pointer; text-decoration: underline;" onclick="quickSearch('Laptop')">Laptops</span> •
+      <span style="cursor: pointer; text-decoration: underline;" onclick="quickSearch('Headphones')">Headphones</span> •
+      <span style="cursor: pointer; text-decoration: underline;" onclick="quickSearch('Shirt')">Oxford Shirts</span> •
+      <span style="cursor: pointer; text-decoration: underline;" onclick="quickSearch('Chair')">Ergonomic Chairs</span> •
+      <span style="cursor: pointer; text-decoration: underline;" onclick="quickSearch('Dumbbell')">Adjustable Dumbbells</span>
+    </div>
+
+    <!-- Clean Hero Banner -->
     <section class="hero-section">
       <div>
-        <span class="hero-tag">🔥 Mega Savings Event</span>
-        <h1 class="hero-title">Best Deals on Top Tech & Lifestyle</h1>
-        <p class="hero-desc">Save up to 40% on premier laptops, noise-canceling headphones, tailored apparel, ergonomic office furniture, and fitness essentials.</p>
+        <span class="hero-tag">Seasonal Selection</span>
+        <h1 class="hero-title">Everyday essentials made for real life.</h1>
+        <p class="hero-desc">Discover dependable electronics, comfortable apparel, practical kitchenware, and durable home essentials built with honest materials.</p>
         
-        <div class="hero-actions" style="margin-bottom: 1.5rem;">
-          <a href="#shop-catalog" class="btn btn-secondary btn-lg" style="background: #ffffff; color: #2874f0; font-weight: 800;">
-            Explore Deals Now ↓
+        <div class="hero-actions">
+          <a href="#shop-catalog" class="btn btn-primary btn-lg">
+            Shop Catalog ↓
           </a>
-        </div>
-
-        <!-- Quick Trending Search Tags -->
-        <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
-          <span style="font-size: 0.85rem; font-weight: 700; color: rgba(255, 255, 255, 0.9);">Trending Searches:</span>
-          <button class="badge" style="background: rgba(255, 255, 255, 0.2); color: #ffffff; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.4);" onclick="quickSearch('Laptop')">💻 Laptop</button>
-          <button class="badge" style="background: rgba(255, 255, 255, 0.2); color: #ffffff; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.4);" onclick="quickSearch('Headphones')">🎧 Headphones</button>
-          <button class="badge" style="background: rgba(255, 255, 255, 0.2); color: #ffffff; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.4);" onclick="quickSearch('Shirt')">👕 Oxford Shirt</button>
-          <button class="badge" style="background: rgba(255, 255, 255, 0.2); color: #ffffff; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.4);" onclick="quickSearch('Chair')">🛋️ Mesh Chair</button>
-          <button class="badge" style="background: rgba(255, 255, 255, 0.2); color: #ffffff; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.4);" onclick="quickSearch('Dumbbell')">⚡ Dumbbells</button>
         </div>
       </div>
 
       <div class="hero-img-box">
-        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Featured Items">
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Featured Products">
       </div>
     </section>
 
@@ -126,13 +107,13 @@
     <section id="shop-catalog">
       <!-- Controls Bar -->
       <div class="catalog-header-bar">
-        <span id="catalog-count-text" class="catalog-count-text">Showing all curated items</span>
+        <span id="catalog-count-text" class="catalog-count-text">Showing all items</span>
         <div>
           <select id="sort-select" class="catalog-sort-select" onchange="loadProducts()">
-            <option value="newest">Sort by: Popularity / Newest</option>
+            <option value="newest">Sort: Featured & Newest</option>
             <option value="price_asc">Price: Low to High</option>
             <option value="price_desc">Price: High to Low</option>
-            <option value="rating">Customer Rating: High to Low</option>
+            <option value="rating">Customer Rating</option>
           </select>
         </div>
       </div>
@@ -147,24 +128,20 @@
     <section class="value-props-section">
       <div class="value-props-grid">
         <div class="value-prop-item">
-          <div class="value-prop-icon">🚚</div>
-          <h4>Fast & Free Delivery</h4>
-          <p>Free standard delivery on orders over $50</p>
+          <h4>Free Standard Shipping</h4>
+          <p>On all domestic orders over $50</p>
         </div>
         <div class="value-prop-item">
-          <div class="value-prop-icon">🔄</div>
-          <h4>30-Day Easy Returns</h4>
-          <p>Hassle-free 100% money back guarantee</p>
+          <h4>30-Day Returns</h4>
+          <p>Simple and hassle-free returns</p>
         </div>
         <div class="value-prop-item">
-          <div class="value-prop-icon">🔒</div>
-          <h4>100% Safe & Secure</h4>
-          <p>256-bit encrypted SSL checkout protection</p>
+          <h4>Secure Checkout</h4>
+          <p>Protected by 256-bit encryption</p>
         </div>
         <div class="value-prop-item">
-          <div class="value-prop-icon">⭐</div>
-          <h4>Quality Assured</h4>
-          <p>Curated authentic verified merchandise</p>
+          <h4>Customer Support</h4>
+          <p>Dedicated help for all your orders</p>
         </div>
       </div>
     </section>
@@ -175,38 +152,38 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <div class="logo" style="margin-bottom: 1rem; color: var(--text-main);">Everyday<span style="color: #2874f0;">Store</span></div>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65;">Your trusted destination for premium electronics, fashion, home essentials, and lifestyle goods. Fast doorstep delivery and dependable 24/7 customer care.</p>
+          <div class="logo" style="margin-bottom: 1rem;">Everyday<span>Store</span></div>
+          <p style="color: var(--text-muted); font-size: 0.925rem; line-height: 1.6;">Simple, honest goods for everyday living. Fast express shipping and helpful customer support.</p>
         </div>
 
         <div class="footer-col">
-          <h4>Customer Care</h4>
+          <h4>Shopping</h4>
           <ul>
             <li><a href="/index.html">Browse Catalog</a></li>
             <li><a href="/cart.html">Shopping Cart</a></li>
-            <li><a href="/orders.html">Track My Order</a></li>
+            <li><a href="/orders.html">Track Order</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>About & Policies</h4>
+          <h4>Help & Information</h4>
           <ul>
-            <li><a href="/index.html">About EverydayStore</a></li>
-            <li><a href="/orders.html">Return & Refund Policy</a></li>
-            <li><a href="/index.html">Shipping Guidelines</a></li>
+            <li><a href="/index.html">About Us</a></li>
+            <li><a href="/orders.html">Return Policy</a></li>
+            <li><a href="/index.html">Shipping Details</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Certified Safe Shopping</h4>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Payment methods: Credit Card, Debit Card, PayPal, and Cash on Delivery.</p>
-          <span class="badge badge-success">✓ Verified Secure Store</span>
+          <h4>Safe & Secure</h4>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1rem;">Payment methods accepted: Major Credit Cards, Debit, PayPal, and Cash on Delivery.</p>
+          <span class="badge badge-secondary">Verified Clean Store</span>
         </div>
       </div>
 
       <div class="footer-bottom">
         <p>&copy; 2026 EverydayStore. All rights reserved.</p>
-        <p>Built with Precision & Care</p>
+        <p>Simple, Clean & Human-Crafted</p>
       </div>
     </div>
   </footer>

@@ -15,10 +15,10 @@
   <div class="top-bar">
     <div class="container">
       <div>
-        <span>⚡ Super Savings Deals • Free standard shipping on orders over $50</span>
+        <span>Free standard shipping on orders over $50 • 30-Day Easy Returns</span>
       </div>
       <div class="top-bar-links">
-        <a href="/orders.html">Track My Order</a>
+        <a href="/orders.html">Track Order</a>
       </div>
     </div>
   </div>
@@ -29,7 +29,6 @@
       <a href="/index.html" class="logo">Everyday<span>Store</span></a>
 
       <div class="nav-search">
-        <span class="nav-search-icon">🔍</span>
         <input type="text" id="search-input" placeholder="Search products..." onkeyup="if(event.key==='Enter') window.location.href='/index.html?search=' + encodeURIComponent(this.value);">
         <button class="nav-search-btn" onclick="window.location.href='/index.html?search=' + encodeURIComponent(document.getElementById('search-input').value);">Search</button>
       </div>
@@ -38,12 +37,12 @@
         <li><a href="/index.html">← Continue Shopping</a></li>
         <li>
           <button id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Theme">
-            🌙 Dark Mode
+            Dark Mode
           </button>
         </li>
         <li>
           <a href="/cart.html" class="cart-btn">
-            <span>🛒 Cart</span>
+            <span>Cart</span>
             <span id="cart-badge-count" class="cart-count" style="display: none;">0</span>
           </a>
         </li>
@@ -53,13 +52,13 @@
   </header>
 
   <main class="container" style="margin-top: 3rem; margin-bottom: 5rem;">
-    <h1 style="font-size: 2.25rem; font-weight: 900; color: var(--text-main); margin-bottom: 2rem;">Shopping Cart</h1>
+    <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 2rem;">Shopping Cart</h1>
 
     <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start;">
       <!-- Cart Items Section -->
       <div id="cart-items-container">
         <div style="text-align: center; padding: 5rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border);">
-          <p style="color: var(--text-muted); font-size: 1.1rem;">Loading your items...</p>
+          <p style="color: var(--text-muted); font-size: 1.05rem;">Loading your items...</p>
         </div>
       </div>
 
@@ -69,7 +68,7 @@
 
         <!-- Coupon Apply Input -->
         <div style="margin-bottom: 1.75rem;">
-          <label class="form-label" style="font-size: 0.9rem;">Have a Promo Coupon?</label>
+          <label class="form-label" style="font-size: 0.9rem;">Have a Promo Code?</label>
           <div style="display: flex; gap: 0.6rem;">
             <input type="text" id="coupon-code-input" class="form-control" placeholder="e.g. WELCOME10" style="text-transform: uppercase;">
             <button class="btn btn-secondary" onclick="applyPromo()">Apply</button>
@@ -85,8 +84,8 @@
           <!-- Populated by JS -->
         </div>
 
-        <a href="/checkout.html" id="checkout-btn" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1.75rem; text-decoration: none; text-align: center; background: #fb641b; font-weight: 800;">
-          Place Order →
+        <a href="/checkout.html" id="checkout-btn" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1.75rem; text-decoration: none; text-align: center;">
+          Proceed to Checkout →
         </a>
       </div>
     </div>
@@ -96,7 +95,7 @@
     <div class="container">
       <div class="footer-bottom">
         <p>&copy; 2026 EverydayStore. All rights reserved.</p>
-        <a href="/index.html" style="color: var(--primary); font-weight: 700;">← Back to Shop</a>
+        <a href="/index.html" style="color: var(--text-muted);">← Back to Shop</a>
       </div>
     </div>
   </footer>
@@ -119,10 +118,9 @@
       if (!cart || !cart.items || cart.items.length === 0) {
         itemsContainer.innerHTML = `
           <div style="background: var(--bg-card); padding: 5rem 2rem; text-align: center; border-radius: var(--radius-lg); border: 1px solid var(--border);">
-            <div style="font-size: 3.5rem; margin-bottom: 1.25rem;">🛒</div>
-            <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">Your cart is empty</h3>
-            <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem;">Explore our curated selection and find items you love.</p>
-            <a href="/index.html" class="btn btn-primary btn-lg" style="background: #fb641b;">Start Shopping</a>
+            <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Your cart is empty</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">Explore our curated selection and find items you love.</p>
+            <a href="/index.html" class="btn btn-primary btn-lg">Start Shopping</a>
           </div>
         `;
         summaryDetails.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 1rem 0;">No items in cart</p>';
@@ -149,7 +147,7 @@
                 <tr>
                   <td>
                     <div style="display: flex; align-items: center; gap: 1.25rem;">
-                      <img src="${item.image || '/images/placeholder.svg'}" alt="${item.name}" style="width: 75px; height: 75px; object-fit: contain; background: #fff; padding: 4px; border-radius: var(--radius-sm); border: 1px solid var(--border);" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
+                      <img src="${item.image || '/images/placeholder.svg'}" alt="${item.name}" style="width: 70px; height: 70px; object-fit: contain; background: #fff; padding: 4px; border-radius: var(--radius-sm); border: 1px solid var(--border);" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
                       <div>
                         <a href="/product.html?id=${item.productId}" style="color: var(--text-main); font-weight: 700; font-size: 1.05rem;">${item.name}</a>
                         <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">SKU: ${item.sku || 'N/A'}</div>
@@ -176,26 +174,26 @@
       `;
 
       summaryDetails.innerHTML = `
-        <div style="display: flex; justify-content: space-between; margin-bottom: 0.85rem; font-size: 0.975rem;">
-          <span style="color: var(--text-muted);">Price (${cart.itemCount} items):</span> 
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.85rem; font-size: 0.95rem;">
+          <span style="color: var(--text-muted);">Items Subtotal (${cart.itemCount}):</span> 
           <strong style="color: var(--text-main);">$${cart.subtotal.toFixed(2)}</strong>
         </div>
         ${cart.discountAmount > 0 ? `
-        <div style="display: flex; justify-content: space-between; margin-bottom: 0.85rem; font-size: 0.975rem; color: #388e3c;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.85rem; font-size: 0.95rem; color: var(--discount-green);">
           <span>Coupon Discount (${cart.appliedCoupon?.code || 'ACTIVE'}):</span> 
           <strong>-$${cart.discountAmount.toFixed(2)}</strong>
         </div>` : ''}
-        <div style="display: flex; justify-content: space-between; margin-bottom: 0.85rem; font-size: 0.975rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.85rem; font-size: 0.95rem;">
           <span style="color: var(--text-muted);">Estimated Tax:</span> 
           <strong style="color: var(--text-main);">$${cart.taxAmount.toFixed(2)}</strong>
         </div>
-        <div style="display: flex; justify-content: space-between; margin-bottom: 1.25rem; font-size: 0.975rem;">
-          <span style="color: var(--text-muted);">Delivery Charges:</span> 
-          <strong>${cart.shippingAmount === 0 ? '<span style="color: #388e3c; font-weight: 800;">FREE</span>' : `$${cart.shippingAmount.toFixed(2)}`}</strong>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1.25rem; font-size: 0.95rem;">
+          <span style="color: var(--text-muted);">Shipping:</span> 
+          <strong>${cart.shippingAmount === 0 ? '<span style="color: var(--discount-green); font-weight: 700;">FREE</span>' : `$${cart.shippingAmount.toFixed(2)}`}</strong>
         </div>
         <div style="padding-top: 1.25rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: baseline;">
-          <span style="font-size: 1.2rem; font-weight: 900; color: var(--text-main);">Total Amount:</span>
-          <span style="font-size: 1.95rem; font-weight: 900; color: var(--text-main);">$${cart.grandTotal.toFixed(2)}</span>
+          <span style="font-size: 1.15rem; font-weight: 800; color: var(--text-main);">Order Total:</span>
+          <span style="font-size: 1.85rem; font-weight: 900; color: var(--text-main);">$${cart.grandTotal.toFixed(2)}</span>
         </div>
       `;
     }

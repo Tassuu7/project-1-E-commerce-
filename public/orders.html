@@ -15,7 +15,7 @@
   <div class="top-bar">
     <div class="container">
       <div>
-        <span>📦 Live shipment tracking with real-time updates</span>
+        <span>Real-time shipment tracking with verified dispatch updates</span>
       </div>
       <div class="top-bar-links">
         <a href="/index.html">← Back to Shop</a>
@@ -32,7 +32,7 @@
         <li><a href="/index.html">Shop</a></li>
         <li>
           <button id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Theme">
-            🌙 Dark Mode
+            Dark Mode
           </button>
         </li>
         <li>
@@ -50,14 +50,14 @@
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.25rem; flex-wrap: wrap; gap: 1rem;">
       <div>
         <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--text-main);">My Orders & Tracking</h1>
-        <p style="color: var(--text-muted); font-size: 1.05rem;">Track your delivery status and view order details</p>
+        <p style="color: var(--text-muted); font-size: 1rem;">Track your delivery status and view order details</p>
       </div>
       <a href="/index.html" class="btn btn-primary">+ Browse More Items</a>
     </div>
 
     <div id="orders-list-container">
       <div style="text-align: center; padding: 5rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border);">
-        <p style="color: var(--text-muted); font-size: 1.1rem;">Loading orders...</p>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">Loading orders...</p>
       </div>
     </div>
   </main>
@@ -102,8 +102,7 @@
         } else {
           container.innerHTML = `
             <div style="background: var(--bg-card); padding: 5rem 2rem; text-align: center; border-radius: var(--radius-lg); border: 1px solid var(--border);">
-              <div style="font-size: 3.5rem; margin-bottom: 1.25rem;">📦</div>
-              <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">No orders yet</h3>
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">No orders found</h3>
               <p style="color: var(--text-muted); margin-bottom: 2rem;">You haven't placed any orders yet.</p>
               <a href="/index.html" class="btn btn-primary btn-lg">Start Shopping</a>
             </div>
@@ -131,21 +130,21 @@
               <small style="color: var(--text-muted);">Ordered on ${new Date(order.createdAt).toLocaleDateString()}</small>
             </div>
             <div style="text-align: right;">
-              <span style="font-size: 0.9rem; color: var(--text-muted);">Total</span>
+              <span style="font-size: 0.9rem; color: var(--text-muted);">Total Amount</span>
               <div style="font-size: 2rem; font-weight: 900; color: var(--text-main);">$${order.grandTotal.toFixed(2)}</div>
             </div>
           </div>
 
           <!-- Items List -->
           <div style="margin-bottom: 2.25rem;">
-            <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 1.25rem; color: var(--text-main);">Items (${order.items.length})</h3>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-main);">Purchased Items (${order.items.length})</h3>
             <div style="display: flex; flex-direction: column; gap: 0.85rem;">
               ${order.items.map(item => `
                 <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; background: var(--bg-muted); border-radius: var(--radius-sm); border: 1px solid var(--border);">
                   <div style="display: flex; align-items: center; gap: 1rem;">
-                    <img src="${item.image || '/images/placeholder.svg'}" alt="${item.name}" style="width: 52px; height: 52px; object-fit: cover; border-radius: var(--radius-sm);" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
+                    <img src="${item.image || '/images/placeholder.svg'}" alt="${item.name}" style="width: 52px; height: 52px; object-fit: contain; background: #fff; padding: 2px; border-radius: var(--radius-sm);" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
                     <div>
-                      <strong style="color: var(--text-main); font-size: 1.05rem;">${item.name}</strong>
+                      <strong style="color: var(--text-main); font-size: 1rem;">${item.name}</strong>
                       <div style="font-size: 0.85rem; color: var(--text-muted);">Qty: ${item.quantity} × $${item.price.toFixed(2)}</div>
                     </div>
                   </div>
@@ -159,8 +158,8 @@
           <div style="background: var(--bg-muted); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.75rem;">
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <div>
-                <strong style="color: var(--text-main); font-size: 0.95rem;">Tracking ID:</strong>
-                <div style="font-size: 1.25rem; font-weight: 800; color: var(--accent); font-family: monospace; margin-top: 0.25rem;">
+                <strong style="color: var(--text-main); font-size: 0.9rem;">Shipment Tracking Number:</strong>
+                <div style="font-size: 1.2rem; font-weight: 800; color: var(--text-main); font-family: monospace; margin-top: 0.25rem;">
                   ${order.trackingNumber || 'PENDING'}
                 </div>
               </div>
@@ -170,7 +169,7 @@
 
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <a href="/orders.html" class="btn btn-secondary btn-sm">← View All Orders</a>
-            <button class="btn btn-dark btn-sm" onclick="window.print()">Print Receipt</button>
+            <button class="btn btn-primary btn-sm" onclick="window.print()">Print Receipt</button>
           </div>
         </div>
       `;
@@ -183,11 +182,11 @@
             <div style="background: var(--bg-card); padding: 1.75rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--card-shadow); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
               <div>
                 <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.4rem;">
-                  <strong style="font-size: 1.25rem; color: var(--text-main);">${order.orderNumber}</strong>
+                  <strong style="font-size: 1.2rem; color: var(--text-main);">${order.orderNumber}</strong>
                   <span class="badge ${getBadgeClass(order.orderStatus)}">${order.orderStatus}</span>
                 </div>
-                <div style="font-size: 0.925rem; color: var(--text-muted);">
-                  Recipient: <strong>${order.customerName}</strong> • Date: ${new Date(order.createdAt).toLocaleDateString()}
+                <div style="font-size: 0.9rem; color: var(--text-muted);">
+                  Customer: <strong>${order.customerName}</strong> • Date: ${new Date(order.createdAt).toLocaleDateString()}
                 </div>
                 <div style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem;">
                   Tracking ID: <code style="background: var(--bg-muted); padding: 2px 6px; border-radius: 4px;">${order.trackingNumber || 'PENDING'}</code>
@@ -197,9 +196,9 @@
               <div style="display: flex; align-items: center; gap: 1.75rem;">
                 <div style="text-align: right;">
                   <span style="font-size: 0.85rem; color: var(--text-muted);">Total</span>
-                  <div style="font-size: 1.5rem; font-weight: 900; color: var(--text-main);">$${order.grandTotal.toFixed(2)}</div>
+                  <div style="font-size: 1.4rem; font-weight: 800; color: var(--text-main);">$${order.grandTotal.toFixed(2)}</div>
                 </div>
-                <a href="/orders.html?orderId=${order.id}" class="btn btn-secondary btn-sm">View Details →</a>
+                <a href="/orders.html?orderId=${order.id}" class="btn btn-secondary btn-sm">View Order Details →</a>
               </div>
             </div>
           `).join('')}

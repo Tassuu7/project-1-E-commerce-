@@ -1,6 +1,6 @@
 /**
  * Storefront Catalog Controller
- * Flipkart / Retail Quality Experience
+ * Clean, Human-Crafted Retail Experience
  */
 
 let allProducts = [];
@@ -30,7 +30,7 @@ async function loadProducts() {
         } else if (selectedCategory !== 'ALL') {
           countEl.innerHTML = `Showing <strong>${allProducts.length} items</strong> in <em>${selectedCategory}</em>`;
         } else {
-          countEl.innerHTML = `Showing all <strong>${allProducts.length} curated products</strong>`;
+          countEl.innerHTML = `Showing all <strong>${allProducts.length} items</strong>`;
         }
       }
       renderProductGrid(allProducts);
@@ -50,10 +50,9 @@ function renderProductGrid(products) {
 
   if (!products || products.length === 0) {
     grid.innerHTML = `
-      <div style="grid-column: 1/-1; text-align: center; padding: 5rem 2rem; background: var(--bg-card); border: 2px dashed var(--border); border-radius: var(--radius-lg);">
-        <div style="font-size: 3.5rem; margin-bottom: 1rem;">🔍</div>
-        <h3 style="font-size: 1.45rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">No products match your search</h3>
-        <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.75rem;">Check your spelling or explore our top categories.</p>
+      <div style="grid-column: 1/-1; text-align: center; padding: 5rem 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+        <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">No items matched your search</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.75rem;">Try adjusting your terms or explore our categories.</p>
         <button class="btn btn-secondary" onclick="resetFilters()">View All Items</button>
       </div>
     `;
@@ -73,7 +72,7 @@ function renderProductGrid(products) {
     return `
       <div class="product-card">
         <div class="product-img-wrapper">
-          ${hasDiscount ? `<span class="product-tag-discount">${discountPct}% OFF</span>` : ''}
+          ${hasDiscount ? `<span class="product-tag-discount">-${discountPct}%</span>` : ''}
           <a href="/product.html?id=${p.id}" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
             <img src="${imgUrl}" alt="${p.name}" class="product-img" loading="lazy" onerror="this.onerror=null; this.src='/images/placeholder.svg';">
           </a>
@@ -86,7 +85,7 @@ function renderProductGrid(products) {
           </h3>
 
           <div class="product-rating-row">
-            <span class="rating-badge">${ratingVal.toFixed(1)} ★</span>
+            <span class="rating-badge">★ ${ratingVal.toFixed(1)}</span>
             <span class="rating-count">(${reviewsVal.toLocaleString()})</span>
           </div>
 
@@ -94,14 +93,14 @@ function renderProductGrid(products) {
             <span class="price-current">$${priceVal.toFixed(2)}</span>
             ${hasDiscount ? `
               <span class="price-original">$${originalPrice.toFixed(2)}</span>
-              <span class="price-discount-percent">${discountPct}% off</span>
+              <span class="price-discount-percent">Save ${discountPct}%</span>
             ` : ''}
           </div>
 
-          <div class="delivery-tag">✓ Free Delivery by Tomorrow</div>
+          <div class="delivery-tag">Free 2-day delivery</div>
 
           <button class="btn-add-cart" onclick="CartManager.addItem('${p.id}')" ${isOutOfStock ? 'disabled' : ''}>
-            ${isOutOfStock ? 'Out of Stock' : '🛒 Add to Cart'}
+            ${isOutOfStock ? 'Out of Stock' : 'Add to Cart'}
           </button>
         </div>
       </div>
@@ -112,7 +111,7 @@ function renderProductGrid(products) {
 function filterByCategory(categoryName, element) {
   selectedCategory = categoryName;
 
-  document.querySelectorAll('.category-strip-card').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.category-strip-btn').forEach(c => c.classList.remove('active'));
   if (element) element.classList.add('active');
 
   loadProducts();
@@ -142,7 +141,7 @@ function resetFilters() {
   const sortSelect = document.getElementById('sort-select');
   if (sortSelect) sortSelect.value = 'newest';
 
-  document.querySelectorAll('.category-strip-card').forEach((c, i) => {
+  document.querySelectorAll('.category-strip-btn').forEach((c, i) => {
     if (i === 0) c.classList.add('active');
     else c.classList.remove('active');
   });
