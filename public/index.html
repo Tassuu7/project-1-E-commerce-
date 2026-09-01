@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Everyday Store — Quality Goods for Daily Living</title>
+  <title>EverydayStore — Quality Goods for Daily Living</title>
+  <script src="/js/theme.js"></script>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/storefront.css">
@@ -14,7 +15,7 @@
   <div class="top-bar">
     <div class="container">
       <div>
-        <span>Free standard shipping on orders over $50 &nbsp;•&nbsp; 30-day easy returns</span>
+        <span>⚡ Free standard shipping on orders over $50 &nbsp;•&nbsp; 30-day easy returns</span>
       </div>
       <div class="top-bar-links">
         <a href="/orders.html">Track My Order</a>
@@ -23,23 +24,28 @@
     </div>
   </div>
 
-  <!-- Clean Navigation Header -->
+  <!-- Clean, Prominent Navigation Header -->
   <header>
     <div class="container nav-wrapper">
-      <!-- Brand Logo -->
+      <!-- Big Bold Brand Logo -->
       <a href="/index.html" class="logo">
         Everyday<span>Store</span>
       </a>
 
-      <!-- Simple Search Bar -->
+      <!-- Large Search Bar -->
       <div class="nav-search">
         <span class="nav-search-icon">🔍</span>
-        <input type="text" id="search-input" placeholder="Search products..." onkeyup="handleSearch(this.value)">
+        <input type="text" id="search-input" placeholder="Search quality products..." onkeyup="handleSearch(this.value)">
       </div>
 
-      <!-- Nav Links & Cart -->
+      <!-- Nav Links, Theme Switcher & Cart -->
       <ul class="nav-menu">
         <li><a href="/index.html" class="active">Shop</a></li>
+        <li>
+          <button id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Theme">
+            🌙 Dark Mode
+          </button>
+        </li>
         <li>
           <a href="/cart.html" class="cart-btn">
             <span>Cart</span>
@@ -92,7 +98,7 @@
         </div>
       </div>
 
-      <!-- Product Grid -->
+      <!-- Product Grid (Full-Screen Fluid 4-6 Columns) -->
       <div id="product-grid" class="product-grid">
         <!-- Loaded dynamically by storefront.js -->
       </div>
@@ -130,8 +136,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <div class="logo" style="margin-bottom: 0.75rem;">Everyday<span>Store</span></div>
-          <p style="color: #6b7280; font-size: 0.9rem; line-height: 1.6;">Simple, honest goods for everyday living. Fast shipping and friendly customer support.</p>
+          <div class="logo" style="margin-bottom: 1rem;">Everyday<span>Store</span></div>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65;">Simple, honest goods for everyday living. Fast express shipping and friendly customer support.</p>
         </div>
 
         <div class="footer-col">
@@ -154,8 +160,8 @@
 
         <div class="footer-col">
           <h4>Secure Shopping</h4>
-          <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 0.75rem;">All transactions are 100% encrypted and safe.</p>
-          <span class="badge badge-success">✓ Verified Store</span>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">All transactions are 100% encrypted and safe.</p>
+          <span class="badge badge-success">✓ Verified Clean Store</span>
         </div>
       </div>
 
